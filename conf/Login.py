@@ -14,36 +14,21 @@ government_host = DEFAULT.test
 pc_host = DEFAULT.test3
 headers = DEFAULT.HEADERS
 
-# government_URL = government_host + "/Gover"
-# request.get_request(_url=government_URL, _headers=headers)
-# government_check = government_host + "/j_spring_security_check"
-# params = {
-#             "mobile": "15184448326",
-#             "password": "123qwe"
-#         }
-# print(params)
-# response = request.post_request(_url=government_check, _data=params, _headers=headers)
-# print(response.request.headers["Cookie"])
-
-
-def get_account(mobile, password):
+def get_account(account, password):
     def login(func):
-        func()
-        government_URL = government_host + "/Gover"
-        request.get_request(_url=government_URL, _headers=headers)
-        government_check = government_host + "/j_spring_security_check"
-        params = {
-                    "mobile": mobile,
-                    "password": password
-                }
-        print(params)
-        response = request.post_request_data(_url=government_check, _data=params, _headers=headers)
-        headers["Cookie"] = response.request.headers["Cookie"]
-        print("====" + response.request.headers["Cookie"])
+        def inner(*args):
+            government_URL = government_host + "/Gover"
+            request.get_request(_url=government_URL, _headers=headers)
+            government_check = government_host + "/j_spring_security_check"
+            params = {
+                "mobile": account,
+                "password": password
+            }
+            print(params)
+            response = request.post_request_data(_url=government_check, _data=params, _headers=headers)
+            headers["Cookie"] = response.request.headers["Cookie"]
+            print("====" + response.request.headers["Cookie"])
+            func(*args)
+        return inner
     return login
-
-
-@get_account("13999999992", "123qwe")
-def government_login():
-    print("13")
 
