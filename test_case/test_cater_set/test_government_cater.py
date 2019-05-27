@@ -17,44 +17,23 @@ class test_government_cater(unittest.TestCase):
         self.param = param
         self.excepted = excepted
 
-    def Ttest_user_list(self):
-        response = self.cater.user_list()
-        print(response.json())
-
-    def Ttest_get_by_idCard(self):
+    @Login.get_account("13999999992", "123qwe")
+    def test_get_by_idCard(self):
         param = {
-            "idcard": "510104194107186490"
+            "idcard": self.param
         }
+
         response = self.cater.get_user_by_idCard(param=param)
         print(response.json())
+        self.assertEqual(self.excepted, response.json()["message"])
 
+    @Login.get_account("13999999992", "123qwe")
     def test_add_user(self):
-        param = {
-            "address": "测试现住地址",
-            "applicationCategory": 141,
-            "auditState": 1,
-            "birthday": "19410718",
-            "eatCount": 0,
-            "handleWay": "",
-            "homeDelivery": 0,
-            "homeDeliveryDetail": "",
-            "idCard": "510104194107184014",
-            "isArea": 1,
-            "mealId": 135,
-            "name": "测试api01",
-            "otherCredentials": [],
-            "permanentAddress": "测试户籍地址",
-            "phone": "15282566260",
-            "residenceAddress": "90010902",
-            "sex": "m",
-            "useYanglao": 1,
-            "userGoverBalance": {}
-        }
         response = self.cater.add_user(param=self.param)
         print(response.text)
-        self.assertEqual(self.excepted, str(response.json()["message"]).split(":")[0])
-        # self.assertEqual("操作异常:用户重复", response.json()["message"])
+        self.assertEqual(self.excepted, response.json()["message"])
 
 
 if __name__ == "__main__":
-    unittest.main()
+    # unittest.main()
+    pass
