@@ -11,11 +11,11 @@ from conf import Login
 
 class test_government_cater(unittest.TestCase):
     cater = government_Cater()
-    #
-    # def __init__(self, method_name, param, excepted):
-    #     super(test_government_cater, self).__init__(method_name)
-    #     self.param = param
-    #     self.excepted = excepted
+
+    def __init__(self, method_name, param, excepted):
+        super(test_government_cater, self).__init__(method_name)
+        self.param = param
+        self.excepted = excepted
 
     def Ttest_user_list(self):
         response = self.cater.user_list()
@@ -50,9 +50,10 @@ class test_government_cater(unittest.TestCase):
             "useYanglao": 1,
             "userGoverBalance": {}
         }
-        response = self.cater.add_user(param=param)
-        print(response.json())
-        self.assertEqual("添加成功", str(response.json()["message"]).split(":")[0])
+        response = self.cater.add_user(param=self.param)
+        print(response.text)
+        self.assertEqual(self.excepted, str(response.json()["message"]).split(":")[0])
+        # self.assertEqual("操作异常:用户重复", response.json()["message"])
 
 
 if __name__ == "__main__":

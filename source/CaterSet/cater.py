@@ -24,6 +24,6 @@ class government_Cater(object):
 
     def add_user(self, param):
         """添加人员申请"""
-        response = self.request.post_request(_url=cater.adduser, _data=param, _headers=self.headers)
+        response = self.request.post_request_json(_url=cater.adduser, _json=param, _headers=self.headers)
         return response
 

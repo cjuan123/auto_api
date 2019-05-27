@@ -37,12 +37,13 @@ def get_account(mobile, password):
                     "password": password
                 }
         print(params)
-        response = request.post_request(_url=government_check, _data=params, _headers=headers)
+        response = request.post_request_data(_url=government_check, _data=params, _headers=headers)
         headers["Cookie"] = response.request.headers["Cookie"]
+        print("====" + response.request.headers["Cookie"])
     return login
 
 
-# @get_account("15184448326", "123qwe")
-# def government_login():
-#     print("13")
+@get_account("13999999992", "123qwe")
+def government_login():
+    print("13")
 
