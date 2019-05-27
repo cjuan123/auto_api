@@ -13,13 +13,3 @@ headers = {
     "Accept-Language": "zh-CN,zh;q=0.9"
 }
 
-_url = "https://test.chinaylzl.com/Gover"
-requests.get(_url, headers=headers)
-
-_check = "https://test.chinaylzl.com/j_spring_security_check"
-params = {
-    "mobile": "15184448326",
-    "password": "123qwe"
-          }
-res = requests.post(url=_check, data=params, headers=headers)
-print(res.request.headers["Cookie"])
