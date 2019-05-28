@@ -13,8 +13,7 @@ from tools.mysql_helper import MysqlHelper
 
 class CaterHelper:
 
-    my_sql = MysqlHelper(host='rds0nj0vi475ec4xe7kn7o.mysql.rds.aliyuncs.com',
-                         port=3306, user='assist_test', password='Qsheal502', db='assist_catering')
+   
 
     def query_appointment(self, user_id):
         """查询预约记录"""
