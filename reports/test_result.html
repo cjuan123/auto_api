@@ -116,19 +116,19 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">全时云接口单元测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> chenj</p>
-<p class='attribute'><strong>开始时间 : </strong> 2019-05-27 11:03:34</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.611000</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 1，通过 1，通过率= 100.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-05-27 16:01:35</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:07.091000</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 2，失败 2，通过率= 0.00%</p>
 
 <p class='description'></p>
 </div>
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 1 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 1 }</a>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 2 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
 <colgroup>
@@ -148,33 +148,84 @@ function html_escape(s) {
     <td>详细</td>
 </tr>
 
-<tr class='passClass warning'>
+<tr class='failClass warning'>
     <td>test_case.test_cater_set.test_government_cater.test_government_cater</td>
-    <td class="text-center">1</td>
-    <td class="text-center">1</td>
+    <td class="text-center">2</td>
     <td class="text-center">0</td>
+    <td class="text-center">2</td>
     <td class="text-center">0</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',2)" class="detail" id='c1'>详细</a></td>
 </tr>
 
-<tr id='pt1_1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_add_user</div></td>
+<tr id='ft1_1' class='none'>
+    <td class='failCase'><div class='testcase'>test_add_user</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 -Findyou
-    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
-    <div id='div_pt1_1' class="collapse">  -->
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
+    <div id='div_ft1_1' class="collapse">  -->
     <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
-    <div id='div_pt1_1' class="collapse in" align="left">
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
+    <div id='div_ft1_1' class="collapse in" align="left">
     <pre>
     
-pt1_1: 【URL】：https://test.chinaylzl.com/cater-server/user/addUser
+ft1_1: =============【政府端登录：13999999992】==================
+【request_URL】：https://test.chinaylzl.com/Gover
+【status_code】: 200
+【request_URL】：https://test.chinaylzl.com/j_spring_security_check
+【status_code】: 200
+&lt;class 'dict'&gt;
+【request_URL】：https://test.chinaylzl.com/cater-server/user/addUser
 【status_code】: 200
 {
 	"data":null,
-	"message":"操作异常:用户重复",
-	"status":500
+	"message":"添加成功",
+	"status":0
 }
+Traceback (most recent call last):
+  File "F:\auto_api\conf\Login.py", line 30, in inner
+    func(*args)
+  File "F:\auto_api\test_case\test_cater_set\test_government_cater.py", line 34, in test_add_user
+    self.assertEqual(self.excepted, response.json()["message"])
+AssertionError: '操作异常:用户重复' != '添加成功'
+- 操作异常:用户重复
++ 添加成功
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_2' class='none'>
+    <td class='failCase'><div class='testcase'>test_add_user</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_2'>失败</button>
+    <div id='div_ft1_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_2'>失败</button>
+    <div id='div_ft1_2' class="collapse in" align="left">
+    <pre>
+    
+ft1_2: =============【政府端登录：13999999992】==================
+【request_URL】：https://test.chinaylzl.com/Gover
+【status_code】: 200
+【request_URL】：https://test.chinaylzl.com/j_spring_security_check
+【status_code】: 200
+&lt;class 'dict'&gt;
+【request_URL】：https://test.chinaylzl.com/cater-server/user/addUser
+【status_code】: 200
+{"message":"https://test.chinaylzl.com/Gover/login","status":501}
+Traceback (most recent call last):
+  File "F:\auto_api\conf\Login.py", line 30, in inner
+    func(*args)
+  File "F:\auto_api\test_case\test_cater_set\test_government_cater.py", line 34, in test_add_user
+    self.assertEqual(self.excepted, response.json()["message"])
+AssertionError: '操作异常' != 'https://test.chinaylzl.com/Gover/login'
+- 操作异常
++ https://test.chinaylzl.com/Gover/login
+
 
 
     </pre>
@@ -184,11 +235,11 @@ pt1_1: 【URL】：https://test.chinaylzl.com/cater-server/user/addUser
 
 <tr id='total_row' class="text-center active">
     <td>总计</td>
-    <td>1</td>
-    <td>1</td>
+    <td>2</td>
     <td>0</td>
+    <td>2</td>
     <td>0</td>
-    <td>通过率：100.00%</td>
+    <td>通过率：0.00%</td>
 </tr>
 </table>
 
