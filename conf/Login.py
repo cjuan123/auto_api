@@ -15,8 +15,9 @@ pc_host = DEFAULT.test3
 headers = DEFAULT.HEADERS
 
 
+#   政府端登录
 def get_account(account, password):
-    """政府端登录"""
+
     def login(func):
         def inner(*args):
             print("=============【政府端登录：%s】==================" % account)
@@ -34,8 +35,8 @@ def get_account(account, password):
     return login
 
 
+#   大配餐企业端登录
 def get_pc_account(account, password):
-    """大配餐企业端登录"""
     def login(func):
         def inner(*args):
             print("=============【大配餐企业端登录：%s】==================" % account)
@@ -54,9 +55,12 @@ def get_pc_account(account, password):
     return login
 
 
+#   大配餐APP登录
+
 def get_app_account(account, password):
     def login(func):
         def inner(*args):
+            print("=============【大配餐APP登录：%s】==================" % account)
             _url = pc_host + "/api/login"
             param = {
                 "mobile": account,
@@ -68,3 +72,24 @@ def get_app_account(account, password):
         return inner
     return login
 
+
+#   企业端登录
+def get_business_account(account, password):
+    def login(func):
+        def inner(*args):
+            print("=========================== 【企业端】登录账号：%s ===========================" % account)
+            _URL_login = "https://test1.chinaylzl.com/login"  # setting.SAS_HOST + setting.sas_login
+            request.get_request(_url=_URL_login, _headers=headers)
+            _URL_submit_login = "https://test1.chinaylzl.com/submitLogin"  # setting.SAS_HOST + setting.sas_submit_login
+            param = {
+                'account': account,
+                'password': password
+            }
+            response = request.post_request_data(_url=_URL_submit_login, _data=param, _headers=headers)
+            session = response.cookies.get_dict()["SESSION"]
+            ylzlbs = response.cookies.get_dict()["ylzlbs"]
+            cookies = "SESSION=" + session + ";ylzlbs=" + ylzlbs
+            headers["Cookie"] = cookies
+            func(*args)
+        return inner
+    return login
