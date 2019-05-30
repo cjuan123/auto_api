@@ -21,7 +21,7 @@ class TestCaterFlow(unittest.TestCase):
     s_cater = CaterSAS()
     yang_lao = YangLao()
     cater_helper = CaterHelper()
-    id_card = "971513194501176906"
+    id_card = "970936193603060315"
     PASSWORD_GOVERNMENT = DEFAULT.PASSWORD_GOVERNMENT
     PASSWORD_PG = DEFAULT.PASSWORD_PG
     user_info = []
@@ -97,15 +97,17 @@ class TestCaterFlow(unittest.TestCase):
         print(response_2.json())
         self.assertEqual("操作成功", response_2.json()["message"])
 
+    def test_002(self):
+        """政府端：批量充值配餐积分"""
         # 备注：文件名最好不要是中文的
         files = {
             "file": open("F:\\auto_api\\test_data\\recharge.xlsx", "rb")
         }
-        response = self.yang_lao.Recharge(files)
+        response = self.yang_lao.recharge(files)
         print(response.json())
 
     @Login.get_pc_account("13999999993", PASSWORD_PG)
-    def test_002(self):
+    def test_003(self):
         """企业端：根据身份证查询人员信息"""
         param = {
             "idCard": self.id_card
@@ -120,7 +122,7 @@ class TestCaterFlow(unittest.TestCase):
         print(response.json())
         self.assertEqual(200, response.status_code)
 
-    def test_003(self):
+    def test_004(self):
         """企业端：给人员充值积分"""
         param = {
             "userId": self.user_info[0],
@@ -129,7 +131,7 @@ class TestCaterFlow(unittest.TestCase):
         response = self.s_cater.set_recharge(param=param)
         print(response.json())
 
-    def test_004(self):
+    def test_005(self):
         """企业端：给人员新增预约"""
         param = {
             "id": self.user_info[0],
@@ -148,7 +150,7 @@ class TestCaterFlow(unittest.TestCase):
         self.cater_helper.update_server_order_time(self.user_info[0])
 
     @Login.get_app_account("13999999993", PASSWORD_PG)
-    def test_005(self):
+    def test_006(self):
         """APP：就餐扫码"""
         param = {
             "userCode": self.user_info[4],
