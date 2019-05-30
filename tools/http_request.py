@@ -29,6 +29,12 @@ class Request:
         print("【status_code】: %d" % response.status_code)
         return response
 
+    def post_request_files(self, _url, _files, _headers):
+        response = requests.post(url=_url, files=_files, headers=_headers, verify=False)
+        print("【request_URL】：%s" % _url)
+        print("【status_code】: %d" % response.status_code)
+        return response
+
     def get_request(self, _url, _headers, _data=None):
         response = requests.get(url=_url, params=_data, headers=_headers, verify=False)
         print("【request_URL】：%s" % _url)
