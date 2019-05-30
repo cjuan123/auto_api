@@ -40,6 +40,7 @@ def get_pc_account(account, password):
     def login(func):
         def inner(*args):
             print("=============【大配餐企业端登录：%s】==================" % account)
+            print(headers)
             pc_URL = pc_host + "/login"
             request.get_request(_url=pc_URL, _headers=headers)
             pc_check = pc_host + "/checkUser"
@@ -89,6 +90,24 @@ def get_business_account(account, password):
             session = response.cookies.get_dict()["SESSION"]
             ylzlbs = response.cookies.get_dict()["ylzlbs"]
             cookies = "SESSION=" + session + ";ylzlbs=" + ylzlbs
+            headers["Cookie"] = cookies
+            func(*args)
+        return inner
+    return login
+
+
+#   派工助手APP登录
+def get_business_app_account(account, password):
+    def login(func):
+        def inner(*args):
+            print("=========================== 【派工APP】登录账号：%s ===========================" % account)
+            _URL_login = "https://test1.chinaylzl.com/user/api/login"
+            param = {
+                'account': account,
+                'password': password
+            }
+            res = request.post_request_data(_url=_URL_login, _data=param, _headers=None)
+            cookies = 'ylzlbs=' + res.cookies.get_dict()['ylzlbs']
             headers["Cookie"] = cookies
             func(*args)
         return inner
