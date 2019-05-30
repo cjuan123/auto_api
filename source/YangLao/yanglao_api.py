@@ -10,5 +10,8 @@ from conf import DEFAULT
 
 gover_host = DEFAULT.test
 
+loginOut = gover_host + "/loginOut"     # 退出登录
 addSurveyUser = gover_host + "/surveyUser/addSurveyUser"    # 添加人员
 recharge = gover_host + "/Balance/Recharge"      # 人员批量充值
+listUsersNew = gover_host + "/surveyUser/listUsersNew"      # 根据身份证号，查询获取uid
+SingleRecharge = gover_host + "/Balance/SingleRecharge"     # 养老积分充值
