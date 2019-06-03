@@ -14,12 +14,37 @@ headers = {
 }
 
 _url = "https://test.chinaylzl.com/Gover"
-requests.get(_url, headers=headers)
+requests.get(_url, headers=headers, verify=False)
 
 _check = "https://test.chinaylzl.com/j_spring_security_check"
 params = {
-    "mobile": "15184448326",
+    "mobile": "18048054262",
     "password": "123qwe"
           }
-res = requests.post(url=_check, data=params, headers=headers)
-print(res.request.headers["Cookie"])
+res = requests.post(url=_check, data=params, headers=headers, verify=False)
+
+headers["Cookie"] = res.request.headers["Cookie"]
+print(headers)
+
+url = "https://test.chinaylzl.com/surveyUser/listUsersNew"      # 人员批量充值
+# param = "name=&idCard=510107193303079195&sex=&startAge=&endAge=&address=&sort=&orderby=&pageIndex=1&point=&residenceAddress=51010902&type=0&shinengStr=&cjstate=&cjdj=&level=&personCategory=&liveStatus=&liveType=&startTime=&endTime=&isBind=&isPaging=false"
+param = {
+    "idCard": "711557195305306788",
+    "pageIndex": 1,
+    "isBind": ""
+}
+res = requests.post(url=url, headers=headers, data=param, verify=False)
+print(res.status_code)
+print(res.json())
+
+
+# listServiceRecord = "https://test.chinaylzl.com/service/listServiceRecord"
+# param = {
+#     "userName": "测试0514",
+#     "isPaging": "false",
+#     "community": "900109"
+# }
+#
+# res = requests.post(url=listServiceRecord, headers=headers, data=param, verify=False)
+# print(res.status_code)
+# print(res.text)

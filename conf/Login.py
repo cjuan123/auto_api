@@ -12,6 +12,7 @@ from tools.http_request import Request
 request = Request()
 government_host = DEFAULT.test
 pc_host = DEFAULT.test3
+bus_host = DEFAULT.test1
 headers = DEFAULT.HEADERS
 
 
@@ -79,7 +80,7 @@ def get_business_account(account, password):
     def login(func):
         def inner(*args):
             print("=========================== 【企业端】登录账号：%s ===========================" % account)
-            _URL_login = "https://test1.chinaylzl.com/login"  # setting.SAS_HOST + setting.sas_login
+            _URL_login = bus_host + "/login"  # setting.SAS_HOST + setting.sas_login
             request.get_request(_url=_URL_login, _headers=headers)
             _URL_submit_login = "https://test1.chinaylzl.com/submitLogin"  # setting.SAS_HOST + setting.sas_submit_login
             param = {
@@ -101,7 +102,7 @@ def get_business_app_account(account, password):
     def login(func):
         def inner(*args):
             print("=========================== 【派工APP】登录账号：%s ===========================" % account)
-            _URL_login = "https://test1.chinaylzl.com/user/api/login"
+            _URL_login = bus_host + "/user/api/login"
             param = {
                 'account': account,
                 'password': password
@@ -109,6 +110,26 @@ def get_business_app_account(account, password):
             res = request.post_request_data(_url=_URL_login, _data=param, _headers=None)
             cookies = 'ylzlbs=' + res.cookies.get_dict()['ylzlbs']
             headers["Cookie"] = cookies
+            func(*args)
+        return inner
+    return login
+
+
+#   评估APP登录
+def get_agencies_app_account(account, password):
+    def login(func):
+        def inner(*args):
+            print("=========================== 【评估APP】登录账号：%s ===========================" % account)
+            _URL = pc_host + "/api/user/login"
+            param = {
+                'phone': account,
+                'password': password
+            }
+            res = request.post_request(url=_URL, data=param, header=headers)
+            print(res.cookies.get_dict()['assess_token'])
+            headers["Cookie"] = 'assess_token=' + res.cookies.get_dict()['assess_token']
+            print(res.json()['detail'])
+            print(res.json()['data']['agencyId'])
             func(*args)
         return inner
     return login

@@ -47,9 +47,3 @@ class MysqlHelper:
         result = self.cursor.fetchall()
         return result
 
-#
-
-# sql = "SELECT * FROM `appointment` where user_id = 1357 and enabled = 1;"
-# result = my_sql.findAll(sql)
-# print(my_sql.findAll(sql))
-#
