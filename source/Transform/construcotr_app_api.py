@@ -6,8 +6,9 @@
 @time: 2019/6/6 10:58
 @desc：适老化：施工方app api接口
 """
+from conf import DEFAULT
 
-host = "http://192.168.100.151:8085"
+host = DEFAULT.host_8094
 
 login = host + "/app/login"         # 施工app登录
 web_login = host + "/web/login"     # web管理后台系统登录
