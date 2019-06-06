@@ -8,7 +8,8 @@
 """
 from conf import DEFAULT
 
-agencies_host = DEFAULT.test3
+# agencies_host = DEFAULT.test3
+agencies_host = "http://120.76.84.195:8093"
 goverment_host = DEFAULT.test
 
 #  政府端--评估
@@ -35,3 +36,4 @@ querySchemeSubjectList = agencies_host + "/api/evalute/querySchemeSubjectList"  
 update = agencies_host + "/api/business/update"  # 开始评估申请
 calcScore = agencies_host + "/api/evalute/calcScore"  # 计算分数
 saveAnswer = agencies_host + "/api/evalute/saveAnswer"  # 上传评估结果
+

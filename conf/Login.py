@@ -8,22 +8,57 @@
 
 from conf import DEFAULT
 from tools.http_request import Request
+from source.Transform import construcotr_app_api as c_app
 
 request = Request()
 government_host = DEFAULT.test
 pc_host = DEFAULT.test3
 bus_host = DEFAULT.test1
 headers = DEFAULT.HEADERS
+construction_login = c_app.login
+web_c_login = c_app.web_login
+
+
+#   施工web
+def get_construction_web(account, password):
+    def login(func):
+        def inner(*args):
+            print("=========================== 【施工web】登录账号：%s ===========================" % account)
+            param = {
+                "account": account,
+                "password": password
+            }
+            response = request.post_request_data(_url=web_c_login, _data=param, _headers=DEFAULT.HEADERS)
+            headers["token"] = response.json()["data"]
+            print(DEFAULT.HEADERS)
+            func(*args)
+        return inner
+    return login
+
+
+#   施工APP
+def get_construction_app(account, password):
+    def login(func):
+        def inner(*args):
+            print("=========================== 【施工APP】登录账号：%s ===========================" % account)
+            param = {
+                "account": account,
+                "password": password
+            }
+            response = request.post_request_data(_url=construction_login, _data=param, _headers=DEFAULT.HEADERS)
+            headers["Cookie"] = "token=" + response.json()["data"]
+            func(*args)
+        return inner
+    return login
 
 
 #   政府端登录
 def get_account(account, password):
-
     def login(func):
         def inner(*args):
             print("=============【政府端登录：%s】==================" % account)
-            government_URL = government_host + "/Gover"
-            request.get_request(_url=government_URL, _headers=headers)
+            government_url = government_host + "/Gover"
+            request.get_request(_url=government_url, _headers=headers)
             government_check = government_host + "/j_spring_security_check"
             params = {
                 "mobile": account,
@@ -115,6 +150,26 @@ def get_business_app_account(account, password):
     return login
 
 
+#   评估机构登录
+def get_agencies_account(account, password):
+    def login(func):
+        def inner(*args):
+            print("=========================== 【企业端】登录账号：%s ===========================" % account)
+            _URL_login = pc_host + "/login"
+            param = {
+                'phone': account,
+                'password': password
+            }
+            response = request.post_request_data(_url=_URL_login, _data=param, _headers=headers)
+            session = response.cookies.get_dict()["SESSION"]
+            user = response.cookies.get_dict()["user"]
+            cookies = "SESSION=" + session + ";user=" + user
+            headers["Cookie"] = cookies
+            func(*args)
+        return inner
+    return login
+
+
 #   评估APP登录
 def get_agencies_app_account(account, password):
     def login(func):
@@ -125,7 +180,7 @@ def get_agencies_app_account(account, password):
                 'phone': account,
                 'password': password
             }
-            res = request.post_request(url=_URL, data=param, header=headers)
+            res = request.post_request_data(_url=_URL, _data=param, _headers=headers)
             print(res.cookies.get_dict()['assess_token'])
             headers["Cookie"] = 'assess_token=' + res.cookies.get_dict()['assess_token']
             print(res.json()['detail'])
@@ -133,3 +188,27 @@ def get_agencies_app_account(account, password):
             func(*args)
         return inner
     return login
+
+
+#   评估APP登录
+def get_transform_account(account, password):
+    def login(func):
+        def inner(*args):
+            print("=========================== 【评估APP】登录账号：%s ===========================" % account)
+            _URL = pc_host + "/api/user/login"
+            param = {
+                'phone': account,
+                'password': password
+            }
+            res = request.post_request_data(_url=_URL, _data=param, _headers=headers)
+            print(res.cookies.get_dict()['assess_token'])
+            headers["Cookie"] = 'assess_token=' + res.cookies.get_dict()['assess_token']
+            print(res.json()['detail'])
+            print(res.json()['data']['agencyId'])
+            func(*args)
+        return inner
+    return login
+
+
+
+

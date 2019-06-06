@@ -76,7 +76,7 @@ class TestDaycareFlow(unittest.TestCase):
         self.record_id.append(res.json()["pageView"]["records"][0]["id"])
         print("日照评估ID：%s " % self.record_id)
 
-    @Login.get_agencies_app_account("18048054260", DEFAULT.PASSWORD_PG)
+    @Login.get_agencies_app_account("18048054260", "123456")
     def test_006(self):
         """app下载评估申请"""
         assert len(self.record_id) != 0
