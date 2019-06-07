@@ -414,5 +414,6 @@ class TestTransformFlow(unittest.TestCase):
         self.assertEqual("领取成功", response.json()["message"])
 
 
+
 if __name__ == '__main__':
     unittest.main()
