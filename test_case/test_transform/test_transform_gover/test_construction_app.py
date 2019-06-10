@@ -57,18 +57,35 @@ class TestConstructionApp(unittest.TestCase):
         self.con_emp_id.append(response.json()["data"]["records"][0]["id"])
         print(self.con_emp_id[0])
 
-    @Login.get_construction_web("13633269651", "123456")
+    @Login.get_construction_app("13633269651", "123456")
     def test_get_task(self):
         """施工app：获取任务"""
         param = {
-            "eId": self.con_emp_id[0],
-            "recordId": 36
+            # self.con_emp_id[0],
+            "recordId": 63
         }
         response = self.construction_app.get_task(param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("领取成功", response.json()["message"])
+
+    @Login.get_construction_app("15256216643", "123456")
+    def test_my_task_list(self):
+        param = {
+            "pageNow": 1
+        }
+        response = self.construction_app.my_task_list(param=param)
+        print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("操作成功", response.json()["message"])
+
+    def test_construction_details(self):
+        param = {
+            "id": 63
+        }
+        # response = self.construction_app.
 
 
 if __name__ == '__main__':

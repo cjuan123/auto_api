@@ -17,12 +17,12 @@ class TestSuitableAgingApp(unittest.TestCase):
     order_id = [21]
     person_record_id = []   # 人员评估记录ID
     evn_record_id = []  # 环境评估记录ID
-
-    @Login.get_agencies_app_account("15982566561", "123456")
+    products = []
+    @Login.get_agencies_app_account("13733263135", "123456")
     def test_001_get_tasks(self):
         param = {
-            "orderId": self.order_id[0],
-            "assessmentUserId": 465
+            "orderId": 77,
+            "assessmentUserId": 498
         }
         print(param)
         response = self.t_app.get_tasks(data=param)
@@ -38,7 +38,6 @@ class TestSuitableAgingApp(unittest.TestCase):
         self.person_record_id.append(response.json()["data"][0]["personRecordId"])
         self.env_record_id.append(response.json()["data"][0]["personRecordId"])
 
-
     @Login.get_agencies_app_account("15982566561", "123456")
     def test_003_save_answer_person(self):
         id = 1009335
@@ -49,7 +48,6 @@ class TestSuitableAgingApp(unittest.TestCase):
                          id),
             'agencyId': '110',
             "conclusion": ""
-
         }
         response = self.t_app.save_answer(data=param)
         print(response.json())
@@ -63,10 +61,26 @@ class TestSuitableAgingApp(unittest.TestCase):
                       % (id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id,
                          id, id, id, id, id, id),
 
-            'agencyId': '110',
-            "conclusion": ""
+            'agencyId': '110'
         }
         response = self.t_app.save_answer(data=param)
         print(response.json())
 
+    @Login.get_agencies_app_account("13733263135", "123456")
+    def test_download_subject(self):
+        """【评估app：下载题目，获取产品信息】"""
+        param = {
+            "schemeId": 104
+        }
+        response = self.t_app.download_subject(data=param)
+        print(response.json())
+        print(len(response.json()["data"][0]["productList"]))
+        data = {
+            "productId": response.json()["data"][0]["productList"][0]["productId"],
+            "selectedCounts": 1,
+            "typeId": response.json()["data"][0]["productList"][0]["typeId"],
+            "price": response.json()["data"][0]["productList"][0]["price"]
+        }
+        self.products.append(data)
+        print(self.products)
 

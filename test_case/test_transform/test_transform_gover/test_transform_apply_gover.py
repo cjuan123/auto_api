@@ -4,7 +4,8 @@
 @author: chenj
 @file: test_transform_product_gover.py
 @time: 2019/6/3 17:42
-@desc：适老化政府端:添加评估申请
+@desc：政府端--适老化
+        添加改造（评估）申请、改造审核、改造评估
 """
 import unittest
 import random
@@ -17,7 +18,7 @@ class TestTransformGovern(unittest.TestCase):
 
     transform = Transform()
     id_card = IDCard().idCard(85, 1)
-    name = "api申请" + str(random.randint(0, 100))
+    name = "张三" + str(random.randint(0, 100))
     apply_id = []
     v_id = []     # 改造单ID
 
@@ -125,8 +126,8 @@ class TestTransformGovern(unittest.TestCase):
     def test_007_business_apply(self):
         """【政府端--适老化】：评估中列表分页查询"""
         param = {
-            "agencyId": 125,
-            "agencyName": "api评估机构6872",
+            "agencyId": 151,
+            "agencyName": "api评估机构8841",
             "id": self.v_id[0]
         }
         response = self.transform.business_apply(data=param)
@@ -147,8 +148,6 @@ class TestTransformGovern(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
-        self.assertEqual(125, response.json()["data"]["records"][0]["agencyId"])
-        self.assertEqual("api评估机构53", response.json()["data"]["records"][0]["agencyName"])
 
 
 if __name__ == '__main__':

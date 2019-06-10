@@ -4,7 +4,8 @@
 @author: chenj
 @file: test_transform_product_gover.py
 @time: 2019/6/3 17:42
-@desc：适老化政府端
+@desc：政府端--适老化改造
+        添加产品、编辑产品等产品相关操作
 """
 import unittest
 import random
@@ -102,18 +103,6 @@ class TestTransformGovern(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
         self.assertEqual(self.name + "(update)", response.json()["data"]["name"])
-
-    # def test_get_unit_data(self):
-    #     """【政府端--适老化】：获取单位数据"""
-    #     response = self.transform.get_unit_data()
-    #     print(response.json())
-    #
-    # def test_get_product_type_list(self):
-    #     """【政府端--适老化】：查询产品类型list"""
-    #     response = self.transform.get_product_type_list()
-    #     print(response.json())
-    #     self.assertEqual(0, response.json()["status"])
-    #     self.assertEqual("操作成功", response.json()["message"])
 
 
 if __name__ == "__main__":
