@@ -11,24 +11,29 @@ from tools.http_request import Request
 from source.Transform import construcotr_app_api as c_app
 
 request = Request()
-government_host = DEFAULT.test
-pc_host = DEFAULT.test3
-bus_host = DEFAULT.test1
-headers = DEFAULT.HEADERS
-construction_login = c_app.login
-web_c_login = c_app.web_login
+government_host = DEFAULT.test  # 政府端host
+pc_host = DEFAULT.test3     # 大配餐host
+bus_host = DEFAULT.test1    # 企业host
+headers = DEFAULT.HEADERS   # 请求头
+construction_login = c_app.login    # 施工app
+web_c_login = c_app.web_login       # 施工web端
 
 
 #   施工web
 def get_construction_web(account, password):
     def login(func):
         def inner(*args):
+            print(DEFAULT.HEADERS)
+            if ("Cookie" in DEFAULT.HEADERS) == True:
+                del DEFAULT.HEADERS['Cookie']
+            print(DEFAULT.HEADERS)
             print("=========================== 【施工web】登录账号：%s ===========================" % account)
             param = {
                 "account": account,
                 "password": password
             }
-            response = request.post_request_data(_url=web_c_login, _data=param, _headers=DEFAULT.HEADERS)
+            response = request.get_request(_url=web_c_login, _data=param, _headers=DEFAULT.HEADERS)
+            print(response.json())
             headers["token"] = response.json()["data"]
             print(DEFAULT.HEADERS)
             func(*args)
@@ -40,13 +45,16 @@ def get_construction_web(account, password):
 def get_construction_app(account, password):
     def login(func):
         def inner(*args):
+            if ("Cookie" in DEFAULT.HEADERS) == True:
+                del dict['Cookie']
             print("=========================== 【施工APP】登录账号：%s ===========================" % account)
             param = {
                 "account": account,
                 "password": password
             }
             response = request.post_request_data(_url=construction_login, _data=param, _headers=DEFAULT.HEADERS)
-            headers["Cookie"] = "token=" + response.json()["data"]
+            headers["token"] = response.json()["data"]
+            print(DEFAULT.HEADERS)
             func(*args)
         return inner
     return login
@@ -56,6 +64,7 @@ def get_construction_app(account, password):
 def get_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=============【政府端登录：%s】==================" % account)
             government_url = government_host + "/Gover"
             request.get_request(_url=government_url, _headers=headers)
@@ -75,6 +84,7 @@ def get_account(account, password):
 def get_pc_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=============【大配餐企业端登录：%s】==================" % account)
             print(headers)
             pc_URL = pc_host + "/login"
@@ -97,6 +107,7 @@ def get_pc_account(account, password):
 def get_app_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=============【大配餐APP登录：%s】==================" % account)
             _url = pc_host + "/api/login"
             param = {
@@ -114,6 +125,7 @@ def get_app_account(account, password):
 def get_business_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=========================== 【企业端】登录账号：%s ===========================" % account)
             _URL_login = bus_host + "/login"  # setting.SAS_HOST + setting.sas_login
             request.get_request(_url=_URL_login, _headers=headers)
@@ -136,6 +148,7 @@ def get_business_account(account, password):
 def get_business_app_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=========================== 【派工APP】登录账号：%s ===========================" % account)
             _URL_login = bus_host + "/user/api/login"
             param = {
@@ -154,6 +167,7 @@ def get_business_app_account(account, password):
 def get_agencies_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=========================== 【企业端】登录账号：%s ===========================" % account)
             _URL_login = pc_host + "/login"
             param = {
@@ -174,6 +188,7 @@ def get_agencies_account(account, password):
 def get_agencies_app_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=========================== 【评估APP】登录账号：%s ===========================" % account)
             _URL = pc_host + "/api/user/login"
             param = {
@@ -194,6 +209,7 @@ def get_agencies_app_account(account, password):
 def get_transform_account(account, password):
     def login(func):
         def inner(*args):
+            headers["Cookie"] = None
             print("=========================== 【评估APP】登录账号：%s ===========================" % account)
             _URL = pc_host + "/api/user/login"
             param = {
