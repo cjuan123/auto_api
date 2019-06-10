@@ -36,7 +36,19 @@ class ConstructionApp:
         response = self.request.post_request_data(_url=c_app_api.getTask, _data=param, _headers=self.headers)
         return response
 
+    def get_transform_scheme_detail(self, param):
+        """【施工app: 查看改造方案详情】"""
+        response = self.request.get_request(_url=c_app_api.getTransFormSchemeDetail, _data=param, _headers=self.headers)
+        return response
 
+    def my_task_list(self, param):
+        """【施工app：我的任务列表】"""
+        response = self.request.get_request(_url=c_app_api.myTaskList, _data=param, _headers=self.headers)
+        return response
+
+    def construction_details(self, param):
+        response = self.request.get_request(_url=c_app_api.constructionDetails, _data=param, _headers=self.headers)
+        return response
 
 
 

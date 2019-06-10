@@ -37,12 +37,21 @@ class TransformApp:
         return response
 
     def save_answer(self, data):
-        """"【适老化--app】：上传评估结果"""
+        """"【适老化--app】：上传人员评估结果"""
         response = self.request.post_request_data(_url=app_api.saveAnswer, _data=data, _headers=self.headers)
+        return response
+
+    def save_env_answer(self, data):
+        """"【适老化--app】：上传环境评估结果"""
+        response = self.request.post_request_data(_url=app_api.saveEnvAnswer, _data=data, _headers=self.headers)
         return response
 
     def save_person_products(self, data):
         """【适老化--app】：保存人员评估结果选择的产品关系"""
         response = self.request.post_request_data(_url=app_api.savePersonProducts, _data=data, _headers=self.headers)
+        return response
+
+    def download_subject(self, data):
+        response = self.request.post_request_data(_url=app_api.downloadSubject, _data=data, _headers=self.headers)
         return response
 

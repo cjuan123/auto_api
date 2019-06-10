@@ -18,8 +18,10 @@ agencyUserListData = transform_host + "/user/agencyUserListData"    # 员工列�
 getTasks = transform_host + "/api/suitableAging/getTasks"   # 领取任务
 listOwnTasks = transform_host + "/api/suitableAging/listOwnTasks"   # 我的任务列表
 downloadSubject = transform_host + "/api/suitableAging/downloadSubject"     # 适老化题目下载
-saveAnswer = transform_host + "/api/evalute/saveAnswer"  # 上传评估结果
+saveAnswer = transform_host + "/api/evalute/saveAnswer"  # 上传人员评估结果
+saveEnvAnswer = transform_host + "/api/suitableAging/saveEnvAnswer"     # 上传环境评估结果
 savePersonProducts = transform_host + "/api/suitableAging/savePersonProducts"    # 保存人员评估结果选择的产品关系
+downloadSubject = transform_host + "/api/suitableAging/downloadSubject"     # 下题
 
 
 

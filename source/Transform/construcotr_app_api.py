@@ -20,4 +20,13 @@ employeeList = host + "/web/staff/employeeList"     # 查询员工列表
 
 # 【施工APP】
 
-getTask = host + "/app/getTask"     # 领取任务
+taskList = host + "/app/taskList"       # 领取任务列表
+getTask = host + "/app/getTask"             # 领取任务
+myTaskList = host + "/app/myTaskList"       # 我的任务列表
+backTask = host + "/app/backTask"           # 退单
+constructionDetails = host + "/app/constructionDetails"     # 查看施工详情
+commitScheme = host + "/app/commitScheme"   # 提交施工产品方案
+completeScheme = host + "/app/completeScheme"   # 施工完成
+completeTaskList = host + "/app/completeTaskList"   # 已完成列表
+
+
