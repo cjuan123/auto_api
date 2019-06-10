@@ -44,6 +44,8 @@ class TestTransformFlow(unittest.TestCase):
     env_record_id = []  # 环境评估记录ID
     con_emp_id = []
 
+    products = []   # 上传环境评估记录时，上传的产品
+
     @Login.get_account("18981967059", "123qwe")
     def test_001_add_assess_agency(self):
         """1.政府端：添加评估机构"""
@@ -288,7 +290,7 @@ class TestTransformFlow(unittest.TestCase):
         response = self.transform_app.agency_user_list_data(data=data)
         print(response.json())
         self.emp_id.append(response.json()["data"][0]["id"])
-        print("员工emp_id: %d" % self.emp_id[0])
+        print("评估员工emp_id: %d" % self.emp_id[0])
 
     @Login.get_agencies_app_account(emp_phone, "123456")
     def test_013_get_tasks(self):
@@ -313,8 +315,24 @@ class TestTransformFlow(unittest.TestCase):
         print("人员评估申请记录person_record_id：%d" % self.person_record_id[0])
         print("环境评估申请记录env_record_id：%d" % self.env_record_id[0])
 
-    def test_015_save_answer_person(self):
-        """15.评估app：人员评估上传评估结果"""
+    def test_015_download_subject(self):
+        """15.评估app：下载题目，获取产品信息"""
+        param = {
+            "schemeId": 104
+        }
+        response = self.transform_app.download_subject(data=param)
+        print(response.json())
+        print(len(response.json()["data"][0]["productList"]))
+        # data = {
+        #     "productId": response.json()["data"][0]["productList"][0]["productId"],
+        #     "selectedCounts": 1,
+        #     "typeId": response.json()["data"][0]["productList"][0]["typeId"],
+        #     "price": response.json()["data"][0]["productList"][0]["price"]
+        # }
+        # self.products.append(data)
+
+    def test_016_save_answer_person(self):
+        """16.评估app：人员评估上传评估结果"""
         id = self.person_record_id[0]
         param = {
             'name': 'assess_token',
@@ -328,8 +346,8 @@ class TestTransformFlow(unittest.TestCase):
         print(response.json())
         self.assertEqual(200, response.status_code)
 
-    def test_016_save_answer_env(self):
-        """16.评估app：环境评估上传评估结果"""
+    def test_017_save_answer_env(self):
+        """17.评估app：环境评估上传评估结果"""
         id = self.env_record_id[0]
         param = {
             'name': 'assess_token',
@@ -337,14 +355,15 @@ class TestTransformFlow(unittest.TestCase):
                       % (id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id,
                          id, id, id, id, id, id),
             'agencyId': self.agency_id[0],
-            "conclusion": ""
+            "products": self.products
+
         }
-        response = self.transform_app.save_answer(data=param)
+        response = self.transform_app.save_env_answer(data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
 
-    def test_017_save_person_products(self):
-        """17.评估app：保存人员评估结果选择的产品关系"""
+    def test_018_save_person_products(self):
+        """18.评估app：保存人员评估结果选择的产品关系"""
         param = {
             "recordId": self.person_record_id[0],
             "json": ""
@@ -353,8 +372,8 @@ class TestTransformFlow(unittest.TestCase):
         print(response.json())
 
     @Login.get_account("18981967059", "123qwe")
-    def test_018_constructor_apply(self):
-        """18.政府端：施工派单"""
+    def test_019_constructor_apply(self):
+        """19.政府端：施工派单"""
         param = {
             "constructionId": self.construction_id[0],
             "id": self.verify_id[0]
@@ -366,13 +385,12 @@ class TestTransformFlow(unittest.TestCase):
         self.assertEqual("派单成功", response.json()["message"])
 
     @Login.get_construction_web(construction_phone, "123456")
-    def test_019_add_employee(self):
-        """19.施工单位添加员工"""
+    def test_020_add_employee(self):
+        """20.施工单位添加员工"""
         param = {
             "account": self.con_emp_account,
             "addressDetail": "api测试详细地址",
             "annex": "apiannex",
-            "bid": 44,
             "idCard": self.id_card,
             "name": self.con_emp_name,
             "password": "123456",
@@ -385,8 +403,8 @@ class TestTransformFlow(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("添加成功", response.json()["message"])
 
-    def test_020_employee_list(self):
-        """20.施工单位：获取员工ID"""
+    def test_021_employee_list(self):
+        """21.施工单位：获取员工ID"""
         param = {
             "name": self.con_emp_name,
             "pageNow": 1
@@ -396,23 +414,34 @@ class TestTransformFlow(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
-        print(len(response.json()["data"]["records"]))
+        # print(len(response.json()["data"]["records"]))
         self.con_emp_id.append(response.json()["data"]["records"][0]["id"])
-        print(self.con_emp_id[0])
+        print("施工员工ID：%s" % self.con_emp_id[0])
 
     @Login.get_construction_app(con_emp_account, "123456")
-    def test_021_get_task(self):
-        """21.施工app：获取任务"""
+    def test_022_get_task(self):
+        """22.施工app：获取任务"""
         param = {
-            "eId": self.con_emp_id[0],
+            # "eId": self.con_emp_id[0],
             "recordId": self.verify_id[0]
         }
+        print(param)
         response = self.construction_app.get_task(param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("领取成功", response.json()["message"])
 
+    def test_030_id(self):
+        print("评估机构agency_id：%d" % self.agency_id[0])
+        print("施工单位construction_ID：%d" % self.construction_id[0])
+        print("产品product_id：%d" % self.product_id[0])
+        print("改造申请apply_id：%d" % self.apply_id[0])
+        print("审核verify_id：%d" % self.verify_id[0])
+        print("评估员工emp_id: %d" % self.emp_id[0])
+        print("人员评估申请记录person_record_id：%d" % self.person_record_id[0])
+        print("环境评估申请记录env_record_id：%d" % self.env_record_id[0])
+        print("施工员工ID：%s" % self.con_emp_id[0])
 
 
 if __name__ == '__main__':
