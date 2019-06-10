@@ -323,13 +323,13 @@ class TestTransformFlow(unittest.TestCase):
         response = self.transform_app.download_subject(data=param)
         print(response.json())
         print(len(response.json()["data"][0]["productList"]))
-        # data = {
-        #     "productId": response.json()["data"][0]["productList"][0]["productId"],
-        #     "selectedCounts": 1,
-        #     "typeId": response.json()["data"][0]["productList"][0]["typeId"],
-        #     "price": response.json()["data"][0]["productList"][0]["price"]
-        # }
-        # self.products.append(data)
+        data = {
+            "productId": response.json()["data"][0]["productList"][0]["productId"],
+            "selectedCounts": 1,
+            "typeId": response.json()["data"][0]["productList"][0]["typeId"],
+            "price": response.json()["data"][0]["productList"][0]["price"]
+        }
+        self.products.append(data)
 
     def test_016_save_answer_person(self):
         """16.评估app：人员评估上传评估结果"""
@@ -358,6 +358,7 @@ class TestTransformFlow(unittest.TestCase):
             "products": self.products
 
         }
+        print(param)
         response = self.transform_app.save_env_answer(data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)

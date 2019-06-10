@@ -4,7 +4,8 @@
 @author: chenj
 @file: test_assessment_gover.py
 @time: 2019/6/5 11:40
-@desc：
+@desc：政府端：
+        添加评估机构
 """
 import unittest
 import random
