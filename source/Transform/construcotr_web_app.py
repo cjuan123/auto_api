@@ -2,13 +2,13 @@
 """
 @version: 1.0
 @author: chenj
-@file: construcotr_app.py
+@file: construcotr_web_app.py
 @time: 2019/6/6 14:10
 @desc：施工企业app
 """
 from conf import DEFAULT
 from tools.http_request import Request
-from source.Transform import construcotr_app_api as c_app_api
+from source.Transform import construcotr_web_app_api as c_app_api
 
 
 class ConstructionApp:
@@ -47,8 +47,22 @@ class ConstructionApp:
         return response
 
     def construction_details(self, param):
+        """【施工app：查询任务详情】"""
         response = self.request.get_request(_url=c_app_api.constructionDetails, _data=param, _headers=self.headers)
         return response
 
+    def commit_scheme(self, data):
+        """【施工app：提交施工产品方案】"""
+        response = self.request.post_request_data(_url=c_app_api.commitScheme, _data=data, _headers=self.headers)
+        return response
 
+    def complete_scheme(self, data):
+        """"【施工app：施工完成】"""
+        response = self.request.post_request_data(_url=c_app_api.commitScheme, _data=data, _headers=self.headers)
+        return response
+
+    def complete_task_list(self, data):
+        """"【施工app：已完成列表】"""
+        response = self.request.get_request(_url=c_app_api.completeTaskList, _data=data, _headers=self.headers)
+        return response
 

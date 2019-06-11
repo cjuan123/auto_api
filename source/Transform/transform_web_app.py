@@ -2,13 +2,13 @@
 """
 @version: 1.0
 @author: chenj
-@file: transform_app.py
+@file: transform_web_app.py
 @time: 2019/6/5 17:52
 @desc：适老化app接口
 """
 from conf import DEFAULT
 from tools.http_request import Request
-from source.Transform import transform_app_api as app_api
+from source.Transform import transform_web_app_api as app_api
 
 
 class TransformApp:

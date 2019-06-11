@@ -2,13 +2,13 @@
 """
 @version: 1.0
 @author: chenj
-@file: transform.py
+@file: transform_govern.py
 @time: 2019/6/3 17:39
 @desc：适老化政府端接口
 """
 from conf import DEFAULT
 from tools.http_request import Request
-from source.Transform import transform_api as t_api
+from source.Transform import transform_govern_api as t_api
 
 
 class Transform:
@@ -235,6 +235,31 @@ class Transform:
     # 【改造施工】
 
     def constructor_apply(self, data):
+        """【政府端--适老化】：派单施工方"""
         response = self.request.get_request(_url=t_api.constructorApply, _data=data, _headers=self.headers)
         return response
+
+    # 【项目验收】
+
+    def get_project_inspection_list(self, data):
+        """【政府端--适老化】：项目验收列表分页查询"""
+        response = self.request.get_request(_url=t_api.getProjectInspectionList, _data=data, _headers=self.headers)
+        return response
+
+    def check_transform_scheme(self, data):
+        """【政府端--适老化】：验收改造方案"""
+        response = self.request.get_request(_url=t_api.checkTransformScheme, _data=data, _headers=self.headers)
+        return response
+
+    def get_transform_settlement_list(self, data):
+        """【政府端--适老化】:项目结算列表分页查询"""
+        response = self.request.get_request(_url=t_api.getTransformSettlementList, _data=data, _headers=self.headers)
+        return response
+
+    def settlement(self, data):
+        """【政府端--适老化】:结算项目"""
+        response = self.request.get_request(_url=t_api.settlement, _data=data, _headers=self.headers)
+        return response
+
+
 
