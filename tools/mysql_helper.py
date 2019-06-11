@@ -47,9 +47,3 @@ class MysqlHelper:
         result = self.cursor.fetchall()
         return result
 
-# my_sql = MysqlHelper(host='rds0nj0vi475ec4xe7kn7o.mysql.rds.aliyuncs.com',
-#                      port=3306, user='assist_test', password='Qsheal502',
-# db='assist_catering')
-# sql = "SELECT * FROM `appointment` where user_id = 1357 and enabled = 1;"
-# result = my_sql.findAll(sql)
-# print(my_sql.findAll(sql))
