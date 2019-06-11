@@ -11,9 +11,9 @@ import unittest
 import random
 from conf import Login
 from conf.IDCard import IDCard
-from source.Transform.transform import Transform
-from source.Transform.transform_app import TransformApp
-from source.Transform.construcotr_app import ConstructionApp
+from source.Transform.transform_govern import Transform
+from source.Transform.transform_web_app import TransformApp
+from source.Transform.construcotr_web_app import ConstructionApp
 
 
 class TestTransformFlow(unittest.TestCase):
@@ -42,9 +42,10 @@ class TestTransformFlow(unittest.TestCase):
     emp_id = []     # 评估员ID
     person_record_id = []  # 人员评估记录ID
     env_record_id = []  # 环境评估记录ID
-    con_emp_id = []
+    con_emp_id = []     # 施工单位员工ID
 
     products = []   # 上传环境评估记录时，上传的产品
+    scheme = []     # 产品方案
 
     @Login.get_account("18981967059", "123qwe")
     def test_001_add_assess_agency(self):
@@ -350,12 +351,12 @@ class TestTransformFlow(unittest.TestCase):
         """17.评估app：环境评估上传评估结果"""
         id = self.env_record_id[0]
         param = {
-            'name': 'assess_token',
-            "answer": '[{"answerId":1129,"parentId":635,"recordId":%d,"subjectId":668},{"answerId":1140,"parentId":635,"recordId":%d,"subjectId":673},{"answerId":1135,"parentId":635,"recordId":%d,"subjectId":671},{"answerId":1124,"parentId":635,"recordId":%d,"subjectId":666},{"answerId":1119,"parentId":635,"recordId":%d,"subjectId":664},{"answerId":1130,"parentId":635,"recordId":%d,"subjectId":669},{"answerId":1141,"parentId":635,"recordId":%d,"subjectId":674},{"answerId":1126,"parentId":635,"recordId":%d,"subjectId":667},{"answerId":1137,"parentId":635,"recordId":%d,"subjectId":672},{"answerId":1121,"parentId":635,"recordId":%d,"subjectId":665},{"answerId":1133,"parentId":635,"recordId":%d,"subjectId":670},{"answerId":1118,"parentId":634,"recordId":%d,"subjectId":652},{"answerId":1113,"parentId":634,"recordId":%d,"subjectId":650},{"answerId":1115,"parentId":634,"recordId":%d,"subjectId":651},{"answerId":1098,"parentId":633,"recordId":%d,"subjectId":642},{"answerId":1105,"parentId":633,"recordId":%d,"subjectId":645},{"answerId":1106,"parentId":633,"recordId":%d,"subjectId":646},{"answerId":1109,"parentId":633,"recordId":%d,"subjectId":644},{"answerId":1156,"parentId":636,"recordId":%d,"subjectId":687},{"answerId":1145,"parentId":636,"recordId":%d,"subjectId":682},{"answerId":1151,"parentId":636,"recordId":%d,"subjectId":685},{"answerId":1157,"parentId":636,"recordId":%d,"subjectId":688},{"answerId":1146,"parentId":636,"recordId":%d,"subjectId":683},{"answerId":1153,"parentId":636,"recordId":%d,"subjectId":686},{"answerId":1149,"parentId":636,"recordId":%d,"subjectId":684},{"answerId":1167,"parentId":637,"recordId":%d,"subjectId":697},{"answerId":1162,"parentId":637,"recordId":%d,"subjectId":695},{"answerId":1169,"parentId":637,"recordId":%d,"subjectId":698},{"answerId":1165,"parentId":637,"recordId":%d,"subjectId":696},{"answerId":1160,"parentId":637,"recordId":%d,"subjectId":694}]'
+            'recordId': id,
+            "answers": '[{"answerId":1129,"parentId":635,"recordId":%d,"subjectId":668},{"answerId":1140,"parentId":635,"recordId":%d,"subjectId":673},{"answerId":1135,"parentId":635,"recordId":%d,"subjectId":671},{"answerId":1124,"parentId":635,"recordId":%d,"subjectId":666},{"answerId":1119,"parentId":635,"recordId":%d,"subjectId":664},{"answerId":1130,"parentId":635,"recordId":%d,"subjectId":669},{"answerId":1141,"parentId":635,"recordId":%d,"subjectId":674},{"answerId":1126,"parentId":635,"recordId":%d,"subjectId":667},{"answerId":1137,"parentId":635,"recordId":%d,"subjectId":672},{"answerId":1121,"parentId":635,"recordId":%d,"subjectId":665},{"answerId":1133,"parentId":635,"recordId":%d,"subjectId":670},{"answerId":1118,"parentId":634,"recordId":%d,"subjectId":652},{"answerId":1113,"parentId":634,"recordId":%d,"subjectId":650},{"answerId":1115,"parentId":634,"recordId":%d,"subjectId":651},{"answerId":1098,"parentId":633,"recordId":%d,"subjectId":642},{"answerId":1105,"parentId":633,"recordId":%d,"subjectId":645},{"answerId":1106,"parentId":633,"recordId":%d,"subjectId":646},{"answerId":1109,"parentId":633,"recordId":%d,"subjectId":644},{"answerId":1156,"parentId":636,"recordId":%d,"subjectId":687},{"answerId":1145,"parentId":636,"recordId":%d,"subjectId":682},{"answerId":1151,"parentId":636,"recordId":%d,"subjectId":685},{"answerId":1157,"parentId":636,"recordId":%d,"subjectId":688},{"answerId":1146,"parentId":636,"recordId":%d,"subjectId":683},{"answerId":1153,"parentId":636,"recordId":%d,"subjectId":686},{"answerId":1149,"parentId":636,"recordId":%d,"subjectId":684},{"answerId":1167,"parentId":637,"recordId":%d,"subjectId":697},{"answerId":1162,"parentId":637,"recordId":%d,"subjectId":695},{"answerId":1169,"parentId":637,"recordId":%d,"subjectId":698},{"answerId":1165,"parentId":637,"recordId":%d,"subjectId":696},{"answerId":1160,"parentId":637,"recordId":%d,"subjectId":694}]'
                       % (id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id,
                          id, id, id, id, id, id),
-            'agencyId': self.agency_id[0],
-            "products": self.products
+            # 'agencyId': self.agency_id[0],
+            "products": str(self.products)
 
         }
         print(param)
@@ -433,7 +434,81 @@ class TestTransformFlow(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("领取成功", response.json()["message"])
 
-    def test_030_id(self):
+    @Login.get_construction_app(con_emp_account, "123456")
+    def test_023_construction_details(self):
+        """23.施工app：查询任务详情"""
+        param = {
+            "id": self.verify_id
+        }
+        response = self.construction_app.construction_details(param=param)
+        print(response.json())
+        self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["id"])
+        self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["productImg"])
+
+    def test_024_commit_scheme(self):
+        """24.施工app：提交施工产品方案"""
+        param = {
+            "recordId": self.verify_id,
+            "scheme": str({
+                "id": self.scheme[0],
+                "transformBefore": self.scheme[1],
+                "transformMiddle": "http://file.chinaylzl.com/test/userHead/2018/11/16/38acfc8085c249628beffed54bccb2c7.png",
+                "transformAfter": "http://file.chinaylzl.com/test/userHead/2018/11/16/38acfc8085c249628beffed54bccb2c7.png",
+                "remark": "api施工小程序产品备注"
+            })
+        }
+        print(param)
+        response = self.construction_app.commit_scheme(data=param)
+        print(response.json())
+
+    @Login.get_account("18981967059", "123qwe")
+    def test_025_govern_get_project_inspection_list(self):
+        """25.政府端：项目验收列表分页查询"""
+        param = {
+            "pageNow": 1
+        }
+        response = self.transform.get_project_inspection_list(data=param)
+        print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("操作成功", response.json()["message"])
+
+    def test_026_govern_check_transform_scheme(self):
+        """26.政府端：验收改造方案"""
+        param = {
+            "schemeId": self.scheme[0],
+            "recordId": self.verify_id,
+            "qualified": 1
+        }
+        response = self.transform.check_transform_scheme(data=param)
+        print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("操作成功", response.json()["message"])
+
+    def test_027_get_transform_settlement_list(self):
+        """27.政府端：项目结算列表分页查询"""
+        param = {
+            "pageNow": 1
+        }
+        response = self.transform.get_transform_settlement_list(data=param)
+        print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("操作成功", response.json()["message"])
+
+    def test_028_settlement(self):
+        """28.政府端：结算项目"""
+        param = {
+            "id": self.verify_id
+        }
+        response = self.transform.settlement(data=param)
+        print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("结算成功", response.json()["message"])
+
+    def test_029_id(self):
         print("评估机构agency_id：%d" % self.agency_id[0])
         print("施工单位construction_ID：%d" % self.construction_id[0])
         print("产品product_id：%d" % self.product_id[0])
