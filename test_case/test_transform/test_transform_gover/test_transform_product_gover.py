@@ -10,7 +10,7 @@
 import unittest
 import random
 from conf import Login
-from source.Transform.transform import Transform
+from source.Transform.transform_govern import Transform
 
 
 class TestTransformGovern(unittest.TestCase):

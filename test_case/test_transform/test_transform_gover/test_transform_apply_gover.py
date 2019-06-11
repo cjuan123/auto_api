@@ -11,7 +11,7 @@ import unittest
 import random
 from conf import Login
 from conf.IDCard import IDCard
-from source.Transform.transform import Transform
+from source.Transform.transform_govern import Transform
 
 
 class TestTransformGovern(unittest.TestCase):
@@ -70,32 +70,32 @@ class TestTransformGovern(unittest.TestCase):
         self.assertEqual("操作成功", response.json()["message"])
         self.apply_id.append(response.json()["data"]["records"][0]["id"])
 
-    def test_004_edit_transform(self):
-        param = {
-            "id": self.apply_id[0],
-            "idCard": self.id_card,
-            "userName": self.name + "(edit)",
-            "phone": "13999999999",
-            "addressDetail": "测试地址(edit)",
-            "transformContents": "测试内容(edit)",
-            "transformCause": "测试(edit)",
-            "emergencyContact": [{
-                "ralative": 1,
-                "phone": "13777777787",
-                "name": "测试(edit)"
-            }],
-            "certificates": [{
-                "name": "timg.gif",
-                "url": "blob:https://test.chinaylzl.com/df5e890d-d6e3-454a-8d28-1786b9230e31"
-            }],
-            "state": 1,
-            "version": 1
-            }
-        response = self.transform.edit_transform(json=param)
-        print(response.json())
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(0, response.json()["status"])
-        self.assertEqual("编辑成功", response.json()["message"])
+    # def test_004_edit_transform(self):
+    #     param = {
+    #         "id": self.apply_id[0],
+    #         "idCard": self.id_card,
+    #         "userName": self.name + "(edit)",
+    #         "phone": "13999999999",
+    #         "addressDetail": "测试地址(edit)",
+    #         "transformContents": "测试内容(edit)",
+    #         "transformCause": "测试(edit)",
+    #         "emergencyContact": [{
+    #             "ralative": 1,
+    #             "phone": "13777777787",
+    #             "name": "测试(edit)"
+    #         }],
+    #         "certificates": [{
+    #             "name": "timg.gif",
+    #             "url": "blob:https://test.chinaylzl.com/df5e890d-d6e3-454a-8d28-1786b9230e31"
+    #         }],
+    #         "state": 1,
+    #         "version": 1
+    #         }
+    #     response = self.transform.edit_transform(json=param)
+    #     print(response.json())
+    #     self.assertEqual(200, response.status_code)
+    #     self.assertEqual(0, response.json()["status"])
+    #     self.assertEqual("编辑成功", response.json()["message"])
 
     def test_005_get_transform_verify_list(self):
         """【政府端--适老化】：分页查询改造审核列表"""
@@ -126,8 +126,8 @@ class TestTransformGovern(unittest.TestCase):
     def test_007_business_apply(self):
         """【政府端--适老化】：评估中列表分页查询"""
         param = {
-            "agencyId": 151,
-            "agencyName": "api评估机构8841",
+            "agencyId": 163,
+            "agencyName": "api评估机构5507",
             "id": self.v_id[0]
         }
         response = self.transform.business_apply(data=param)

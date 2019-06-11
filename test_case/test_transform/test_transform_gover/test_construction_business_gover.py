@@ -10,7 +10,7 @@ import unittest
 import random
 from conf import Login
 from faker import Faker
-from source.Transform.transform import Transform
+from source.Transform.transform_govern import Transform
 
 
 class TestConstructionBusinessGovern(unittest.TestCase):

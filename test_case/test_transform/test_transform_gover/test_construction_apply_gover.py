@@ -8,7 +8,7 @@
 """
 import unittest
 from conf import Login
-from source.Transform.transform import Transform
+from source.Transform.transform_govern import Transform
 
 
 class TestConstructionApplyGovern(unittest.TestCase):
