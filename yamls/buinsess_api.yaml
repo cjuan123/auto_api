@@ -1,5 +1,5 @@
 # 企业端相关接口
-buiness:
+business:
   login:
     - app_login: /user/api/login
     - web_login: /login

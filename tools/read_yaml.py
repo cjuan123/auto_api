@@ -19,12 +19,42 @@ class ReadYaml:
 
     def open_yaml(self):
         """打开yaml文件"""
-        path = os.path.join(self.file_path.root_path(), self.path)
-        self.fo = open(path, encoding='utf-8')
-        data = yaml.load(self.fo)
-        return data
+        try:
+            with open(self.path, 'r', encoding='utf-8') as url:
+                url_data = yaml.load(url)
+            return url_data
+        except Exception as e:
+            print('yaml读取失败，原因为：%s' % e)
+        return url_data
+
+    def house_govern(self, type, api_name):
+        data = self.open_yaml()
+        return data["house_govern"][type][api_name]
+
+    def house_constructor(self, type, api_name):
+        data = self.open_yaml()
+        return data["house_constructor"][type][api_name]
+
+    def business(self, type, api_name):
+        data = self.open_yaml()
+        return data["business"][type][api_name]
+
+    def agencies(self, type, api_name):
+        data = self.open_yaml()
+        return data["agencies"][type][api_name]
+
+    def govern_agencies(self, type, api_name):
+        data = self.open_yaml()
+        return data["govern_agencies"][type][api_name]
+
+    def get_header(self):
+        data = self.open_yaml()
+        self.close_yaml()
+        return data["HEADER"]
 
     def close_yaml(self):
         """关闭文件"""
         self.fo.close()
+
+
 
