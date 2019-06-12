@@ -495,7 +495,7 @@ class TestTransformFlow(unittest.TestCase):
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
-        self.assertEqual("操作成功", response.json()["message"])
+        self.assertEqual("验收成功", response.json()["message"])
 
     def test_028_settlement(self):
         """28.政府端：结算项目"""

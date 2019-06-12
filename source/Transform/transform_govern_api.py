@@ -9,8 +9,8 @@
 from conf import DEFAULT
 
 
-# government_host = DEFAULT.test + "/gov-house"
-government_host = "http://192.168.100.151:8084"
+government_host = DEFAULT.test + "/gov-house"
+# government_host = "http://192.168.100.151:8084"
 
 # 【产品】
 addProduct = government_host + "/product/addProduct"    # 添加产品

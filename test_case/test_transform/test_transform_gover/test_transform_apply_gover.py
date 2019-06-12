@@ -126,8 +126,8 @@ class TestTransformGovern(unittest.TestCase):
     def test_007_business_apply(self):
         """【政府端--适老化】：评估中列表分页查询"""
         param = {
-            "agencyId": 163,
-            "agencyName": "api评估机构5507",
+            "agencyId": 189,
+            "agencyName": "api评估机构5951",
             "id": self.v_id[0]
         }
         response = self.transform.business_apply(data=param)

@@ -30,7 +30,6 @@ sunlightApplyList = goverment_host + "/sunlight/sunlightApplyList"    # 查询�
 
 
 #  评估端--app
-
 login = agencies_host + "/api/user/login"  # 评估app登录
 querySchemeSubjectList = agencies_host + "/api/evalute/querySchemeSubjectList"  # 下载评估申请
 update = agencies_host + "/api/business/update"  # 开始评估申请

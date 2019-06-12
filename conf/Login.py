@@ -8,7 +8,7 @@
 
 from conf import DEFAULT
 from tools.http_request import Request
-from source.Transform import construcotr_app_api as c_app
+from source.Transform import construcotr_web_app_api as c_app
 
 request = Request()
 government_host = DEFAULT.test  # 政府端host

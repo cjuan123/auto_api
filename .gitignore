@@ -39,4 +39,4 @@ gradlew.bat
 .vscode/
 
 /.idea/
-conf/DEFAULT.py
+yamls/default.yaml

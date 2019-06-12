@@ -1,0 +1,37 @@
+
+# 评估端web、app接口地址
+agencies:
+  login:
+    app_login: /api/user/login  # 评估app登录
+
+  web:
+   - agencyUserEditSubmit: /user/agencyUserEditSubmit    # 评估端添加员工
+   - agencyUserListData: /user/agencyUserListData         # 员工列表查询
+
+  app:
+   - getTasks: /api/suitableAging/getTasks            # 领取任务
+   - listOwnTasks: /api/suitableAging/listOwnTasks   # 我的任务列表
+   - downloadSubject: /api/suitableAging/downloadSubject     # 适老化题目下载
+   - saveAnswer: /api/evalute/saveAnswer                  # 上传人员评估结果
+   - saveEnvAnswer: /api/suitableAging/saveEnvAnswer     # 上传环境评估结果
+   - savePersonProducts: /api/suitableAging/savePersonProducts    # 保存人员评估结果选择的产品关系
+   - querySchemeSubjectList: /api/evalute/querySchemeSubjectList  # 下载评估申请
+   - update: /api/business/update  # 开始评估申请
+   - calcScore: /api/evalute/calcScore  # 计算分数
+
+
+# 政府端评估相关接口
+govern_agencies:
+  person:
+   - queryUser: /assessmentManage/queryUser    # 查询身份证是否存在评估申请
+   - applyAdd: /assessmentManage/applyAdd    # 政府端添加评估申请
+   - applyList: /assessmentManage/applyList  # 查询评估申请的ID
+   - cancelRecordById: /assessmentManage/cancelRecordById    # 取消评估申请
+   - auditList: /assessmentManage/auditList   # 待审核页面
+   - update: /assessmentManage/update     # 审核
+  daycare:
+   - addSunlight: /sunlight/addSunlight     # 添加日照中心
+   - sunlightManage: /sunlight/sunlightManage   # 根据日照名称查询
+   - sunlightApplyAdd: /sunlight/sunlightApplyAdd   # 添加日照评估申请
+   - sunlightApplyList: /sunlight/sunlightApplyList   # 查询日照评估ID
+

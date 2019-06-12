@@ -1,0 +1,85 @@
+
+# 适老化政府端接口地址
+house_govern:
+  product:  # 产品
+   - addProduct: /product/addProduct # 添加产品
+   - getProductList: /product/getProductList # 分页查询产品列表
+   - getProductTypeList: /product/getProductTypeList   # 查询产品类型list
+   - stopStartProduct: /product/stopStartProduct    # 产品停启
+   - updateProduct: /product/updateProduct     # 编辑产品信息
+   - getUnitData: /product/getUnitData      # 获取单位数据
+   - getProductDetail: /product/getProductDetail    # 查看产品详情
+
+  construction: # 施工单位
+   - addConstructionBusiness: /business/addConstructionBusiness     # 添加施工单位
+   - getConstructionBusinessList: /business/getConstructionBusinessList     # 分页查询施工单位列表
+   - editConstructionBusiness: /business/editConstructionBusiness   # 编辑施工单位信息
+   - getBusinessDetail: /business/getBusinessDetail     # 获取施工单位信息
+   - recordConstructionList: /business/recordConstructionList   # 施工记录
+   - getEmployeeList: /business/getEmployeeList     # 通讯名单
+   - stopOrStartConstructor: /business/stopOrStartConstructor   # 停启施工单位
+   - servicesList: /business/servicesList   # 结算服务
+
+  agency: # 【评估机构】
+   - addAssessAgency: /assessment/addAssessAgency   # 添加评估机构
+   - assessmentRecord: /assessment/assessmentRecord     # 机构评估记录
+   - editAssessAgency: /assessment/editAssessAgency     # 编辑获取评估机构信息
+   - getAgencyDetail: /assessment/getAgencyDetail       # 获取评估机构基本信息
+   - getAgencyEmployeeList: /assessment/getAgencyEmployeeList   # 通讯名单列表
+   - getAssessmentAgencies: /assessment/getAssessmentAgencies   # 分页查询评估机构列表
+   - getAssessmentScheme: /assessment/getAssessmentScheme   # 查询方案列表
+   - getSettleService: /assessment/getSettleService     # 结算服务列表
+   - queryAgenciesList: /assessment/queryAgenciesList   # 获取选择评估机构列表
+   - saveAssessmentAgency: /assessment/saveAssessmentAgency     # 保存编辑后评估机构信息
+   - settleAgency: /assessment/settleAgency     # 结算服务列表
+   - startOrStop: /assessment/startOrStop       # 机构评估停启用
+
+  apply: # 【改造申请】
+   - getUserByIdCard: /transformApply/getUserByIdCard       # 根据身份证查询人员信息
+   - addTransformApply: /transformApply/addTransformApply   # 添加改造申请
+   - applyTransform: /transformApply/applyTransform     # 改造申请
+   - editTransform: /transformApply/editTransform       # 编辑改造单
+   - getRelationData: /transformApply/getRelationData   # 获取人员关系数据
+   - getTransformApplyList: /transformApply/getTransformApplyList   # 分页查询改造申请列表
+   - getTransformDetail: /transformApply/getTransformDetail     # 获取改造单详情
+
+  verify: # 【改造审核】
+   - getTransformVerifyList: /transformVerify/getTransformVerifyList    # 分页查询改造审核列表
+   - verifyTransform: /transformVerify/verifyTransform      # 审核改造单
+
+  assessment: # 【改造评估】
+   - businessApply: /transformAssess/businessApply      # 申请评估机构
+   - cancelAssessment: /transformAssess/cancelAssessment    # 取消待评估改造
+   - getAssessApplyList: /transformAssess/getAssessApplyList    # 评估申请列表分页查询
+   - getAssessmentList: /transformAssess/getAssessmentList      # 评估中列表分页查询
+   - getConstructionList: /transformAssess/getConstructionList      # 选择施工单位列表
+   - constructorApply: /transformConstruction/constructorApply  # 派单施工方
+
+  project: # 【项目验收\结算】
+   - getProjectInspectionList: /transformCheck/getProjectInspectionList     # 项目验收列表分页查询
+   - checkTransformScheme: /transformCheck/checkTransformScheme     # 验收改造方案
+   - getTransformSettlementList: /transformSettlement/getTransformSettlementList    # 项目结算列表分页查询
+   - settlement: /transformSettlement/settlement    # 结算项目
+
+
+# 施工单位企业端、app接口地址
+house_constructor:
+  login: # 登录接口
+  - app_login: /app/login         # 施工app登录
+  - web_login: /web/login     # web管理后台系统登录
+
+  web: #   【施工web】
+  - addEmployee: /web/staff/addEmployee      # 添加员工
+  - updateEmployee: /web/staff/updateEmployee     # 编辑员工
+  - employeeList: /web/staff/employeeList     # 查询员工列表
+
+
+  app:  # 【施工APP】
+  - taskList: /app/taskList       # 领取任务列表
+  - getTask: /app/getTask             # 领取任务
+  - myTaskList: /app/myTaskList       # 我的任务列表
+  - backTask: /app/backTask           # 退单
+  - constructionDetails: /app/constructionDetails     # 查看施工详情
+  - commitScheme: /app/commitScheme   # 提交施工产品方案
+  - completeScheme: /app/completeScheme   # 施工完成
+  - completeTaskList: /app/completeTaskList   # 已完成列表
