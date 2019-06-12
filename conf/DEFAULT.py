@@ -19,9 +19,7 @@ host_8094 = "http://120.76.84.195:8094"
 local_host = "http://192.168.100.151:8085"
 
 
-PASSWORD_GOVERNMENT = "123qwe"
-PASSWORD_SAS = "123456"
-PASSWORD_PG = "Qsheal502"
+
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64)",
