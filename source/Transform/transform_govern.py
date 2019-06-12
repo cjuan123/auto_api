@@ -19,6 +19,7 @@ class Transform:
 
     def add_product(self, param):
         """【政府端--适老化】：添加产品"""
+        print(t_api.addProduct)
         response = self.request.post_request_json(_url=t_api.addProduct, _json=param, _headers=self.headers)
         return response
 

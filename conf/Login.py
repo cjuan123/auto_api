@@ -10,6 +10,7 @@ from conf import DEFAULT
 from tools.http_request import Request
 from source.Transform import construcotr_web_app_api as c_app
 
+
 request = Request()
 government_host = DEFAULT.test  # 政府端host
 pc_host = DEFAULT.test3     # 大配餐host
@@ -64,7 +65,6 @@ def get_construction_app(account, password):
 def get_account(account, password):
     def login(func):
         def inner(*args):
-            headers["Cookie"] = None
             print("=============【政府端登录：%s】==================" % account)
             government_url = government_host + "/Gover"
             request.get_request(_url=government_url, _headers=headers)

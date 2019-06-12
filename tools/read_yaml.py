@@ -13,8 +13,8 @@ from tools.file_path import FilePath
 class ReadYaml:
 
     def __init__(self, path):
-        self.path = path
-        self.file_path = FilePath()
+        self.file_path = FilePath().root_path()
+        self.path = os.path.join(os.path.join(self.file_path, "yamls"), path)
         self.fo = None
 
     def open_yaml(self):
@@ -49,12 +49,16 @@ class ReadYaml:
 
     def get_header(self):
         data = self.open_yaml()
-        self.close_yaml()
         return data["HEADER"]
+
+    def get_host(self, type):
+        data = self.open_yaml()
+        return data["host"][type]
 
     def close_yaml(self):
         """关闭文件"""
         self.fo.close()
 
 
+# read = ReadYaml("default.yaml")
 

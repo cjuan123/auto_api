@@ -1,18 +1,18 @@
 # 企业端相关接口
 business:
   login:
-    - app_login: /user/api/login
-    - web_login: /login
-    - web_login_sub: /submitLogin
+    app_login: /user/api/login
+    web_login: /login
+    web_login_sub: /submitLogin
 
   web:
-   - addOrUpdateBranch: /business/addOrUpdateBranch       # 添加|更新分支机构
-   - branchInfo: /managementBusiness/branchInfo    # 查询分支机构，获取id
-   - queryPaiUserInfo: /service/queryPaiUserInfo   # 服务订单生成
-   - createOrders: /service/createOrders   # 创建订单
-   - queryPaiOrderSend: /paiOrder/queryPaiOrderSend    # 订单派工页面，获取订单ID
-   - saveServiceRecord: /serviceRecord/saveServiceRecord   # 派工
+    addOrUpdateBranch: /business/addOrUpdateBranch       # 添加|更新分支机构
+    branchInfo: /managementBusiness/branchInfo    # 查询分支机构，获取id
+    queryPaiUserInfo: /service/queryPaiUserInfo   # 服务订单生成
+    createOrders: /service/createOrders   # 创建订单
+    queryPaiOrderSend: /paiOrder/queryPaiOrderSend    # 订单派工页面，获取订单ID
+    saveServiceRecord: /serviceRecord/saveServiceRecord   # 派工
   app:
-   - startService: /user/api/startService  # 派工助手APP：开始服务
-   - completeService: /user/api/completeService    # 派工助手APP：完成服务
-   - updateServiceDegree: /user/api/updateServiceDegree    # 派工助手APP：评价订单
+    startService: /user/api/startService  # 派工助手APP：开始服务
+    completeService: /user/api/completeService    # 派工助手APP：完成服务
+    updateServiceDegree: /user/api/updateServiceDegree    # 派工助手APP：评价订单
