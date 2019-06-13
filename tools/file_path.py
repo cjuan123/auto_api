@@ -25,4 +25,7 @@ class FilePath:
         root = self.root_path()
         return os.path.join(root, "reports")
 
+    def case_path(self):
+        root = self.root_path()
+        return os.path.join(root, "test_case")
 
