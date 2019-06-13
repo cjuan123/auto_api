@@ -6,14 +6,14 @@
 @time: 2019/6/12 21:02
 @desc：政府端--适老化改造
 """
-from conf import DEFAULT
+from conf import HEADERS
 from tools.read_yaml import ReadYaml
 from tools.http_request import Request
 
 
 class GovernHouse:
     request = Request()
-    headers = DEFAULT.HEADERS
+    headers = HEADERS.headers
     read_default = ReadYaml("default.yaml")
     govern = read_default.get_host("govern") + "/gov-house"
     # govern = "http://192.168.100.151:8084"

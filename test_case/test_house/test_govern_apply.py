@@ -9,6 +9,7 @@
 import unittest
 import random
 from conf import Login
+from tools.read_yaml import ReadYaml
 from conf.IDCard import IDCard
 from source.govern_house import GovernHouse
 
@@ -16,12 +17,15 @@ from source.govern_house import GovernHouse
 class TestGovernApply(unittest.TestCase):
 
     house = GovernHouse()
+    govern_account = str(ReadYaml("default.yaml").get_account("govern"))
+    pass_word = ReadYaml("default.yaml").get_password("govern")
+
     id_card = IDCard().idCard(85, 1)
     name = "张三" + str(random.randint(0, 100))
     apply_id = []   # 申请ID
     v_id = []       # 改造单ID
 
-    # @Login.get_account("18981967059", "123qwe")
+    @Login.govern_login(govern_account, pass_word)
     def test_001_get_user_by_id_card(self):
         """【政府端 - -适老化】：根据身份证查询人员信息"""
         param = {

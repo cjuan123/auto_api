@@ -16,7 +16,7 @@ from tools.read_yaml import ReadYaml
 
 
 class TestHouseFlow(unittest.TestCase):
-    govern_account = ReadYaml("default.yaml").get_account("govern")
+    govern_account = str(ReadYaml("default.yaml").get_account("govern"))
     pass_word = ReadYaml("default.yaml").get_password("govern")
     default_pwd = "123456"
     agency_phone = "1353326" + str(random.randint(1000, 9999))  # 评估机构 登录账号
@@ -40,7 +40,7 @@ class TestHouseFlow(unittest.TestCase):
         # cls.construction_phone = "1363326" + str(random.randint(1000, 9999))  # 施工单位 登录账号
         # cls.con_emp_account = "1383326" + str(random.randint(1000, 9999))   # 施工员账号
 
-        cls.product_name = "api产品" + str(random.randint(0, 100))
+        cls.product_name = "api产品" + str(random.randint(1000, 9999))
         cls.person_name = "api申请" + str(random.randint(1000, 9999))
 
         cls.con_emp_name = "api施员工" + str(random.randint(1000, 9999))
@@ -61,7 +61,7 @@ class TestHouseFlow(unittest.TestCase):
         cls.products = []  # 上传环境评估记录时，上传的产品
         cls.scheme = []  # 产品方案
 
-    @Login.get_account(govern_account, pass_word)
+    @Login.govern_login(govern_account, pass_word)
     def test_001_add_assess_agency(self):
         """1.政府端：添加评估机构"""
         print("评估机构：" + self.agency_name)
@@ -284,7 +284,7 @@ class TestHouseFlow(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("申请成功", response.json()["message"])
 
-    @Login.get_agencies_account(agency_phone, default_pwd)
+    @Login.agencies_login(agency_phone, default_pwd)
     def test_012_agency_user_edit_submit(self):
         """13.评估端：添加员工账号"""
         param = {
@@ -306,7 +306,7 @@ class TestHouseFlow(unittest.TestCase):
         self.agency_emp_id.append(response.json()["data"][0]["id"])
         print("评估员工emp_id: %d" % self.agency_emp_id[0])
 
-    @Login.get_agencies_app_account(agency_emp_phone, default_pwd)
+    @Login.agencies_app_login(agency_emp_phone, default_pwd)
     def test_013_get_tasks(self):
         """13.评估app：领取任务"""
         param = {
@@ -397,7 +397,7 @@ class TestHouseFlow(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
 
-    @Login.get_account(govern_account, pass_word)
+    @Login.govern_login(govern_account, pass_word)
     def test_019_constructor_apply(self):
         """19.政府端：施工派单"""
         param = {
@@ -410,7 +410,7 @@ class TestHouseFlow(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("派单成功", response.json()["message"])
 
-    @Login.get_construction_web(construction_phone, default_pwd)
+    @Login.construction_login(construction_phone, default_pwd)
     def test_020_add_employee(self):
         """20.施工单位添加员工"""
         param = {
@@ -443,7 +443,7 @@ class TestHouseFlow(unittest.TestCase):
         self.con_emp_id.append(response.json()["data"]["records"][0]["id"])
         print("施工员工ID：%s" % self.con_emp_id[0])
 
-    @Login.get_construction_app(con_emp_account, default_pwd)
+    @Login.construction_app_login(con_emp_account, default_pwd)
     def test_022_get_task(self):
         """22.施工app：获取任务"""
         param = {
@@ -482,7 +482,7 @@ class TestHouseFlow(unittest.TestCase):
         response = self.construction.commit_scheme(data=param)
         print(response.json())
 
-    @Login.get_account(govern_account, pass_word)
+    @Login.govern_login(govern_account, pass_word)
     def test_025_govern_get_project_inspection_list(self):
         """25.政府端：项目验收列表分页查询"""
         param = {

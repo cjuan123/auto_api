@@ -6,13 +6,13 @@
 @time: 2019/6/13 10:56
 @desc：评估端相关接口方法
 """
-from conf import DEFAULT
+from conf import HEADERS
 from tools.read_yaml import ReadYaml
 from tools.http_request import Request
 
 
 class Agencies:
-    headers = DEFAULT.HEADERS
+    headers = HEADERS.headers
     host_8093 = ReadYaml("default.yaml").get_host("host_8093")
     read_agencies = ReadYaml("agencies_api.yaml")
     request = Request()

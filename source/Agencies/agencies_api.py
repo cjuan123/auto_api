@@ -10,7 +10,7 @@ from conf import DEFAULT
 
 # agencies_host = DEFAULT.test3
 agencies_host = "http://120.76.84.195:8093"
-goverment_host = DEFAULT.test
+goverment_host = "https://test.chinaylzl.com"
 
 #  政府端--评估
 queryUser = goverment_host + "/assessmentManage/queryUser"     # 查询身份证是否存在评估申请

@@ -9,7 +9,6 @@
 import unittest
 import random
 from conf import Login
-from conf import DEFAULT
 from source.Agencies.agencies import Agencies
 from source.YangLao.yanglao import YangLao
 from tools.http_request import Request
@@ -24,7 +23,7 @@ class TestDaycareFlow(unittest.TestCase):
     bid = []  # 日照中心ID
     record_id = []
 
-    @Login.get_account("18048054262", DEFAULT.PASSWORD_GOVERNMENT)
+    @Login.govern_login("18048054262", "123qwe")
     def test_001(self):
         """添加日照中心"""
         print("日照中心名称：" + self.sunlightName)
@@ -76,7 +75,7 @@ class TestDaycareFlow(unittest.TestCase):
         self.record_id.append(res.json()["pageView"]["records"][0]["id"])
         print("日照评估ID：%s " % self.record_id)
 
-    @Login.get_agencies_app_account("18048054260", "123456")
+    @Login.agencies_app_login("18048054260", "123456")
     def test_006(self):
         """app下载评估申请"""
         assert len(self.record_id) != 0

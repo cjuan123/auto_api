@@ -9,16 +9,19 @@
 import unittest
 import random
 from conf import Login
+from tools.read_yaml import ReadYaml
 from source.govern_house import GovernHouse
 
 
 class TestGovernProduct(unittest.TestCase):
 
     house = GovernHouse()
+    govern_account = str(ReadYaml("default.yaml").get_account("govern"))
+    pass_word = ReadYaml("default.yaml").get_password("govern")
     name = "api产品" + str(random.randint(100, 999))
     product_id = []     # 产品ID
 
-    @Login.get_account("18981967059", "123qwe")
+    @Login.govern_login(govern_account, pass_word)
     def test_1_add_product(self):
         """【适老化】：添加产品"""
         param = {

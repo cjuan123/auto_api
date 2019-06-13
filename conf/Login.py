@@ -1,175 +1,69 @@
+# -*- coding: utf-8 -*-
 """
 @version: 1.0
 @author: chenj
-@file: Login.py
-@time: 2019/5/19 11:10
-@desc：登录类
+@file: Login_s.py
+@time: 2019/6/13 13:32
+@desc：
 """
-
-from conf import DEFAULT
+from conf import HEADERS
+from tools.read_yaml import ReadYaml
 from tools.http_request import Request
-from source.Transform import construcotr_web_app_api as c_app
 
+headers = HEADERS.headers
 
 request = Request()
-government_host = DEFAULT.test  # 政府端host
-pc_host = DEFAULT.test3     # 大配餐host
-bus_host = DEFAULT.test1    # 企业host
-headers = DEFAULT.HEADERS   # 请求头
-construction_login = c_app.login    # 施工app
-web_c_login = c_app.web_login       # 施工web端
+
+read_yaml = ReadYaml("default.yaml")
+govern_host = read_yaml.get_host("govern")      # 政府端
+business = read_yaml.get_host("business")       # 企业端
+agencies = read_yaml.get_host("host_8093")      # 评估端
+host_8094 = read_yaml.get_host("host_8094")     # 施工端
+cater = read_yaml.get_host("agencies")          # 配餐企业端
 
 
-#   施工web
-def get_construction_web(account, password):
+def construction_app_login(account, password):
+    """施工app登录"""
     def login(func):
         def inner(*args):
-            print(DEFAULT.HEADERS)
-            if ("Cookie" in DEFAULT.HEADERS) == True:
-                del DEFAULT.HEADERS['Cookie']
-            print(DEFAULT.HEADERS)
             print("=========================== 【施工web】登录账号：%s ===========================" % account)
+            _URL = host_8094 + "/app/login"
             param = {
                 "account": account,
                 "password": password
             }
-            response = request.get_request(_url=web_c_login, _data=param, _headers=DEFAULT.HEADERS)
-            print(response.json())
+            response = request.post_request_data(_url=_URL, _data=param, _headers=headers)
+
             headers["token"] = response.json()["data"]
-            print(DEFAULT.HEADERS)
             func(*args)
         return inner
     return login
 
 
-#   施工APP
-def get_construction_app(account, password):
+def construction_login(account, password):
+    """施工端登录"""
     def login(func):
         def inner(*args):
-            if ("Cookie" in DEFAULT.HEADERS) == True:
-                del dict['Cookie']
-            print("=========================== 【施工APP】登录账号：%s ===========================" % account)
+            print("=========================== 【施工web】登录账号：%s ===========================" % account)
+            _URL = host_8094 + "/web/login"
             param = {
                 "account": account,
                 "password": password
             }
-            response = request.post_request_data(_url=construction_login, _data=param, _headers=DEFAULT.HEADERS)
+            response = request.get_request(_url=_URL, _data=param, _headers=headers)
             headers["token"] = response.json()["data"]
-            print(DEFAULT.HEADERS)
             func(*args)
         return inner
     return login
 
 
-#   政府端登录
-def get_account(account, password):
-    def login(func):
-        def inner(*args):
-            print("=============【政府端登录：%s】==================" % account)
-            government_url = government_host + "/Gover"
-            request.get_request(_url=government_url, _headers=headers)
-            government_check = government_host + "/j_spring_security_check"
-            params = {
-                "mobile": account,
-                "password": password
-            }
-            response = request.post_request_data(_url=government_check, _data=params, _headers=headers)
-            headers["Cookie"] = response.request.headers["Cookie"]
-            func(*args)
-        return inner
-    return login
-
-
-#   大配餐企业端登录
-def get_pc_account(account, password):
-    def login(func):
-        def inner(*args):
-            headers["Cookie"] = None
-            print("=============【大配餐企业端登录：%s】==================" % account)
-            print(headers)
-            pc_URL = pc_host + "/login"
-            request.get_request(_url=pc_URL, _headers=headers)
-            pc_check = pc_host + "/checkUser"
-            param = {
-                "mobile": account,
-                "password": password
-            }
-            response = request.post_request_data(_url=pc_check, _data=param, _headers=headers)
-            headers["Cookie"] = "JSESSIONID=" + response.cookies.get_dict()["JSESSIONID"] + \
-                                ";USER_COOKIE_ID_meal=" + response.cookies.get_dict()["USER_COOKIE_ID_meal"]
-            func(*args)
-        return inner
-    return login
-
-
-#   大配餐APP登录
-
-def get_app_account(account, password):
-    def login(func):
-        def inner(*args):
-            headers["Cookie"] = None
-            print("=============【大配餐APP登录：%s】==================" % account)
-            _url = pc_host + "/api/login"
-            param = {
-                "mobile": account,
-                "password": password
-            }
-            response = request.post_request_data(_url=_url, _data=param, _headers=headers)
-            headers["Cookie"] = "USER_COOKIE_ID_meal=" + response.cookies.get_dict()["USER_COOKIE_ID_meal"]
-            func(*args)
-        return inner
-    return login
-
-
-#   企业端登录
-def get_business_account(account, password):
+def agencies_login(account, password):
+    """评估端登录"""
     def login(func):
         def inner(*args):
             headers["Cookie"] = None
             print("=========================== 【企业端】登录账号：%s ===========================" % account)
-            _URL_login = bus_host + "/login"  # setting.SAS_HOST + setting.sas_login
-            request.get_request(_url=_URL_login, _headers=headers)
-            _URL_submit_login = "https://test1.chinaylzl.com/submitLogin"  # setting.SAS_HOST + setting.sas_submit_login
-            param = {
-                'account': account,
-                'password': password
-            }
-            response = request.post_request_data(_url=_URL_submit_login, _data=param, _headers=headers)
-            session = response.cookies.get_dict()["SESSION"]
-            ylzlbs = response.cookies.get_dict()["ylzlbs"]
-            cookies = "SESSION=" + session + ";ylzlbs=" + ylzlbs
-            headers["Cookie"] = cookies
-            func(*args)
-        return inner
-    return login
-
-
-#   派工助手APP登录
-def get_business_app_account(account, password):
-    def login(func):
-        def inner(*args):
-            headers["Cookie"] = None
-            print("=========================== 【派工APP】登录账号：%s ===========================" % account)
-            _URL_login = bus_host + "/user/api/login"
-            param = {
-                'account': account,
-                'password': password
-            }
-            res = request.post_request_data(_url=_URL_login, _data=param, _headers=None)
-            cookies = 'ylzlbs=' + res.cookies.get_dict()['ylzlbs']
-            headers["Cookie"] = cookies
-            func(*args)
-        return inner
-    return login
-
-
-#   评估机构登录
-def get_agencies_account(account, password):
-    def login(func):
-        def inner(*args):
-            headers["Cookie"] = None
-            print("=========================== 【企业端】登录账号：%s ===========================" % account)
-            _URL_login = pc_host + "/login"
+            _URL_login = agencies + "/login"
             param = {
                 'phone': account,
                 'password': password
@@ -184,13 +78,36 @@ def get_agencies_account(account, password):
     return login
 
 
-#   评估APP登录
-def get_agencies_app_account(account, password):
+def govern_login(account, password):
+    """政府端登录"""
+    def login(func):
+        def inner(*args):
+            print("=============【政府端登录：%s】==================" % account)
+            headers["token"] = None
+            headers["Cookie"] = None
+            government_url = govern_host + "/Gover"
+            request.get_request(_url=government_url, _headers=headers)
+            government_check = govern_host + "/j_spring_security_check"
+            params = {
+                "mobile": account,
+                "password": password
+            }
+            print(headers)
+            response = request.post_request_data(_url=government_check, _data=params, _headers=headers)
+
+            headers["Cookie"] = response.request.headers["Cookie"]
+            print(headers)
+            func(*args)
+        return inner
+    return login
+
+
+def agencies_app_login(account, password):
     def login(func):
         def inner(*args):
             headers["Cookie"] = None
             print("=========================== 【评估APP】登录账号：%s ===========================" % account)
-            _URL = pc_host + "/api/user/login"
+            _URL = agencies + "/api/user/login"
             param = {
                 'phone': account,
                 'password': password
@@ -205,26 +122,83 @@ def get_agencies_app_account(account, password):
     return login
 
 
-#   评估APP登录
-def get_transform_account(account, password):
+def cater_login(account, password):
+    """配餐企业端登录"""
     def login(func):
         def inner(*args):
             headers["Cookie"] = None
-            print("=========================== 【评估APP】登录账号：%s ===========================" % account)
-            _URL = pc_host + "/api/user/login"
+            print("=============【大配餐企业端登录：%s】==================" % account)
+            print(headers)
+            _URL = cater + "/login"
+            request.get_request(_url=_URL, _headers=headers)
+            _check = cater + "/checkUser"
             param = {
-                'phone': account,
-                'password': password
+                "mobile": account,
+                "password": password
             }
-            res = request.post_request_data(_url=_URL, _data=param, _headers=headers)
-            print(res.cookies.get_dict()['assess_token'])
-            headers["Cookie"] = 'assess_token=' + res.cookies.get_dict()['assess_token']
-            print(res.json()['detail'])
-            print(res.json()['data']['agencyId'])
+            response = request.post_request_data(_url=_check, _data=param, _headers=headers)
+            headers["Cookie"] = "JSESSIONID=" + response.cookies.get_dict()["JSESSIONID"] + \
+                                ";USER_COOKIE_ID_meal=" + response.cookies.get_dict()["USER_COOKIE_ID_meal"]
             func(*args)
         return inner
     return login
 
 
+def cater_app_login(account, password):
+    """配餐APP登录"""
+    def login(func):
+        def inner(*args):
+            headers["Cookie"] = None
+            print("==================【大配餐APP登录：%s】==================" % account)
+            _URL = cater + "/api/login"
+            param = {
+                "mobile": account,
+                "password": password
+            }
+            response = request.post_request_data(_url=_URL, _data=param, _headers=headers)
+            headers["Cookie"] = "USER_COOKIE_ID_meal=" + response.cookies.get_dict()["USER_COOKIE_ID_meal"]
+            func(*args)
+        return inner
+    return login
 
 
+def business_login(account, password):
+    """企业端登录"""
+    def login(func):
+        def inner(*args):
+            headers["Cookie"] = None
+            print("=========================== 【企业端】登录账号：%s ===========================" % account)
+            _URL = business + "/login"
+            request.get_request(_url=_URL, _headers=headers)
+            _submit_login = business + "/submitLogin"
+            param = {
+                'account': account,
+                'password': password
+            }
+            response = request.post_request_data(_url=_submit_login, _data=param, _headers=headers)
+            session = response.cookies.get_dict()["SESSION"]
+            ylzlbs = response.cookies.get_dict()["ylzlbs"]
+            cookies = "SESSION=" + session + ";ylzlbs=" + ylzlbs
+            headers["Cookie"] = cookies
+            func(*args)
+        return inner
+    return login
+
+
+def business_app_login(account, password):
+    """派工助手APP登录"""
+    def login(func):
+        def inner(*args):
+            headers["Cookie"] = None
+            print("=========================== 【派工APP】登录账号：%s ===========================" % account)
+            _URL = business + "/user/api/login"
+            param = {
+                'account': account,
+                'password': password
+            }
+            res = request.post_request_data(_url=_URL, _data=param, _headers=None)
+            cookies = 'ylzlbs=' + res.cookies.get_dict()['ylzlbs']
+            headers["Cookie"] = cookies
+            func(*args)
+        return inner
+    return login

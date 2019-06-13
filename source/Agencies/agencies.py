@@ -6,7 +6,7 @@
 @time: 2019/6/3 9:57
 @desc：评估
 """
-from conf import DEFAULT
+from conf import HEADERS
 from tools.http_request import Request
 from source.Agencies import agencies_api as a_api
 
@@ -14,7 +14,7 @@ from source.Agencies import agencies_api as a_api
 class Agencies:
 
     request = Request()
-    headers = DEFAULT.HEADERS
+    headers = HEADERS.headers
 
     def query_scheme_subject_list(self, param):
         """【评估-APP】：下载评估申请"""

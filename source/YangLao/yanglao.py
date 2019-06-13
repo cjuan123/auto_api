@@ -6,7 +6,7 @@
 @time: 2019/5/29 10:34
 @desc：政府端-养老模块
 """
-from conf import DEFAULT
+from conf import HEADERS
 from tools.http_request import Request
 from source.YangLao import yanglao_api as yl
 from source.Agencies import agencies_api as a_api
@@ -15,7 +15,7 @@ from source.Agencies import agencies_api as a_api
 class YangLao:
 
     request = Request()
-    headers = DEFAULT.HEADERS
+    headers = HEADERS.headers
 
     def login_out(self):
         """退出登录"""

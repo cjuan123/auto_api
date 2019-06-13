@@ -9,15 +9,19 @@
 import unittest
 import random
 from conf import Login
+from tools.read_yaml import ReadYaml
 from source.govern_house import GovernHouse
 
 
 class TestGovernAgencies(unittest.TestCase):
     house = GovernHouse()
+    govern_account = str(ReadYaml("default.yaml").get_account("govern"))
+    pass_word = ReadYaml("default.yaml").get_password("govern")
+
     agencyId = []
     agencyName = "api评估机构" + str(random.randint(10, 99))
 
-    @Login.get_account("18981967059", "123qwe")
+    @Login.govern_login(govern_account, pass_word)
     def test_001_add_assess_agency(self):
         """【政府端-适老化-评估机构】：添加评估机构"""
         param = {

@@ -9,17 +9,21 @@
 import unittest
 import random
 from conf import Login
+from tools.read_yaml import ReadYaml
 from source.govern_house import GovernHouse
 
 
 class TestGovernConstruction(unittest.TestCase):
 
     house = GovernHouse()
+    govern_account = str(ReadYaml("default.yaml").get_account("govern"))
+    pass_word = ReadYaml("default.yaml").get_password("govern")
+
     b_id = []
     name = "api施工单位" + str(random.randint(100, 999))
     phone = "139825556" + str(random.randint(100, 999))
 
-    # @Login.get_account("18981967059", "123qwe")
+    @Login.govern_login(govern_account, pass_word)
     def test_001_add_construction_business(self):
         """【政府端--适老化】：添加施工单位"""
         param = {

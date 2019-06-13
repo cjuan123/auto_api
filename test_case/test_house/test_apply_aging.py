@@ -20,7 +20,7 @@ class TestGovernApplyAging(unittest.TestCase):
     products = []
     agency_id = []
 
-    @Login.get_agencies_app_account("13733263135", "123456")
+    @Login.agencies_app_login("13733263135", "123456")
     def test_001_get_tasks(self):
         param = {
             "orderId": 77,
@@ -30,7 +30,7 @@ class TestGovernApplyAging(unittest.TestCase):
         response = self.agencies.get_tasks(data=param)
         print(response.json())
 
-    @Login.get_agencies_app_account("15982566561", "123456")
+    @Login.agencies_app_login("15982566561", "123456")
     def test_002_list_own_tasks(self):
         param = {
             "assessmentUserId": 465
@@ -40,7 +40,7 @@ class TestGovernApplyAging(unittest.TestCase):
         self.person_record_id.append(response.json()["data"][0]["personRecordId"])
         self.evn_record_id.append(response.json()["data"][0]["personRecordId"])
 
-    @Login.get_agencies_app_account("15982566561", "123456")
+    @Login.agencies_app_login("15982566561", "123456")
     def test_003_save_answer_person(self):
         id = 1009335
         param = {
@@ -54,7 +54,7 @@ class TestGovernApplyAging(unittest.TestCase):
         response = self.agencies.save_answer(data=param)
         print(response.json())
 
-    @Login.get_agencies_app_account("13733263394", "123456")
+    @Login.agencies_app_login("13733263394", "123456")
     def test_004_save_answer_product(self):
         id = 1009438
         param = {
@@ -72,7 +72,7 @@ class TestGovernApplyAging(unittest.TestCase):
         print(response.json())
         self.assertEqual(200, response.status_code)
 
-    @Login.get_agencies_app_account("13733263135", "123456")
+    @Login.agencies_app_login("13733263135", "123456")
     def test_download_subject(self):
         """【评估app：下载题目，获取产品信息】"""
         param = {

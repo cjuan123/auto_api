@@ -21,7 +21,7 @@ class TestPersonFlow(unittest.TestCase):
     id_card = IDCard().idCard(69, 1)
     recordID = []
 
-    @Login.get_account("18048054262", DEFAULT.PASSWORD_GOVERNMENT)
+    @Login.govern_login("18048054262", "123qwe")
     def test_001(self):
         """【政府端】：查询身份证是否存在评估申请"""
         param = {
@@ -64,7 +64,7 @@ class TestPersonFlow(unittest.TestCase):
         print("【查询评估申请ID】接口返回数据：%s" % response.json())
         print("评估申请ID：【%s】" % rid)
 
-    @Login.get_agencies_app_account("18048054260", "123456")
+    @Login.agencies_app_login("18048054260", "123456")
     def test_004(self):
         """【评估app】：下载评估申请"""
         self.assertEqual(1, len(self.recordID))

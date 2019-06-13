@@ -10,6 +10,7 @@ import unittest
 import random
 from conf import Login
 from conf.IDCard import IDCard
+from tools.read_yaml import ReadYaml
 from source.construction import Construction
 from source.govern_house import GovernHouse
 
@@ -19,13 +20,16 @@ class Agencies(unittest.TestCase):
     construction = Construction()
     house = GovernHouse()
 
+    govern_account = str(ReadYaml("default.yaml").get_account("govern"))
+    pass_word = ReadYaml("default.yaml").get_password("govern")
+
     id_card = IDCard().idCard(75, 2)
     con_emp_id = []
     con_emp_account = "1525621" + str(random.randint(1000, 9999))
     con_emp_name = "api施员工" + str(random.randint(1000, 9999))
     scheme = []
 
-    @Login.get_construction_web("13633262703", "123456")
+    @Login.construction_login("13633262703", "123456")
     def test_add_employee(self):
         print(self.con_emp_name)
         param = {
@@ -61,7 +65,7 @@ class Agencies(unittest.TestCase):
         self.con_emp_id.append(response.json()["data"]["records"][0]["id"])
         print(self.con_emp_id[0])
 
-    @Login.get_construction_app("13633269651", "123456")
+    @Login.construction_app_login("13633269651", "123456")
     def test_get_task(self):
         """施工app：获取任务"""
         param = {
@@ -74,7 +78,7 @@ class Agencies(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("领取成功", response.json()["message"])
 
-    @Login.get_construction_app("15256218834", "123456")
+
     def test_my_task_list(self):
         param = {
             "pageNow": 1
@@ -85,8 +89,7 @@ class Agencies(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
 
-    @Login.get_construction_app("15256218834", "123456")
-    def test_01_construction_details(self):
+    def test_construction_details(self):
         param = {
             "id": 91
         }
@@ -95,7 +98,7 @@ class Agencies(unittest.TestCase):
         self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["id"])
         self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["productImg"])
 
-    def test_02_commit_scheme(self):
+    def test_commit_scheme(self):
         param = {
             "recordId": 91,
             "scheme": str({
@@ -110,7 +113,7 @@ class Agencies(unittest.TestCase):
         response = self.construction.commit_scheme(data=param)
         print(response.json())
 
-    @Login.get_account("18981967059", "123qwe")
+    @Login.govern_login(govern_account, pass_word)
     def test_03_govern_get_project_inspection_list(self):
         param = {
             "pageNow": 1
@@ -121,7 +124,6 @@ class Agencies(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
 
-    @Login.get_account("18981967059", "123qwe")
     def test_04_govern_check_transform_scheme(self):
         param = {
             "schemeId": 83,
@@ -134,7 +136,6 @@ class Agencies(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("验收成功", response.json()["message"])
 
-    # @Login.get_account("18981967059", "123qwe")
     def test_05_get_transform_settlement_list(self):
         """项目结算"""
         param = {

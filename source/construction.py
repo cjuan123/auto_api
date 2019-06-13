@@ -7,7 +7,7 @@
 @desc：施工单位web端、app端相关接口方法
 
 """
-from conf import DEFAULT
+from conf import HEADERS
 from tools.http_request import Request
 from tools.read_yaml import ReadYaml
 
@@ -15,7 +15,7 @@ from tools.read_yaml import ReadYaml
 class Construction:
 
     request = Request()
-    headers = DEFAULT.HEADERS
+    headers = HEADERS.headers
     read_default = ReadYaml("default.yaml")
     host_8094 = read_default.get_host("host_8094")
     house = ReadYaml("house_api.yaml")
