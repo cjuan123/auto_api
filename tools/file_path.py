@@ -17,3 +17,11 @@ class FilePath:
         root = os.path.join(path, "auto_api")
         return root
 
+    def log_path(self):
+        root = self.root_path()
+        return os.path.join(root, "logs")
+
+file = FilePath()
+log_path = file.log_path()
+print(os.path.join(log_path, "log.txt"))
+
