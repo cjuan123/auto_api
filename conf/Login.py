@@ -92,11 +92,8 @@ def govern_login(account, password):
                 "mobile": account,
                 "password": password
             }
-            print(headers)
             response = request.post_request_data(_url=government_check, _data=params, _headers=headers)
-
             headers["Cookie"] = response.request.headers["Cookie"]
-            print(headers)
             func(*args)
         return inner
     return login
