@@ -16,6 +16,7 @@ class GovernHouse:
     headers = DEFAULT.HEADERS
     read_default = ReadYaml("default.yaml")
     govern = read_default.get_host("govern") + "/gov-house"
+    # govern = "http://192.168.100.151:8084"
     house = ReadYaml("house_api.yaml")
 
     # 【产品】

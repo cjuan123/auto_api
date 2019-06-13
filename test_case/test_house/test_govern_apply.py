@@ -2,33 +2,32 @@
 """
 @version: 1.0
 @author: chenj
-@file: test_transform_product_gover.py
-@time: 2019/6/3 17:42
-@desc：政府端--适老化
-        添加改造（评估）申请、改造审核、改造评估
+@file: test_govern_apply.py
+@time: 2019/6/13 10:46
+@desc：评估申请
 """
 import unittest
 import random
 from conf import Login
 from conf.IDCard import IDCard
-from source.Transform.transform_govern import Transform
+from source.govern_house import GovernHouse
 
 
-class TestTransformGovern(unittest.TestCase):
+class TestGovernApply(unittest.TestCase):
 
-    transform = Transform()
+    house = GovernHouse()
     id_card = IDCard().idCard(85, 1)
     name = "张三" + str(random.randint(0, 100))
-    apply_id = []
-    v_id = []     # 改造单ID
+    apply_id = []   # 申请ID
+    v_id = []       # 改造单ID
 
-    @Login.get_account("18981967059", "123qwe")
+    # @Login.get_account("18981967059", "123qwe")
     def test_001_get_user_by_id_card(self):
         """【政府端 - -适老化】：根据身份证查询人员信息"""
         param = {
             "idCard": self.id_card
         }
-        response = self.transform.get_user_by_id_card(param=param)
+        response = self.house.get_user_by_id_card(param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -53,8 +52,8 @@ class TestTransformGovern(unittest.TestCase):
             }],
             "certificates": [],
             "annex": []
-            }
-        response = self.transform.add_transform_apply(param)
+        }
+        response = self.house.add_transform_apply(param)
         print(response.json())
 
     def test_003_get_transform_apply_list(self):
@@ -63,39 +62,39 @@ class TestTransformGovern(unittest.TestCase):
             "addressId": "510109",
             "pageNow": 1
         }
-        response = self.transform.get_transform_apply_list(data=param)
+        response = self.house.get_transform_apply_list(data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
         self.apply_id.append(response.json()["data"]["records"][0]["id"])
 
-    # def test_004_edit_transform(self):
-    #     param = {
-    #         "id": self.apply_id[0],
-    #         "idCard": self.id_card,
-    #         "userName": self.name + "(edit)",
-    #         "phone": "13999999999",
-    #         "addressDetail": "测试地址(edit)",
-    #         "transformContents": "测试内容(edit)",
-    #         "transformCause": "测试(edit)",
-    #         "emergencyContact": [{
-    #             "ralative": 1,
-    #             "phone": "13777777787",
-    #             "name": "测试(edit)"
-    #         }],
-    #         "certificates": [{
-    #             "name": "timg.gif",
-    #             "url": "blob:https://test.chinaylzl.com/df5e890d-d6e3-454a-8d28-1786b9230e31"
-    #         }],
-    #         "state": 1,
-    #         "version": 1
-    #         }
-    #     response = self.transform.edit_transform(json=param)
-    #     print(response.json())
-    #     self.assertEqual(200, response.status_code)
-    #     self.assertEqual(0, response.json()["status"])
-    #     self.assertEqual("编辑成功", response.json()["message"])
+    def test_004_edit_transform(self):
+        param = {
+            "id": self.apply_id[0],
+            "idCard": self.id_card,
+            "userName": self.name + "(edit)",
+            "phone": "13999999999",
+            "addressDetail": "测试地址(edit)",
+            "transformContents": "测试内容(edit)",
+            "transformCause": "测试(edit)",
+            "emergencyContact": [{
+                "ralative": 1,
+                "phone": "13777777787",
+                "name": "测试(edit)"
+            }],
+            "certificates": [{
+                "name": "timg.gif",
+                "url": "blob:https://test.chinaylzl.com/df5e890d-d6e3-454a-8d28-1786b9230e31"
+            }],
+            "state": 1,
+            "version": 1
+            }
+        response = self.house.edit_transform(json=param)
+        print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("编辑成功", response.json()["message"])
 
     def test_005_get_transform_verify_list(self):
         """【政府端--适老化】：分页查询改造审核列表"""
@@ -103,13 +102,13 @@ class TestTransformGovern(unittest.TestCase):
             "idCard": self.id_card,
             "addressId": "510109"
         }
-        response = self.transform.get_transform_apply_list(data=param)
+        response = self.house.get_transform_apply_list(data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
         self.v_id.append(response.json()["data"]["records"][0]["id"])
-        print(self.v_id)
+        print("改造ID：%s" % self.v_id)
 
     def test_006_verify_transform(self):
         """【政府端--适老化】：审核改造单"""
@@ -117,7 +116,7 @@ class TestTransformGovern(unittest.TestCase):
             "id": self.v_id[0],
             "verifyState": 1
         }
-        response = self.transform.verify_transform(data=param)
+        response = self.house.verify_transform(data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -130,7 +129,7 @@ class TestTransformGovern(unittest.TestCase):
             "agencyName": "api评估机构5951",
             "id": self.v_id[0]
         }
-        response = self.transform.business_apply(data=param)
+        response = self.house.business_apply(data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -143,7 +142,7 @@ class TestTransformGovern(unittest.TestCase):
             "addressId": "510109",
             "pageNow": 1
         }
-        response = self.transform.get_assessment_list(data=param)
+        response = self.house.get_assessment_list(data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])

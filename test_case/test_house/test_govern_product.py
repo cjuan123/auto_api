@@ -15,7 +15,7 @@ from source.govern_house import GovernHouse
 class TestGovernProduct(unittest.TestCase):
 
     house = GovernHouse()
-    name = "api产品" + str(random.randint(0, 100))
+    name = "api产品" + str(random.randint(100, 999))
     product_id = []     # 产品ID
 
     @Login.get_account("18981967059", "123qwe")
@@ -42,6 +42,7 @@ class TestGovernProduct(unittest.TestCase):
         }
         response = self.house.add_product(param=param)
         print(response.json())
+        self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("添加成功", response.json()["message"])
 
@@ -55,7 +56,9 @@ class TestGovernProduct(unittest.TestCase):
         response = self.house.get_product_list(param=param)
         print(response.json())
         self.product_id.append(response.json()["data"]["records"][0]["id"])
-        print(self.product_id[0])
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("操作成功", response.json()["message"])
 
     def test_3_update_product(self):
         """【适老化】：编辑产品信息"""
@@ -79,6 +82,9 @@ class TestGovernProduct(unittest.TestCase):
             }
         response = self.house.update_product(param=param)
         print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
+        self.assertEqual("编辑成功", response.json()["message"])
 
     def test_4_stop_start_product(self):
         """【适老化】：产品停启"""
@@ -99,6 +105,7 @@ class TestGovernProduct(unittest.TestCase):
         }
         response = self.house.get_product_detail(param=param)
         print(response.json())
+        self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
         self.assertEqual(self.name + "(update)", response.json()["data"]["name"])

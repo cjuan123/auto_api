@@ -44,7 +44,6 @@ class TestGovernAgencies(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("评估添加成功", response.json()["message"])
 
-    # @Login.get_account("18981967059", "123qwe")
     def test_002_get_assessment_agencies(self):
         """【政府端--评估机构】：分页查询评估机构列表"""
         param = {
@@ -59,11 +58,10 @@ class TestGovernAgencies(unittest.TestCase):
         self.agencyId.append(response.json()["data"]["records"][0]["agencyId"])
         print(self.agencyId[0])
 
-    # @Login.get_account("18981967059", "123qwe")
     def test_003_save_assessment_agency(self):
         """【政府端--评估机构】：编辑获取评估机构信息"""
         param = {
-            "id": self.agencyId[0],
+            "agencyId": self.agencyId[0],
             "password": "123456",
             "legal": "测试(update)",
             "contactName": "测试(update)",
@@ -89,14 +87,15 @@ class TestGovernAgencies(unittest.TestCase):
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
-        self.assertEqual("", response.json()["message"])
+        self.assertEqual("评估保存成功", response.json()["message"])
 
-    # @Login.get_account("18981967059", "123qwe")
     def test_query_agencies_list(self):
         """【政府端--评估机构】：获取选择评估机构列表"""
         response = self.house.query_agencies_list()
         print(response.json())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(0, response.json()["status"])
 
 
 if __name__ == '__main__':
-    unittest.main(0)
+    unittest.main()

@@ -55,6 +55,14 @@ class ReadYaml:
         data = self.open_yaml()
         return data["host"][type]
 
+    def get_account(self, type):
+        data = self.open_yaml()
+        return data["account"][type]
+
+    def get_password(self, type):
+        data = self.open_yaml()
+        return data["password"][type]
+
     def close_yaml(self):
         """关闭文件"""
         self.fo.close()
