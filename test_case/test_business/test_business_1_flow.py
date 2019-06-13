@@ -21,7 +21,7 @@ class TestBusiness1(unittest.TestCase):
     id_card = "711557195705308192" # IDCard().idCard(62, 1)
     uid = []
 
-    @Login.get_account("13551042646", DEFAULT.PASSWORD_GOVERNMENT)
+    @Login.govern_login("13551042646", "123qwe")
     def test_001(self):
         """添加人员-级别为：普通老人"""
         print(self.id_card)
@@ -45,7 +45,7 @@ class TestBusiness1(unittest.TestCase):
         res = self.yang_lao.add_survey_user(param=param)
         print("【添加人员-级别为：普通老人】：%s" % res.json())
 
-    @Login.get_account("18048054262", DEFAULT.PASSWORD_GOVERNMENT)
+    @Login.govern_login("18048054262", "123qwe")
     def test_002(self):
         """政府端：根据身份证号查询UID"""
         param = {
@@ -71,7 +71,7 @@ class TestBusiness1(unittest.TestCase):
         print("【积分充值】：%s" % res.json())
         assert "充值成功" == res.json()["detail"]
 
-    @Login.get_business_account("849001", DEFAULT.PASSWORD_GOVERNMENT)
+    @Login.business_login("849001", "123qwe")
     def test_004(self):
         """服务订单生成"""
         param = {
