@@ -63,6 +63,10 @@ class ReadYaml:
         data = self.open_yaml()
         return data["password"][type]
 
+    def get_district(self, type):
+        data = self.open_yaml()
+        return data["district"][type]
+
     def close_yaml(self):
         """关闭文件"""
         self.fo.close()

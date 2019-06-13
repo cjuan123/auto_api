@@ -16,8 +16,10 @@ from tools.read_yaml import ReadYaml
 
 
 class TestHouseFlow(unittest.TestCase):
-    govern_account = str(ReadYaml("default.yaml").get_account("govern"))
-    pass_word = ReadYaml("default.yaml").get_password("govern")
+    read_yaml = ReadYaml("default.yaml")
+    govern_account = read_yaml.get_account("govern")
+    pass_word = read_yaml.get_password("govern")
+    community = read_yaml.get_district("community")
     default_pwd = "123456"
     agency_phone = "1353326" + str(random.randint(1000, 9999))  # 评估机构 登录账号
     agency_emp_phone = "1373326" + str(random.randint(1000, 9999))  # 评估员账号
@@ -71,7 +73,7 @@ class TestHouseFlow(unittest.TestCase):
             "loginPhone": self.agency_phone,
             "legal": "测试",
             "contactName": "测试",
-            "serviceArea": "51010906",
+            "serviceArea": self.community,
             "agencyName": self.agency_name,
             "contactMobile": "15285256626",
             "address": "测试",
@@ -133,7 +135,7 @@ class TestHouseFlow(unittest.TestCase):
             "password": "123456",
             "personInCharge": "测试",
             "personPhone": self.construction_phone,
-            "serviceArea": ["510109"]
+            "serviceArea": [self.community]
             }
         response = self.house.add_construction_business(param=param)
         print(response.json())
@@ -212,7 +214,7 @@ class TestHouseFlow(unittest.TestCase):
             "idCard": self.id_card,
             "userName": self.person_name,
             "phone": "13999999999",
-            "addressId": "51010915",
+            "addressId": self.community,
             "addressDetail": "测试地址",
             "transformContents": "测试内容",
             "transformCause": "测试",
@@ -234,7 +236,7 @@ class TestHouseFlow(unittest.TestCase):
         """8.政府端：添加改造申请"""
         param = {
             "idCard": self.id_card,
-            "addressId": "510109",
+            "addressId": self.community,
             "pageNow": 1
         }
         response = self.house.get_transform_apply_list(data=param)
@@ -249,7 +251,7 @@ class TestHouseFlow(unittest.TestCase):
         """9.政府端：根据身份证号，查询审核ID"""
         param = {
             "idCard": self.id_card,
-            "addressId": "510109"
+            "addressId": self.community
         }
         response = self.house.get_transform_apply_list(data=param)
         print(response.json())
@@ -416,7 +418,13 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "account": self.con_emp_account,
             "addressDetail": "api测试详细地址",
-            "annex": "apiannex",
+            "annex": [{
+                "name": "1",
+                "url": "1.txt"
+            }, {
+                "name": "2",
+                "url": "2.png"
+            }],
             "idCard": self.id_card,
             "name": self.con_emp_name,
             "password": "123456",
