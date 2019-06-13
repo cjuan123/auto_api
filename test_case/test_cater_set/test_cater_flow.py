@@ -8,7 +8,7 @@
         人员无养老积分
 """
 import unittest, datetime
-from source.CaterSet.cater import government_Cater
+from source.CaterSet.cater import GovernCater
 from source.CaterSet.cater_sas import CaterSAS
 from source.CaterSet.cater_helper import CaterHelper
 from conf.IDCard import IDCard
@@ -17,16 +17,16 @@ from conf import DEFAULT
 
 
 class TestCaterFlow(unittest.TestCase):
-    g_cater = government_Cater()
+    g_cater = GovernCater()
     s_cater = CaterSAS()
     cater_helper = CaterHelper()
     id_card = IDCard().idCard(65, 1)
-    PASSWORD_GOVERNMENT = DEFAULT.PASSWORD_GOVERNMENT
-    PASSWORD_PG = DEFAULT.PASSWORD_PG
+    PASSWORD_GOVERNMENT = "123qwe"
+    PASSWORD_PG = "123456"
     user_info = []
     applyId = []
 
-    @Login.get_account("13999999992", PASSWORD_GOVERNMENT)
+    @Login.govern_login("13999999992", PASSWORD_GOVERNMENT)
     def test_001(self):
         """添加人员"""
         param = {
@@ -94,7 +94,7 @@ class TestCaterFlow(unittest.TestCase):
         print(response_2.json())
         self.assertEqual("操作成功", response_2.json()["message"])
 
-    @Login.get_pc_account("13999999993", PASSWORD_PG)
+    @Login.cater_login("13999999993", PASSWORD_PG)
     def test_004(self):
         """企业端：根据身份证查询人员信息"""
         param = {
@@ -137,7 +137,7 @@ class TestCaterFlow(unittest.TestCase):
         self.cater_helper.update_appointment_time(self.user_info[0])
         self.cater_helper.update_server_order_time(self.user_info[0])
 
-    @Login.get_app_account("13999999993", PASSWORD_PG)
+    @Login.cater_app_login("13999999993", PASSWORD_PG)
     def test_007(self):
         """APP：就餐扫码"""
         param = {
