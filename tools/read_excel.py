@@ -7,11 +7,14 @@
 """
 import xlrd
 import os
+from tools.file_path import FilePath
+
+
 class ReadExcel:
 
     def __init__(self, excel_path):
-        root_path = os.path.dirname(os.path.abspath(".."))
-        self.path = os.path.join(root_path, excel_path)
+        self.root_path = FilePath().excel_path()
+        self.path = os.path.join(self.root_path, excel_path)
         # 打开excel文件
         work_book = xlrd.open_workbook(self.path, encoding_override="utf-8")
         self.data_sheet = work_book.sheet_by_name("Sheet1")
@@ -28,19 +31,21 @@ class ReadExcel:
 
     def row_value(self):
         row_values = []
-        # print("====")
-        # print(row_values)
-        # print("=======")
         for num in range(1, self.row_num()):
             row_values.append(self.data_sheet.row_values(num))
         return row_values
 
     def col_values(self):
-        col_values = self.data_sheet.col_values(1)
+        col_values = []
+        for num in range(1, self.col_num()):
+            col_values.append(self.data_sheet.col_values(num))
         return col_values
 
 
-# excel_dir = "test_data\\add_user.xls"
+# excel_dir = "case_data.xlsx"
 # readExcel = ReadExcel(excel_dir)
 # readExcel.row_value()
 # print(readExcel.row_value())
+#
+# readExcel.col_values()
+# print(readExcel.col_values())

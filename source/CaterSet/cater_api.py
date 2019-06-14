@@ -5,8 +5,8 @@
 @time: 2019/5/19 11:55
 """
 from conf import DEFAULT
-goverment_host = DEFAULT.test
-pc_host = DEFAULT.test3
+goverment_host = "https://test.chinaylzl.com"
+pc_host = "https://test3.chinaylzl.com"
 
 #   【大配餐政府端api】
 userlist = goverment_host + "/cater-server/user/userList"   # 人员列表

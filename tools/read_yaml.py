@@ -13,8 +13,7 @@ from tools.file_path import FilePath
 class ReadYaml:
 
     def __init__(self, path):
-        self.file_path = FilePath().root_path()
-        self.path = os.path.join(os.path.join(self.file_path, "yamls"), path)
+        self.path = os.path.join(FilePath().yaml_path(), path)
         self.fo = None
 
     def open_yaml(self):

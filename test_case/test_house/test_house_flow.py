@@ -135,7 +135,7 @@ class TestHouseFlow(unittest.TestCase):
             "password": "123456",
             "personInCharge": "测试",
             "personPhone": self.construction_phone,
-            "serviceArea": [self.community]
+            "serviceAreaList": [{'value': 'shequ', 'id': '5101090201'}]
             }
         response = self.house.add_construction_business(param=param)
         print(response.json())
@@ -150,6 +150,7 @@ class TestHouseFlow(unittest.TestCase):
             "pageNow": 1,
             "enable": 1
         }
+        print(self.construction_name)
         response = self.house.get_construction_business_list(param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)

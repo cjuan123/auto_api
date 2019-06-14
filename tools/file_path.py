@@ -29,3 +29,10 @@ class FilePath:
         root = self.root_path()
         return os.path.join(root, "test_case")
 
+    def yaml_path(self):
+        root = self.root_path()
+        return os.path.join(root, "yamls")
+
+    def excel_path(self):
+        root = self.root_path()
+        return os.path.join(root, "test_data")

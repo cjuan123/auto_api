@@ -61,3 +61,6 @@ class IDCard(object):
         num = str(self.addressID) + str(self.getYear(age)) + str(self.getMouth()) + str(self.getDay()) + str(self.getOrder(sex))
         idCard = str(num) + str(self.vilable(num))
         return idCard
+
+id = IDCard()
+print(id.idCard(88, 1))

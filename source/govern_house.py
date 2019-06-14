@@ -23,7 +23,9 @@ class GovernHouse:
 
     def add_product(self, param):
         """【政府端--适老化】：添加产品"""
+        print(param)
         _URL = self.govern + self.house.house_govern("product", "addProduct")
+        print(_URL)
         response = self.request.post_request_json(_url=_URL, _json=param, _headers=self.headers)
         return response
 

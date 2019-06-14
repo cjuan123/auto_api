@@ -5,14 +5,14 @@
 @time: 2019/5/19 11:57
 """
 from tools.http_request import Request
-from conf import DEFAULT
+from conf import HEADERS
 from source.CaterSet import cater_api as cater
 
 
-class government_Cater(object):
+class GovernCater(object):
 
     request = Request()
-    headers = DEFAULT.HEADERS
+    headers = HEADERS.headers
 
     def user_list(self):
         response = self.request.get_request(_url=cater.userlist, _headers=self.headers)

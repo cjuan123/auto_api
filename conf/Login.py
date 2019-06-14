@@ -51,7 +51,7 @@ def construction_login(account, password):
                 "password": password
             }
             response = request.get_request(_url=_URL, _data=param, _headers=headers)
-            headers["token"] = response.json()["data"]
+            headers["token"] = response.json()["data"]["token"]
             func(*args)
         return inner
     return login

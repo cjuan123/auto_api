@@ -41,7 +41,7 @@ class TestGovernProduct(unittest.TestCase):
             "name": self.name,
             "price": 100,
             "remark": "产品备注",
-            "typeIds": [1, 2, 3, 4, 5, 6, 7, 8]
+            "typeIds": []
         }
         response = self.house.add_product(param=param)
         print(response.json())
