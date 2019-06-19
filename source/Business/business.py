@@ -7,14 +7,14 @@
 @desc：企业类
 """
 from tools.http_request import Request
-from conf import DEFAULT
+from conf import HEADERS
 from source.Business import business_api as b_api
 
 
 class Business:
 
     request = Request()
-    headers = DEFAULT.HEADERS
+    headers = HEADERS.headers
 
     def add_or_update_branch(self, param):
         """企业端：添加|更新分支机构"""

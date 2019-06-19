@@ -9,7 +9,7 @@
 """
 import unittest
 import datetime
-from conf import Login, IDCard, DEFAULT
+from conf import Login, IDCard
 from source.Business.business import Business
 from source.YangLao.yanglao import YangLao
 from tools.read_yaml import ReadYaml

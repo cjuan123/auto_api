@@ -13,7 +13,6 @@ from source.CaterSet.cater_sas import CaterSAS
 from source.CaterSet.cater_helper import CaterHelper
 from source.YangLao.yanglao import YangLao
 from conf import Login
-from conf import DEFAULT
 
 
 class TestCaterFlow(unittest.TestCase):

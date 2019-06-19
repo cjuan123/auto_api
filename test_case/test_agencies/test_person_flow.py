@@ -8,7 +8,6 @@
 """
 import unittest
 from conf import Login
-from conf import DEFAULT
 from conf.IDCard import IDCard
 from source.Agencies.agencies import Agencies
 from source.YangLao.yanglao import YangLao
