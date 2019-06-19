@@ -9,9 +9,10 @@
 """
 import unittest
 import datetime
-from conf import Login, IDCard, DEFAULT
+from conf import Login, IDCard
 from source.Business.business import Business
 from source.YangLao.yanglao import YangLao
+from tools.read_yaml import ReadYaml
 
 
 class TestBusiness2(unittest.TestCase):
@@ -20,7 +21,8 @@ class TestBusiness2(unittest.TestCase):
     id_card = IDCard.IDCard().idCard(66, 2)
     uid = []
     order_id = []
-    pwd = "123qwe"
+    read_yaml = ReadYaml("default.yaml")
+    pwd = read_yaml.get_password("govern")
 
     @Login.govern_login("13551042646", pwd)
     def test_001(self):
@@ -120,7 +122,7 @@ class TestBusiness2(unittest.TestCase):
         res = self.business.save_service_record(param=param)
         print("【订单派工】: %s" % res.json())
 
-    @Login.business_login("626753", pwd)
+    @Login.business_app_login("626753", pwd)
     def test_008(self):
         """派工助手--开始服务"""
         param = {

@@ -12,6 +12,7 @@ import datetime
 from conf import Login, IDCard, DEFAULT
 from source.Business.business import Business
 from source.YangLao.yanglao import YangLao
+from tools.read_yaml import ReadYaml
 
 
 class TestBusiness2(unittest.TestCase):
@@ -20,7 +21,8 @@ class TestBusiness2(unittest.TestCase):
     id_card = IDCard.IDCard().idCard(66, 2)
     uid = []
     order_id = []
-    pwd ="123qwe"
+    read_yaml = ReadYaml("default.yaml")
+    pwd = read_yaml.get_password("govern")
 
     @Login.govern_login("13551042646", pwd)
     def test_001(self):

@@ -9,7 +9,8 @@
 """
 import unittest
 import datetime
-from conf import Login, IDCard, DEFAULT
+from conf import Login, IDCard
+from tools.read_yaml import ReadYaml
 from source.Business.business import Business
 from source.YangLao.yanglao import YangLao
 
@@ -21,7 +22,10 @@ class TestBusiness2(unittest.TestCase):
     uid = []
     order_id = []
 
-    @Login.govern_login("13551042646", "123qwe")
+    read_yaml = ReadYaml("default.yaml")
+    pass_word = read_yaml.get_password("govern")
+
+    @Login.govern_login("13551042646", pass_word)
     def test_001(self):
         """添加人员-级别为：居家养老服务补贴"""
         print("添加人员身份证号：%s" % self.id_card)
@@ -45,7 +49,7 @@ class TestBusiness2(unittest.TestCase):
         res = self.yang_lao.add_survey_user(param=param)
         print("【添加人员-级别为：居家养老服务补贴】：%s" % res.json())
 
-    @Login.govern_login("18048054262", "123qwe")
+    @Login.govern_login("18048054262", pass_word)
     def test_002(self):
         """政府端：根据身份证号查询UID"""
         param = {
@@ -71,7 +75,7 @@ class TestBusiness2(unittest.TestCase):
         # print("【积分充值】：%s" % res.json())
         # assert "充值成功" == res.json()["detail"]
 
-    @Login.business_login("849001", "123qwe")
+    @Login.business_login("849001", pass_word)
     def test_004(self):
         """服务订单生成--查询信息"""
         param = {
@@ -117,7 +121,7 @@ class TestBusiness2(unittest.TestCase):
         res = self.business.save_service_record(param=param)
         print("【订单派工】: %s" % res.json())
 
-    @Login.business_app_login("626753", "123456")
+    @Login.business_app_login("626753", pass_word)
     def test_008(self):
         """派工助手--开始服务"""
         param = {

@@ -18,7 +18,7 @@ from source.Business.business import Business
 class TestBusiness1(unittest.TestCase):
     yang_lao = YangLao()
     business = Business()
-    id_card = "711557195705308192" # IDCard().idCard(62, 1)
+    id_card = IDCard().idCard(62, 1)
     uid = []
 
     @Login.govern_login("13551042646", "123qwe")
