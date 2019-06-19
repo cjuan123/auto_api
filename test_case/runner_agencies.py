@@ -6,6 +6,9 @@
 @time: 2019/6/13 20:34
 @desc：运行评估流程脚本，并生成测试报告
 """
+import sys
+import os
+sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)).split('auto_api')[0], "auto_api"))
 import unittest
 import os, time
 from tools.file_path import FilePath
@@ -15,7 +18,6 @@ from runner import HTMLTestRunnerNew
 reports_path = os.path.join(FilePath().reports_path(), "test_reports_agencies_%s.html" % time.strftime('%Y_%m_%d'))
 
 cast_path = os.path.join(FilePath().case_path(), "test_agencies")
-# discover = unittest.defaultTestLoader.discover(r"F:\auto_api\test_case\test_agencies", pattern="test_*.py")
 discover = unittest.defaultTestLoader.discover(cast_path, pattern="test_*.py")
 
 
@@ -23,3 +25,5 @@ root_path = os.path.dirname(os.path.abspath(".."))
 file = open(os.path.join(root_path, reports_path), "wb+")
 runner = HTMLTestRunnerNew.HTMLTestRunner(stream=file)
 runner.run(discover)
+
+print("【测试报告地址】：%s" % reports_path)
