@@ -6,6 +6,8 @@
 @time: 2019/6/13 10:53
 @desc：评估APP、完成评估
 """
+import sys, os
+sys.path.append(os.path.dirname(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]))
 import unittest
 from conf import Login
 from source.agencies import Agencies

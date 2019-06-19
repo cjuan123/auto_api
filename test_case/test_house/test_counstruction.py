@@ -6,6 +6,8 @@
 @time: 2019/6/13 11:16
 @desc：施工
 """
+import sys, os
+sys.path.append(os.path.dirname(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]))
 import unittest
 import random
 from conf import Login

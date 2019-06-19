@@ -37,6 +37,7 @@ class TestGovernApply(unittest.TestCase):
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
 
+    @Login.govern_login("13999999995", pass_word)
     def test_002_add_apply(self):
         """【政府端--适老化】：添加改造申请"""
         print("申请人name:" + self.name)

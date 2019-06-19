@@ -6,6 +6,8 @@
 @time: 2019/6/13 10:21
 @desc：施工单位接口
 """
+import sys, os
+sys.path.append(os.path.dirname(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]))
 import unittest
 import random
 from conf import Login

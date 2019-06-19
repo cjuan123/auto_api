@@ -6,6 +6,8 @@
 @time: 2019/6/12 22:22
 @desc：适老化：评估机构
 """
+import sys, os
+sys.path.append(os.path.dirname(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]))
 import unittest
 import random
 from conf import Login

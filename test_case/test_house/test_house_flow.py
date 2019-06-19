@@ -6,6 +6,8 @@
 @time: 2019/6/13 11:26
 @desc：适老化流程脚本
 """
+import sys, os
+sys.path.append(os.path.dirname(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]))
 import unittest, random
 from conf import Login
 from conf.IDCard import IDCard

@@ -6,6 +6,8 @@
 @time: 2019/6/12 21:30
 @desc：适老化：产品
 """
+import sys, os
+sys.path.append(os.path.dirname(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]))
 import unittest
 import random
 from conf import Login
