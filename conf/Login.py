@@ -177,6 +177,7 @@ def business_login(account, password):
             ylzlbs = response.cookies.get_dict()["ylzlbs"]
             cookies = "SESSION=" + session + ";ylzlbs=" + ylzlbs
             headers["Cookie"] = cookies
+            print(headers)
             func(*args)
         return inner
     return login
@@ -193,7 +194,7 @@ def business_app_login(account, password):
                 'account': account,
                 'password': password
             }
-            res = request.post_request_data(_url=_URL, _data=param, _headers=None)
+            res = request.post_request_data(_url=_URL, _data=param, _headers=headers)
             cookies = 'ylzlbs=' + res.cookies.get_dict()['ylzlbs']
             headers["Cookie"] = cookies
             func(*args)
