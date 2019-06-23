@@ -10,6 +10,7 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]))
 import unittest, random
 from conf import Login
+from tools.logger import Logger
 from conf.IDCard import IDCard
 from source.agencies import Agencies
 from source.construction import Construction
@@ -30,7 +31,8 @@ class TestHouseFlow(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        print("============================STA============================")
+        print("============================ 适老化 STA============================")
+        Logger().info("------------------------ 适老化 STA ------------------------")
         cls.id_card = IDCard().idCard(76, 1)
         cls.house = GovernHouse()       # 适老化政府端
         cls.agencies = Agencies()       # 评估机构端
@@ -551,7 +553,8 @@ class TestHouseFlow(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        print("============================END============================")
+        Logger().info("------------------------ 适老化 END ------------------------")
+        print("============================ 适老化 END============================")
 
 
 if __name__ == '__main__':

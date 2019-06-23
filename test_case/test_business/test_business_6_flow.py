@@ -10,6 +10,7 @@
 import unittest
 import datetime
 from conf import Login, IDCard
+from tools.logger import Logger
 from source.Business.business import Business
 from source.YangLao.yanglao import YangLao
 from tools.read_yaml import ReadYaml
@@ -24,9 +25,15 @@ class TestBusiness2(unittest.TestCase):
     read_yaml = ReadYaml("default.yaml")
     pwd = read_yaml.get_password("govern")
 
+    @classmethod
+    def setUpClass(cls):
+        Logger().info("------------------------ 护理-机构养老补贴 STA ------------------------")
+        print("------------------------ 护理-机构养老补贴 STA ------------------------")
+
+
     @Login.govern_login("13551042646", pwd)
     def test_001(self):
-        """添加人员-级别为：居家养老服务补贴"""
+        """添加人员-级别为：护理-机构养老补贴"""
         print("添加人员身份证号：%s" % self.id_card)
         param = {
             "idcard": self.id_card,
@@ -45,7 +52,7 @@ class TestBusiness2(unittest.TestCase):
                             "'epRelation':'','epAddress':'','epUnits':'','epWorkAddress':''}]",
             'headImage': 'http://file.chinaylzl.com/test/userHead/2018/11/16/38acfc8085c249628beffed54bccb2c7.png'
         }
-        res = self.yang_lao.add_survey_user(case_name="居家养老服务补贴", param=param)
+        res = self.yang_lao.add_survey_user(case_name="护理-机构养老补贴", param=param)
         print("【添加人员-级别为：居家养老服务补贴】：%s" % res.json())
 
     def test_002(self):
@@ -151,6 +158,12 @@ class TestBusiness2(unittest.TestCase):
         }
         res = self.business.update_service_degree(case_name="评价订单", param=param)
         print("【派工助手--评价订单】: %s" % res.json())
+
+    @classmethod
+    def tearDownClass(cls):
+        Logger().info("------------------------ 护理-机构养老补贴 END------------------------")
+        print("------------------------ 护理-机构养老补贴 END------------------------")
+
 
 
 if __name__ == "__main__":

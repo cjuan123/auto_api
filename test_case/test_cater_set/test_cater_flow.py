@@ -8,6 +8,7 @@
         人员无养老积分
 """
 import unittest, datetime
+from tools.logger import Logger
 from source.CaterSet.cater import GovernCater
 from source.CaterSet.cater_sas import CaterSAS
 from source.CaterSet.cater_helper import CaterHelper
@@ -24,6 +25,11 @@ class TestCaterFlow(unittest.TestCase):
     PASSWORD_PG = "123456"
     user_info = []
     applyId = []
+
+    @classmethod
+    def setUpClass(cls):
+        Logger().info("------------------------ 大配餐 STA ------------------------")
+        print("------------------------ 大配餐 STA ------------------------")
 
     @Login.govern_login("13999999992", PASSWORD_GOVERNMENT)
     def test_001(self):
@@ -152,6 +158,10 @@ class TestCaterFlow(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(self.user_info[1], response.json()["data"]["userName"])
 
+    @classmethod
+    def tearDownClass(cls):
+        Logger().info("------------------------ 大配餐 END ------------------------")
+        print("------------------------ 大配餐 END ------------------------")
 
 if __name__ == "__main__":
     unittest.main()

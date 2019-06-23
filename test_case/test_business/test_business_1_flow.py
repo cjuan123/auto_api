@@ -9,6 +9,7 @@
 """
 import unittest
 from conf import Login
+from tools.logger import Logger
 from conf.IDCard import IDCard
 from source.YangLao.yanglao import YangLao
 from source.Business.business import Business
@@ -19,6 +20,11 @@ class TestBusiness1(unittest.TestCase):
     business = Business()
     id_card = IDCard().idCard(62, 1)
     uid = []
+
+    @classmethod
+    def setUpClass(cls):
+        Logger().info("------------------------ 普通人员 STA------------------------")
+        print("------------------------ 普通人员 STA------------------------")
 
     @Login.govern_login("13551042646", "123qwe")
     def test_001(self):
@@ -81,6 +87,11 @@ class TestBusiness1(unittest.TestCase):
         res = self.business.query_pai_user_info(case_name="服务订单生成", param=param)
         print("【普通人员：服务订单生成】：%s" % res.json())
         assert "该用户不属于服务对象" == res.json()["detail"]
+
+    @classmethod
+    def tearDownClass(cls):
+        Logger().info("------------------------ 普通人员 END------------------------")
+        print("------------------------ 普通人员 END------------------------")
 
 
 if __name__ == "__main__":

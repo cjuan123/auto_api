@@ -11,6 +11,7 @@ import unittest
 import datetime
 from conf import Login, IDCard
 from tools.read_yaml import ReadYaml
+from tools.logger import Logger
 from source.Business.business import Business
 from source.YangLao.yanglao import YangLao
 
@@ -24,6 +25,11 @@ class TestBusiness2(unittest.TestCase):
 
     read_yaml = ReadYaml("default.yaml")
     pass_word = read_yaml.get_password("govern")
+
+    @classmethod
+    def setUpClass(cls):
+        Logger().info("------------------------ 居家养老服务补贴 STA ------------------------")
+        print("------------------------ 居家养老服务补贴 STA ------------------------")
 
     @Login.govern_login("13551042646", pass_word)
     def test_001(self):
@@ -150,6 +156,11 @@ class TestBusiness2(unittest.TestCase):
         }
         res = self.business.update_service_degree(case_name="派工助手--评价订单", param=param)
         print("【派工助手--评价订单】: %s" % res.json())
+
+    @classmethod
+    def tearDownClass(cls):
+        Logger().info("------------------------ 居家养老服务补贴 END------------------------")
+        print("------------------------ 居家养老服务补贴 END------------------------")
 
 
 if __name__ == "__main__":
