@@ -6,8 +6,6 @@
 @time: 2019/6/3 9:52
 @desc：评估机构api
 """
-from conf import DEFAULT
-
 # agencies_host = DEFAULT.test3
 agencies_host = "http://120.76.84.195:8093"
 goverment_host = "https://test.chinaylzl.com"

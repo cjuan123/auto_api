@@ -7,10 +7,9 @@
 @desc：企业接口文件
 """
 
-from conf import DEFAULT
 
 
-business = DEFAULT.test1
+business = "https://test1.chinaylzl.com"
 
 #   【企业端】
 addOrUpdateBranch = business + "/business/addOrUpdateBranch"       # 添加|更新分支机构

@@ -6,9 +6,8 @@
 @time: 2019/5/29 10:35
 @desc：养老模块--api接口
 """
-from conf import DEFAULT
 
-gover_host = DEFAULT.test
+gover_host = "https://test.chinaylzl.com"
 
 loginOut = gover_host + "/loginOut"     # 退出登录
 addSurveyUser = gover_host + "/surveyUser/addSurveyUser"    # 添加人员

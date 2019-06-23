@@ -19,7 +19,7 @@ class YangLao:
 
     def login_out(self):
         """退出登录"""
-        res = self.request.get_request(url=yl.loginOut, header=self.headers)
+        res = self.request.get_request()
         return res
 
     def add_survey_user(self, case_name, param):

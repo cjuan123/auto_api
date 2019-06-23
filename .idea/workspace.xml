@@ -5,32 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d673f47-2707-4936-a534-99ff61dfb355" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Agencies/agencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/Agencies/agencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Business/business.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/Business/business.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/CaterSet/cater.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/CaterSet/cater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/CaterSet/cater_sas.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/CaterSet/cater_sas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/Login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Agencies/agencies_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/Agencies/agencies_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Business/business_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/Business/business_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/YangLao/yanglao.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/YangLao/yanglao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/agencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/agencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/construction.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/construction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/govern_house.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/govern_house.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow_gover_balance.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow_gover_balance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_cater_set/test_government_cater.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_cater_set/test_government_cater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_apply_aging.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_apply_aging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_counstruction.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_counstruction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_govern_agencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_govern_agencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_govern_apply.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_govern_apply.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_govern_construction.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_govern_construction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_govern_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_govern_product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_house_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_house_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/http_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/http_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/YangLao/yanglao_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/YangLao/yanglao_api.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,74 +129,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case/test_house/test_govern_product.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
-              <folding>
-                <element signature="e#790#1517#0" />
-                <element signature="e#1820#2284#0" />
-                <element signature="e#2366#2868#0" />
-                <element signature="e#3176#3544#0" />
-                <element signature="e#3595#4021#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case/test_house/test_house_flow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="551" column="16" lean-forward="true" selection-start-line="551" selection-start-column="16" selection-end-line="551" selection-end-column="16" />
-              <folding>
-                <element signature="e#2643#3568#0" />
-                <element signature="e#2720#3306#0" />
-                <element signature="e#3626#4151#0" />
-                <element signature="e#4211#5477#0" />
-                <element signature="e#4285#5209#0" />
-                <element signature="e#5542#6151#0" />
-                <element signature="e#6197#7277#0" />
-                <element signature="e#6230#7023#0" />
-                <element signature="e#7328#7796#0" />
-                <element signature="e#7850#8988#0" />
-                <element signature="e#9047#9587#0" />
-                <element signature="e#9647#10169#0" />
-                <element signature="e#10220#10596#0" />
-                <element signature="e#10645#11070#0" />
-                <element signature="e#11181#11820#0" />
-                <element signature="e#11925#12344#0" />
-                <element signature="e#12393#12997#0" />
-                <element signature="e#13048#13724#0" />
-                <element signature="e#13777#15807#0" />
-                <element signature="e#13857#15612#0" />
-                <element signature="e#15857#18348#0" />
-                <element signature="e#15934#18128#0" />
-                <element signature="e#18403#18738#0" />
-                <element signature="e#18841#19236#0" />
-                <element signature="e#19346#20091#0" />
-                <element signature="e#19380#19829#0" />
-                <element signature="e#20139#20638#0" />
-                <element signature="e#20781#20834#0" />
-                <element signature="e#21168#21576#0" />
-                <element signature="e#22256#22898#0" />
-                <element signature="e#21664#22139#0" />
-                <element signature="e#22374#22719#0" />
-                <element signature="e#22783#23201#0" />
-                <element signature="e#23265#23612#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logs/2019_06_23.log">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/Login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+            <state relative-caret-position="326">
+              <caret line="168" column="51" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="51" />
               <folding>
                 <element signature="e#109#133#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+              <folding>
+                <element signature="e#150#165#0" expanded="true" />
+                <element signature="e#765#1586#0" />
               </folding>
             </state>
           </provider>
@@ -248,9 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/conf/Login_s.py" />
-        <option value="$PROJECT_DIR$/source/Agencies/agencies_api.py" />
-        <option value="$PROJECT_DIR$/conf/DEFAULT.py" />
         <option value="$PROJECT_DIR$/yamls/default.yaml" />
         <option value="$PROJECT_DIR$/logs/demo_log.py" />
         <option value="$PROJECT_DIR$/logs/logg.py" />
@@ -272,14 +205,10 @@
         <option value="$PROJECT_DIR$/demo.py" />
         <option value="$PROJECT_DIR$/test_case/runner_agencies.py" />
         <option value="$PROJECT_DIR$/test_case/runner_business.py" />
-        <option value="$PROJECT_DIR$/source/YangLao/yanglao.py" />
         <option value="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" />
         <option value="$PROJECT_DIR$/source/Agencies/agencies.py" />
-        <option value="$PROJECT_DIR$/conf/Login.py" />
-        <option value="$PROJECT_DIR$/logs/2019_06_23.log" />
         <option value="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" />
         <option value="$PROJECT_DIR$/tools/http_request.py" />
-        <option value="$PROJECT_DIR$/source/Business/business.py" />
         <option value="$PROJECT_DIR$/source/CaterSet/cater_sas.py" />
         <option value="$PROJECT_DIR$/source/CaterSet/cater.py" />
         <option value="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" />
@@ -299,6 +228,13 @@
         <option value="$PROJECT_DIR$/test_case/test_house/test_govern_construction.py" />
         <option value="$PROJECT_DIR$/test_case/test_house/test_govern_product.py" />
         <option value="$PROJECT_DIR$/test_case/test_house/test_house_flow.py" />
+        <option value="$PROJECT_DIR$/source/YangLao/yanglao.py" />
+        <option value="$PROJECT_DIR$/source/Business/business.py" />
+        <option value="$PROJECT_DIR$/source/Agencies/agencies_api.py" />
+        <option value="$PROJECT_DIR$/source/Business/business_api.py" />
+        <option value="$PROJECT_DIR$/source/YangLao/yanglao_api.py" />
+        <option value="$PROJECT_DIR$/conf/Login.py" />
+        <option value="$PROJECT_DIR$/logs/2019_06_23.log" />
       </list>
     </option>
   </component>
@@ -364,24 +300,13 @@
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="Agencies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
               <item name="test_case" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auto_api" type="462c0819:PsiDirectoryNode" />
               <item name="test_case" type="462c0819:PsiDirectoryNode" />
-              <item name="test_house" type="462c0819:PsiDirectoryNode" />
+              <item name="test_business" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
@@ -435,50 +360,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_person_flow.py">
-    <configuration name="DEFAULT" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_api" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/conf" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conf/DEFAULT.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="runner_business" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_api" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_case/runner_business.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests in test_business_5_flow.py">
     <configuration name="Unittests for test_daycare_flow.TestDaycareFlow.test_006" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="auto_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -493,17 +375,45 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in test_daycare_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in test_business_1_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="auto_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_agencies" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_business_2_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="auto_api" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_business_5_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="auto_api" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -522,19 +432,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.runner_business" />
-      <item itemvalue="Python.DEFAULT" />
-      <item itemvalue="Python tests.Unittests in test_daycare_flow.py" />
       <item itemvalue="Python tests.Unittests for test_daycare_flow.TestDaycareFlow.test_006" />
       <item itemvalue="Python tests.Unittests in test_person_flow.py" />
+      <item itemvalue="Python tests.Unittests in test_business_1_flow.py" />
+      <item itemvalue="Python tests.Unittests in test_business_2_flow.py" />
+      <item itemvalue="Python tests.Unittests in test_business_5_flow.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in test_business_5_flow.py" />
+        <item itemvalue="Python tests.Unittests in test_business_2_flow.py" />
+        <item itemvalue="Python tests.Unittests in test_business_1_flow.py" />
         <item itemvalue="Python tests.Unittests in test_person_flow.py" />
         <item itemvalue="Python tests.Unittests for test_daycare_flow.TestDaycareFlow.test_006" />
-        <item itemvalue="Python tests.Unittests in test_daycare_flow.py" />
-        <item itemvalue="Python.DEFAULT" />
-        <item itemvalue="Python.runner_business" />
       </list>
     </recent_temporary>
   </component>
@@ -552,27 +462,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_business_2_flow_py - 2019.06.19 at 17h 12m 33s.xml">
-      <configuration name="Unittests in test_business_2_flow.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_business_5_flow_py - 2019.06.19 at 17h 16m 49s.xml">
-      <configuration name="Unittests in test_business_5_flow.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_business_6_flow_py - 2019.06.19 at 17h 17m 52s.xml">
-      <configuration name="Unittests in test_business_6_flow.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_business_6_flow_TestBusiness2_test_008 - 2019.06.19 at 17h 18m 21s.xml">
-      <configuration name="Unittests for test_business_6_flow.TestBusiness2.test_008" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_business_6_flow_TestBusiness2_test_008 - 2019.06.19 at 17h 18m 58s.xml">
-      <configuration name="Unittests for test_business_6_flow.TestBusiness2.test_008" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_business_6_flow_py - 2019.06.19 at 17h 19m 20s.xml">
-      <configuration name="Unittests in test_business_6_flow.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_daycare_flow_py - 2019.06.23 at 10h 09m 06s.xml">
-      <configuration name="Unittests in test_daycare_flow.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_daycare_flow_py - 2019.06.23 at 10h 15m 49s.xml">
       <configuration name="Unittests in test_daycare_flow.py" configurationId="tests" />
     </history-entry>
@@ -581,6 +470,27 @@
     </history-entry>
     <history-entry file="Unittests_in_test_person_flow_py - 2019.06.23 at 10h 22m 43s.xml">
       <configuration name="Unittests in test_person_flow.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 44m 35s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 47m 49s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 48m 27s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 49m 15s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 49m 51s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 52m 02s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_business_2_flow_py - 2019.06.23 at 11h 52m 26s.xml">
+      <configuration name="Unittests in test_business_2_flow.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -592,7 +502,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275488" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.09490085" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.65439093" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45010847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -665,14 +575,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://E:/tools/python364/Lib/site-packages/ddt.py" />
-    <entry file="file://$PROJECT_DIR$/tools/read_excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_case_ddt/test_house.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -724,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/Business/business_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yamls/default.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -770,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/YangLao/yanglao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="90" column="45" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -784,20 +672,6 @@
           <folding>
             <element signature="e#126#141#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019_06_23.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/http_request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -815,23 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Agencies/agencies_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Business/business.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding>
-            <element signature="e#113#151#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -877,27 +734,6 @@
           <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
           <folding>
             <element signature="e#92#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="80" column="48" lean-forward="true" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="68" />
-          <folding>
-            <element signature="e#148#163#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3186">
-          <caret line="150" column="71" selection-start-line="150" selection-start-column="71" selection-end-line="150" selection-end-column="71" />
-          <folding>
-            <element signature="e#150#165#0" expanded="true" />
-            <element signature="e#765#1586#0" />
           </folding>
         </state>
       </provider>
@@ -1105,15 +941,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tools/http_request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Business/business.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="e#113#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Agencies/agencies_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/tools/python364/Lib/unittest/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Business/business_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#148#163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/YangLao/yanglao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="26" column="88" lean-forward="true" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
+          <folding>
+            <element signature="e#117#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/YangLao/yanglao_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+          <folding>
+            <element signature="e#150#165#0" expanded="true" />
+            <element signature="e#765#1586#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/conf/Login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+        <state relative-caret-position="326">
+          <caret line="168" column="51" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="51" />
           <folding>
             <element signature="e#109#133#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_06_23.log">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
