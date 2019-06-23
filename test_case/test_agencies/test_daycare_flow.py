@@ -36,7 +36,7 @@ class TestDaycareFlow(unittest.TestCase):
             "state": "1",
             'nature': '1'
         }
-        res = self.yang_lao.add_sunlight(param=param)
+        res = self.yang_lao.add_sunlight(case_name="添加日照中心", param=param)
         print("【添加日照中心】：%s" % res.json())
         assert "添加成功" == res.json()["detail"]
 
@@ -45,7 +45,7 @@ class TestDaycareFlow(unittest.TestCase):
         param = {
             "sunlightName": self.sunlightName
         }
-        res = self.yang_lao.sunlight_manage(param=param)
+        res = self.yang_lao.sunlight_manage(case_name="根据日照名称查询", param=param)
         self.bid.append(res.json()["pageView"]["records"][0]["id"])
         print("【根据日照名称查询-日照ID】：%s" % self.bid[0])
         print("【根据日照名称查询】：%s" % res.json())
@@ -59,7 +59,7 @@ class TestDaycareFlow(unittest.TestCase):
             "bId": self.bid[0],
             "districtId": "5101090201"
         }
-        res = self.yang_lao.sunlight_apply_add(param=param)
+        res = self.yang_lao.sunlight_apply_add(case_name="添加日照评估申请",param=param)
         print("【添加日照评估申请】：%s" % res.json())
         assert "添加成功" == res.json()["detail"]
 
@@ -69,7 +69,7 @@ class TestDaycareFlow(unittest.TestCase):
             "businessName": self.sunlightName,
             "address": "51010902"
         }
-        res = self.yang_lao.sunlight_apply_list(param=param)
+        res = self.yang_lao.sunlight_apply_list(case_name="查询日照评估ID", param=param)
         print("查询日照评估ID,返回json数据：%s" % res.json())
 
         self.record_id.append(res.json()["pageView"]["records"][0]["id"])
@@ -87,7 +87,7 @@ class TestDaycareFlow(unittest.TestCase):
             'type': '1',
             'userId': '86'
         }
-        res = self.agencies.query_scheme_subject_list(param=param)
+        res = self.agencies.query_scheme_subject_list(case_name="app下载评估申请", param=param)
         print("【app下载评估申请】接口返回数据：%s" % res.json())
         self.assertEqual(res.json()['detail'], 'success')
 
@@ -102,7 +102,7 @@ class TestDaycareFlow(unittest.TestCase):
                               'http://file.chinaylzl.com/test/assessmentUpload/2018/12/10/cc12e0aa660c44299667b69c3451aba9.jpeg,'
                               'http://file.chinaylzl.com/test/assessmentUpload/2018/12/10/38a485f40987499797423f9e2f1ef0b0.jpeg'
         }
-        res = self.agencies.update(param=param)
+        res = self.agencies.update(case_name="开始评估", param=param)
         print('请求返回数据：%s' % res.json())
         self.assertEqual(res.json()['detail'], 'success')
 
@@ -208,7 +208,7 @@ class TestDaycareFlow(unittest.TestCase):
                          id, id, id, id, id, id, id, id, id, id, id)
 
         }
-        res = self.agencies.calc_score(param=param)
+        res = self.agencies.calc_score(case_name="计算分数", param=param)
         print('请求返回数据：%s' % res.json())
         self.assertEqual(res.json()['detail'], 'success')
 
@@ -316,7 +316,7 @@ class TestDaycareFlow(unittest.TestCase):
                          id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id, id,
                          id, id, id, id, id, id, id, id, id, id, id)
         }
-        res = self.agencies.save_answer(param=param)
+        res = self.agencies.save_answer(case_name="上传评估结果", param=param)
         print('请求返回数据：%s' % res.json())
         self.assertEqual(res.json()['detail'], 'success')
 

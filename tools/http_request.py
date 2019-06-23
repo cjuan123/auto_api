@@ -19,32 +19,30 @@ class Request:
         # 禁用安全请求警告
         requests.packages.urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-    def post_request_data(self, _url, _data, _headers):
+    def post_request_data(self, _url, _data, _headers, case_name=None):
         response = requests.post(url=_url, data=_data, headers=_headers, verify=False)
-        self.log.info("【request_URL】：%s" % _url)
-        self.log.info("【param_data】: %s" % _data)
-        self.log.info("【status_code】: %d" % response.status_code)
+        self.log.info("【%s - 请求地址】：%s" % (case_name, _url))
+        self.log.info("【%s - 请求参数】: %s" % (case_name, _data))
+        self.log.info("【%s - 响应码】: %d" % (case_name, response.status_code))
         return response
 
-    def post_request_json(self, _url, _json, _headers):
+    def post_request_json(self, _url, _json, _headers, case_name=None):
         response = requests.post(url=_url, json=_json, headers=_headers, verify=False)
-        self.log.info("【request_URL】：%s" % _url)
-        self.log.info("【param_data】: %s" % _json)
-        self.log.info("【status_code】: %d" % response.status_code)
+        self.log.info("【%s - 请求地址】：%s" % (case_name, _url))
+        self.log.info("【%s - 请求参数】: %s" % (case_name, _json))
+        self.log.info("【%s - 响应码】: %d" % (case_name, response.status_code))
         return response
 
-    def post_request_files(self, _url, _files, _headers):
+    def post_request_files(self, _url, _files, _headers, case_name=None):
         response = requests.post(url=_url, files=_files, headers=_headers, verify=False)
-
-        self.log.info("【request_URL】：%s" % _url)
-        self.log.info("【param_data】: %s" % _files)
-        self.log.info("【status_code】: %d" % response.status_code)
-
+        self.log.info("【%s - 请求地址】：%s" % (case_name, _url))
+        self.log.info("【%s - 请求参数】: %s" % (case_name, _files))
+        self.log.info("【%s - 响应码】: %d" % (case_name, response.status_code))
         return response
 
-    def get_request(self, _url, _headers, _data=None):
+    def get_request(self, _url, _headers, _data=None, case_name=None):
         response = requests.get(url=_url, params=_data, headers=_headers, verify=False)
-        self.log.info("【request_URL】：%s" % _url)
-        self.log.info("【param_data】: %s" % _data)
-        self.log.info("【status_code】: %d" % response.status_code)
+        self.log.info("【%s - 请求地址】：%s" % (case_name, _url))
+        self.log.info("【%s - 请求参数】: %s" % (case_name, _data))
+        self.log.info("【%s - 响应码】: %d" % (case_name, response.status_code))
         return response

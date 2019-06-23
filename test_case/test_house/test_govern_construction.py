@@ -58,7 +58,7 @@ class TestGovernConstruction(unittest.TestCase):
             "personPhone": "15282566260",
             "serviceArea": ["510109"]
         }
-        response = self.house.add_construction_business(param=param)
+        response = self.house.add_construction_business(case_name="添加施工单位", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -71,7 +71,7 @@ class TestGovernConstruction(unittest.TestCase):
             "pageNow": 1,
             "enable": 1
         }
-        response = self.house.get_construction_business_list(param=param)
+        response = self.house.get_construction_business_list(case_name="分页查询施工单位列表", param=param)
         print(response.json())
         self.b_id.append(response.json()["data"]["records"][0]["id"])
         print(self.b_id[0])
@@ -111,7 +111,7 @@ class TestGovernConstruction(unittest.TestCase):
             "personInCharge": "测试(update)",
             "serviceArea": ["51010901", "51010902", "51010903"]
         }
-        response = self.house.edit_construction_business(param=param)
+        response = self.house.edit_construction_business(case_name="编辑施工单位信息", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -122,7 +122,7 @@ class TestGovernConstruction(unittest.TestCase):
         param = {
             "bid": self.b_id[0]
         }
-        response = self.house.get_business_detail(param=param)
+        response = self.house.get_business_detail(case_name="获取施工单位信息", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -135,7 +135,7 @@ class TestGovernConstruction(unittest.TestCase):
             "constructionId": self.b_id[0],
             "pageNow": 1
         }
-        response = self.house.record_construction_list(param=param)
+        response = self.house.record_construction_list(case_name="施工记录", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -147,7 +147,7 @@ class TestGovernConstruction(unittest.TestCase):
             "bId": self.b_id[0],
             "enable": 0
         }
-        response = self.house.stop_or_start_constructor(param=param)
+        response = self.house.stop_or_start_constructor(case_name="停启施工单位", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])

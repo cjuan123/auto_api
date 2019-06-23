@@ -45,7 +45,7 @@ class TestGovernProduct(unittest.TestCase):
             "remark": "产品备注",
             "typeIds": []
         }
-        response = self.house.add_product(param=param)
+        response = self.house.add_product(case_name="添加产品", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -58,7 +58,7 @@ class TestGovernProduct(unittest.TestCase):
             "pageNow": 1,
             "name": self.name
         }
-        response = self.house.get_product_list(param=param)
+        response = self.house.get_product_list(case_name="分页查询产品列表", param=param)
         print(response.json())
         self.product_id.append(response.json()["data"]["records"][0]["id"])
         self.assertEqual(200, response.status_code)
@@ -97,7 +97,7 @@ class TestGovernProduct(unittest.TestCase):
             "enable": 0,
             "pId": self.product_id[0]
         }
-        response = self.house.stop_start_product(param=param)
+        response = self.house.stop_start_product(case_name="产品停启", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -108,7 +108,7 @@ class TestGovernProduct(unittest.TestCase):
         param = {
             "id": self.product_id[0]
         }
-        response = self.house.get_product_detail(param=param)
+        response = self.house.get_product_detail(case_name="查看产品详情", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])

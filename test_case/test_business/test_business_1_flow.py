@@ -41,7 +41,7 @@ class TestBusiness1(unittest.TestCase):
                             "'epRelation':'','epAddress':'','epUnits':'','epWorkAddress':''}]",
             'headImage': 'http://file.chinaylzl.com/test/userHead/2018/11/16/38acfc8085c249628beffed54bccb2c7.png'
         }
-        res = self.yang_lao.add_survey_user(param=param)
+        res = self.yang_lao.add_survey_user(case_name="添加普通老人", param=param)
         print("【添加人员-级别为：普通老人】：%s" % res.json())
 
     @Login.govern_login("18048054262", "123qwe")
@@ -52,7 +52,7 @@ class TestBusiness1(unittest.TestCase):
             "pageIndex": 1,
             "isBind": ""
         }
-        res = self.yang_lao.list_users_new(param=param)
+        res = self.yang_lao.list_users_new(case_name="根据身份证号查询UID", param=param)
         u_id = res.json()["pageView"]["records"][0]["id"]
         self.uid.append(u_id)
         print("【根据身份证获取uid】 ：%s" % res.json())
@@ -66,7 +66,7 @@ class TestBusiness1(unittest.TestCase):
             "remark": 0,
             "source": "api"
         }
-        res = self.yang_lao.single_recharge(param=param)
+        res = self.yang_lao.single_recharge(case_name="积分充值", param=param)
         print("【积分充值】：%s" % res.json())
         assert "充值成功" == res.json()["detail"]
 
@@ -78,7 +78,7 @@ class TestBusiness1(unittest.TestCase):
             "groupId": 2,
             "idcard": self.id_card
         }
-        res = self.business.query_pai_user_info(param=param)
+        res = self.business.query_pai_user_info(case_name="服务订单生成", param=param)
         print("【普通人员：服务订单生成】：%s" % res.json())
         assert "该用户不属于服务对象" == res.json()["detail"]
 

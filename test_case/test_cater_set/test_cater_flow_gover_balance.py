@@ -34,7 +34,7 @@ class TestCaterFlow(unittest.TestCase):
         param = {
             "idcard": self.id_card
         }
-        response = self.g_cater.get_user_by_idCard(param)
+        response = self.g_cater.get_user_by_id_card(param)
         print(response.json())
         self.assertEqual("操作成功", response.json()["message"])
         print("人员身份证号：%s" % self.id_card)

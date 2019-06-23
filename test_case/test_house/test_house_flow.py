@@ -87,7 +87,7 @@ class TestHouseFlow(unittest.TestCase):
             "idcardImgZ": "",
             "idcardImgF": ""
         }
-        response = self.house.add_assess_agency(param=param)
+        response = self.house.add_assess_agency(case_name="政府端：添加评估机构", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -99,7 +99,7 @@ class TestHouseFlow(unittest.TestCase):
             "agencyName": self.agency_name,
             "pageNow": 1
         }
-        response = self.house.get_assessment_agencies(param=param)
+        response = self.house.get_assessment_agencies(case_name="政府端：根据评估名称，获取评估机构ID", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -139,7 +139,7 @@ class TestHouseFlow(unittest.TestCase):
             "personPhone": self.construction_phone,
             "serviceAreaList": [{'value': 'shequ', 'id': '5101090201'}]
             }
-        response = self.house.add_construction_business(param=param)
+        response = self.house.add_construction_business(case_name="政府端：添加施工单位", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual("添加成功", response.json()["message"])
@@ -153,7 +153,7 @@ class TestHouseFlow(unittest.TestCase):
             "enable": 1
         }
         print(self.construction_name)
-        response = self.house.get_construction_business_list(param=param)
+        response = self.house.get_construction_business_list(case_name="政府端：根据施工单位名称，获取施工单位ID", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -180,7 +180,7 @@ class TestHouseFlow(unittest.TestCase):
                 "url": "http://file.chinaylzl.com/test/userHead/2018/11/16/38acfc8085c249628beffed54bccb2c7.png"
             }],
             }
-        response = self.house.add_product(param=param)
+        response = self.house.add_product(case_name="政府端：添加产品", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -193,7 +193,7 @@ class TestHouseFlow(unittest.TestCase):
             "pageNow": 1,
             "name": self.product_name
         }
-        response = self.house.get_product_list(param=param)
+        response = self.house.get_product_list(case_name="政府端：根据产品名称获取产品ID", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -205,7 +205,7 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "idCard": self.id_card
         }
-        response = self.house.get_user_by_id_card(param=param)
+        response = self.house.get_user_by_id_card(case_name="政府端：根据身份证查询人员信息", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -242,7 +242,7 @@ class TestHouseFlow(unittest.TestCase):
             "addressId": self.community,
             "pageNow": 1
         }
-        response = self.house.get_transform_apply_list(data=param)
+        response = self.house.get_transform_apply_list(case_name="政府端：添加改造申请", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -256,7 +256,7 @@ class TestHouseFlow(unittest.TestCase):
             "idCard": self.id_card,
             "addressId": self.community
         }
-        response = self.house.get_transform_apply_list(data=param)
+        response = self.house.get_transform_apply_list(case_name="政府端：根据身份证号，查询审核ID", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -270,7 +270,7 @@ class TestHouseFlow(unittest.TestCase):
             "id": self.verify_id[0],
             "verifyState": 1
         }
-        response = self.house.verify_transform(data=param)
+        response = self.house.verify_transform(case_name="政府端：根据审核ID，审核通过", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -283,7 +283,7 @@ class TestHouseFlow(unittest.TestCase):
             "agencyName": self.agency_name,
             "id": self.verify_id[0]
         }
-        response = self.house.business_apply(data=param)
+        response = self.house.business_apply(case_name="政府端：添加改造评估申请", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -299,7 +299,7 @@ class TestHouseFlow(unittest.TestCase):
             "position": "测试api",
             "account": self.agency_emp_phone
         }
-        response = self.agencies.agency_user_edit_submit(data=param)
+        response = self.agencies.agency_user_edit_submit(case_name="评估端：添加员工账号", data=param)
         print(response.json())
 
         # 根据账号获取员工ID
@@ -319,7 +319,7 @@ class TestHouseFlow(unittest.TestCase):
             "assessmentUserId": self.agency_emp_id[0]
         }
         print(param)
-        response = self.agencies.get_tasks(data=param)
+        response = self.agencies.get_tasks(case_name="评估app：领取任务", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -330,7 +330,7 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "assessmentUserId": self.agency_emp_id[0]
         }
-        response = self.agencies.list_own_tasks(data=param)
+        response = self.agencies.list_own_tasks(case_name="评估app：获取record_id", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -344,7 +344,7 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "schemeId": 104
         }
-        response = self.agencies.download_subject(data=param)
+        response = self.agencies.download_subject(case_name="评估app：下载题目，获取产品信息", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -368,7 +368,7 @@ class TestHouseFlow(unittest.TestCase):
             'agencyId': self.agency_id[0],
             "conclusion": ""
         }
-        response = self.agencies.save_answer(data=param)
+        response = self.agencies.save_answer(case_name="评估app：人员评估上传评估结果", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -386,7 +386,7 @@ class TestHouseFlow(unittest.TestCase):
 
         }
         print(param)
-        response = self.agencies.save_env_answer(data=param)
+        response = self.agencies.save_env_answer(case_name="评估app：环境评估上传评估结果", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -397,7 +397,7 @@ class TestHouseFlow(unittest.TestCase):
             "recordId": self.person_record_id[0],
             "json": ""
         }
-        response = self.agencies.save_person_products(data=param)
+        response = self.agencies.save_person_products(case_name="评估app：保存人员评估结果选择的产品关系", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -409,7 +409,7 @@ class TestHouseFlow(unittest.TestCase):
             "constructionId": self.construction_id[0],
             "id": self.verify_id[0]
         }
-        response = self.house.constructor_apply(data=param)
+        response = self.house.constructor_apply(case_name="政府端：施工派单", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -434,7 +434,7 @@ class TestHouseFlow(unittest.TestCase):
             "phone": self.con_emp_account,
             "post": 1
         }
-        response = self.construction.add_employee(param=param)
+        response = self.construction.add_employee(case_name="施工单位添加员工", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -446,7 +446,7 @@ class TestHouseFlow(unittest.TestCase):
             "name": self.con_emp_name,
             "pageNow": 1
         }
-        response = self.construction.employee_list(param=param)
+        response = self.construction.employee_list(case_name="施工单位：获取员工ID", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -461,7 +461,7 @@ class TestHouseFlow(unittest.TestCase):
             "recordId": self.verify_id[0]
         }
         print(param)
-        response = self.construction.get_task(param=param)
+        response = self.construction.get_task(case_name="施工app：获取任务D", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -472,7 +472,7 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "id": self.verify_id
         }
-        response = self.construction.construction_details(param=param)
+        response = self.construction.construction_details(case_name="施工app：查询任务详情", param=param)
         print(response.json())
         self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["id"])
         self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["productImg"])
@@ -490,7 +490,7 @@ class TestHouseFlow(unittest.TestCase):
             })
         }
         print(param)
-        response = self.construction.commit_scheme(data=param)
+        response = self.construction.commit_scheme(case_name="施工app：提交施工产品方案", data=param)
         print(response.json())
 
     @Login.govern_login(govern_account, pass_word)
@@ -499,7 +499,7 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "pageNow": 1
         }
-        response = self.house.get_project_inspection_list(data=param)
+        response = self.house.get_project_inspection_list(case_name="政府端：项目验收列表分页查询", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -512,7 +512,7 @@ class TestHouseFlow(unittest.TestCase):
             "recordId": self.verify_id,
             "qualified": 1
         }
-        response = self.house.check_transform_scheme(data=param)
+        response = self.house.check_transform_scheme(case_name="政府端：验收改造方案", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -523,7 +523,7 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "pageNow": 1
         }
-        response = self.house.get_transform_settlement_list(data=param)
+        response = self.house.get_transform_settlement_list(case_name="政府端：项目结算列表分页查询", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -534,7 +534,7 @@ class TestHouseFlow(unittest.TestCase):
         param = {
             "id": self.verify_id
         }
-        response = self.house.settlement(data=param)
+        response = self.house.settlement(case_name="政府端：结算项目", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])

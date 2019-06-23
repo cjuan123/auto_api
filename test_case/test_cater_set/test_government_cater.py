@@ -22,7 +22,7 @@ class test_government_cater(unittest.TestCase):
         param = {
             "idcard": self.param
         }
-        response = self.cater.get_user_by_idCard(param=param)
+        response = self.cater.get_user_by_id_card(param=param)
         print(response.json())
         self.assertEqual(self.excepted, response.json()["message"])
 

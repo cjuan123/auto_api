@@ -26,7 +26,7 @@ class TestPersonFlow(unittest.TestCase):
         param = {
             "idCard": self.id_card
         }
-        response = self.yang_lao.query_user(param=param)
+        response = self.yang_lao.query_user(case_name="查询身份证是否存在评估申请", param=param)
         print("【查询身份证是否存在评估申请】接口返回数据：%s" % response.json())
         self.assertEqual("", response.json()["detail"])
 
@@ -47,7 +47,7 @@ class TestPersonFlow(unittest.TestCase):
                           "PT_DJLR,PT_LSLR,PT_YOUFU,PT_LITUIXIU,PT_GAOLING,PT_DSZNSC,PT_CLJT,PT_XFDX,PT_TEKUNRENYUAN,"
                           "PT_WUBAO,PT_SANWU,PT_LDY,PT_DGB,PT_TSKNJT,PT_JJKNFWBT,PT_QT"
         }
-        response = self.yang_lao.apply_add(param=param)
+        response = self.yang_lao.apply_add(case_name="添加人员评估申请", param=param)
         print("【添加评估申请】接口返回数据：%s" % response.json())
         self.assertEqual("添加成功", response.json()["detail"])
         print('评估数据：姓名【%s】- 身份证号【%s】' % ("评估数据" + self.id_card, self.id_card))
@@ -57,7 +57,7 @@ class TestPersonFlow(unittest.TestCase):
         param = {
             "idCard": self.id_card,
         }
-        response = self.yang_lao.apply_list(param=param)
+        response = self.yang_lao.apply_list(case_name="查询评估申请ID", param=param)
         rid = response.json()['pageView']['records'][0]['id']
         self.recordID.append(rid)
         print("【查询评估申请ID】接口返回数据：%s" % response.json())
@@ -74,7 +74,7 @@ class TestPersonFlow(unittest.TestCase):
             'type': '1',
             'userId': '86'
         }
-        response = self.agencies.query_scheme_subject_list(param=param)
+        response = self.agencies.query_scheme_subject_list(case_name="下载评估申请", param=param)
         print("【app下载评估申请】接口返回数据：%s" % response.json())
 
     def test_005(self):
@@ -87,7 +87,7 @@ class TestPersonFlow(unittest.TestCase):
                          id),
             'agencyId': '44'
         }
-        response = self.agencies.calc_score(param=param)
+        response = self.agencies.calc_score(case_name="计算分数", param=param)
         print("【计算分数】接口返回数据：%s" % response.json())
 
     def test_006(self):
@@ -101,7 +101,7 @@ class TestPersonFlow(unittest.TestCase):
             'conclusion': '测试',
             'userId': '86'
         }
-        response = self.agencies.save_answer(param=param)
+        response = self.agencies.save_answer(case_name="上传评估结果", param=param)
         print("【上传评估结果】接口返回数据：%s" % response.json())
 
 

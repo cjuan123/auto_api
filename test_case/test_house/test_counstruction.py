@@ -33,6 +33,7 @@ class Agencies(unittest.TestCase):
 
     @Login.construction_login("13633262703", "123456")
     def test_add_employee(self):
+        """【施工web：添加员工】"""
         print(self.con_emp_name)
         param = {
             "account": self.con_emp_account,
@@ -45,7 +46,7 @@ class Agencies(unittest.TestCase):
             "phone": self.con_emp_account,
             "post": 1
             }
-        response = self.construction.add_employee(param=param)
+        response = self.construction.add_employee(case_name="添加员工", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -58,7 +59,7 @@ class Agencies(unittest.TestCase):
             "pageNow": 1
         }
 
-        response = self.construction.employee_list(param=param)
+        response = self.construction.employee_list(case_name="查询员工列表", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -74,33 +75,35 @@ class Agencies(unittest.TestCase):
             # self.con_emp_id[0],
             "recordId": 63
         }
-        response = self.construction.get_task(param=param)
+        response = self.construction.get_task(case_name="获取任务", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("领取成功", response.json()["message"])
 
-
     def test_my_task_list(self):
+        """【施工app：我的任务列表】"""
         param = {
             "pageNow": 1
         }
-        response = self.construction.my_task_list(param=param)
+        response = self.construction.my_task_list(case_name="我的任务列表", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
 
     def test_construction_details(self):
+        """【施工app：查询任务详情】"""
         param = {
             "id": 91
         }
-        response = self.construction.construction_details(param=param)
+        response = self.construction.construction_details(case_name="查询任务详情", param=param)
         print(response.json())
         self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["id"])
         self.scheme.append(response.json()["data"]["transformSchemesType"][0]["transformSchemes"][0]["productImg"])
 
     def test_commit_scheme(self):
+        """【施工app：提交施工产品方案】"""
         param = {
             "recordId": 91,
             "scheme": str({
@@ -112,27 +115,29 @@ class Agencies(unittest.TestCase):
             })
         }
         print(param)
-        response = self.construction.commit_scheme(data=param)
+        response = self.construction.commit_scheme(case_name="提交施工产品方案", data=param)
         print(response.json())
 
     @Login.govern_login(govern_account, pass_word)
     def test_03_govern_get_project_inspection_list(self):
+        """【政府端--适老化】：项目验收列表分页查询"""
         param = {
             "pageNow": 1
         }
-        response = self.house.get_project_inspection_list(data=param)
+        response = self.house.get_project_inspection_list(case_name="项目验收列表分页查询", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
         self.assertEqual("操作成功", response.json()["message"])
 
     def test_04_govern_check_transform_scheme(self):
+        """【政府端--适老化】：验收改造方案"""
         param = {
             "schemeId": 83,
             "recordId": 91,
             "qualified": 1
         }
-        response = self.house.check_transform_scheme(data=param)
+        response = self.house.check_transform_scheme(case_name="验收改造方案", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -143,14 +148,15 @@ class Agencies(unittest.TestCase):
         param = {
             "pageNow": 1
         }
-        response = self.house.get_transform_settlement_list(data=param)
+        response = self.house.get_transform_settlement_list(case_name="项目结算", data=param)
         print(response.json())
 
     def test_06_settlement(self):
+        """【政府端--适老化】:结算项目"""
         param = {
             "id": 91
         }
-        response = self.house.settlement(data=param)
+        response = self.house.settlement(case_name="适老化：结算项目", data=param)
         print(response.json())
 
 

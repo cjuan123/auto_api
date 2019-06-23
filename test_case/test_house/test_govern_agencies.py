@@ -44,7 +44,7 @@ class TestGovernAgencies(unittest.TestCase):
             "idcardImgZ": "",
             "idcardImgF": ""
         }
-        response = self.house.add_assess_agency(param=param)
+        response = self.house.add_assess_agency(case_name="适老化：添加评估机构", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -56,7 +56,7 @@ class TestGovernAgencies(unittest.TestCase):
             "agencyName": self.agencyName,
             "pageNow": 1
         }
-        response = self.house.get_assessment_agencies(param=param)
+        response = self.house.get_assessment_agencies(case_name="分页查询评估机构列表", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -89,7 +89,7 @@ class TestGovernAgencies(unittest.TestCase):
                           "timg_884ce9dd38e848129cf7c86e914f4bdd.gif"
         }
         print(param)
-        response = self.house.save_assessment_agency(param=param)
+        response = self.house.save_assessment_agency(case_name="编辑获取评估机构信息", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -97,7 +97,7 @@ class TestGovernAgencies(unittest.TestCase):
 
     def test_query_agencies_list(self):
         """【政府端--评估机构】：获取选择评估机构列表"""
-        response = self.house.query_agencies_list()
+        response = self.house.query_agencies_list(case_name="获取选择评估机构列表")
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])

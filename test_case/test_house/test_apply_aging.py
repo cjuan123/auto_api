@@ -24,26 +24,29 @@ class TestGovernApplyAging(unittest.TestCase):
 
     @Login.agencies_app_login("13733263135", "123456")
     def test_001_get_tasks(self):
+        """【适老化--app】：领取任务"""
         param = {
             "orderId": 77,
             "assessmentUserId": 498
         }
         print(param)
-        response = self.agencies.get_tasks(data=param)
+        response = self.agencies.get_tasks(case_name="领取任务", data=param)
         print(response.json())
 
     @Login.agencies_app_login("15982566561", "123456")
     def test_002_list_own_tasks(self):
+        """【适老化--app】：我的任务列表"""
         param = {
             "assessmentUserId": 465
         }
-        response = self.agencies.list_own_tasks(data=param)
+        response = self.agencies.list_own_tasks(case_name="我的任务列表", data=param)
         print(response.json())
         self.person_record_id.append(response.json()["data"][0]["personRecordId"])
         self.evn_record_id.append(response.json()["data"][0]["personRecordId"])
 
     @Login.agencies_app_login("15982566561", "123456")
     def test_003_save_answer_person(self):
+        """"【适老化--app】：上传人员评估结果"""
         id = 1009335
         param = {
             'name': 'assess_token',
@@ -53,11 +56,12 @@ class TestGovernApplyAging(unittest.TestCase):
             'agencyId': '110',
             "conclusion": ""
         }
-        response = self.agencies.save_answer(data=param)
+        response = self.agencies.save_answer(case_name="上传人员评估结果", data=param)
         print(response.json())
 
     @Login.agencies_app_login("13733263394", "123456")
     def test_004_save_answer_product(self):
+        """"【适老化--app】：上传环境评估结果"""
         id = 1009438
         param = {
             'recordId': id,
@@ -70,17 +74,17 @@ class TestGovernApplyAging(unittest.TestCase):
             "products": self.products
         }
         print(param)
-        response = self.agencies.save_env_answer(data=param)
+        response = self.agencies.save_env_answer(case_name="上传环境评估结果", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
 
     @Login.agencies_app_login("13733263135", "123456")
     def test_download_subject(self):
-        """【评估app：下载题目，获取产品信息】"""
+        """【适老化--app】：适老化题目下载"""
         param = {
             "schemeId": 104
         }
-        response = self.agencies.download_subject(data=param)
+        response = self.agencies.download_subject(case_name="适老化题目下载", data=param)
         print(response.json())
         print(len(response.json()["data"][0]["productList"]))
         data = {

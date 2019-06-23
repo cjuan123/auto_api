@@ -31,7 +31,7 @@ class TestGovernApply(unittest.TestCase):
         param = {
             "idCard": self.id_card
         }
-        response = self.house.get_user_by_id_card(param=param)
+        response = self.house.get_user_by_id_card(case_name="根据身份证查询人员信息", param=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -58,16 +58,17 @@ class TestGovernApply(unittest.TestCase):
             "certificates": [],
             "annex": []
         }
-        response = self.house.add_transform_apply(param)
+        response = self.house.add_transform_apply(case_name="添加改造申请", param=param)
         print(response.json())
 
     def test_003_get_transform_apply_list(self):
+        """【政府端--适老化】：分页查询改造申请列表"""
         param = {
             "idCard": self.id_card,
             "addressId": "510109",
             "pageNow": 1
         }
-        response = self.house.get_transform_apply_list(data=param)
+        response = self.house.get_transform_apply_list(case_name="分页查询改造申请列表", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -75,6 +76,7 @@ class TestGovernApply(unittest.TestCase):
         self.apply_id.append(response.json()["data"]["records"][0]["id"])
 
     def test_004_edit_transform(self):
+        """【政府端--适老化】：编辑改造单"""
         param = {
             "id": self.apply_id[0],
             "idCard": self.id_card,
@@ -95,7 +97,7 @@ class TestGovernApply(unittest.TestCase):
             "state": 1,
             "version": 1
             }
-        response = self.house.edit_transform(json=param)
+        response = self.house.edit_transform(case_name="编辑改造单", json=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -107,7 +109,7 @@ class TestGovernApply(unittest.TestCase):
             "idCard": self.id_card,
             "addressId": "510109"
         }
-        response = self.house.get_transform_apply_list(data=param)
+        response = self.house.get_transform_apply_list(case_name="分页查询改造审核列表", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -121,7 +123,7 @@ class TestGovernApply(unittest.TestCase):
             "id": self.v_id[0],
             "verifyState": 1
         }
-        response = self.house.verify_transform(data=param)
+        response = self.house.verify_transform(case_name="审核改造单", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -134,7 +136,7 @@ class TestGovernApply(unittest.TestCase):
             "agencyName": "api评估机构5951",
             "id": self.v_id[0]
         }
-        response = self.house.business_apply(data=param)
+        response = self.house.business_apply(case_name="评估中列表分页查询", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
@@ -147,7 +149,7 @@ class TestGovernApply(unittest.TestCase):
             "addressId": "510109",
             "pageNow": 1
         }
-        response = self.house.get_assessment_list(data=param)
+        response = self.house.get_assessment_list(case_name="评估中列表分页查询", data=param)
         print(response.json())
         self.assertEqual(200, response.status_code)
         self.assertEqual(0, response.json()["status"])
