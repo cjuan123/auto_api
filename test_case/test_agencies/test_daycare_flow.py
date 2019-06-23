@@ -9,6 +9,7 @@
 import unittest
 import random
 from conf import Login
+from tools.logger import Logger
 from source.Agencies.agencies import Agencies
 from source.YangLao.yanglao import YangLao
 from tools.http_request import Request
@@ -22,6 +23,11 @@ class TestDaycareFlow(unittest.TestCase):
     sunlightName = "api日照" + str(num)
     bid = []  # 日照中心ID
     record_id = []
+
+    @classmethod
+    def setUpClass(cls):
+        print("------------------------ 日照评估 STA------------------------")
+        Logger().info("------------------------ 日照评估 STA------------------------")
 
     @Login.govern_login("18048054262", "123qwe")
     def test_001(self):
@@ -75,7 +81,7 @@ class TestDaycareFlow(unittest.TestCase):
         self.record_id.append(res.json()["pageView"]["records"][0]["id"])
         print("日照评估ID：%s " % self.record_id)
 
-    @Login.agencies_app_login("18048054260", "123456")
+    @Login.agencies_app_login("18048054260", "123qwe")
     def test_006(self):
         """app下载评估申请"""
         assert len(self.record_id) != 0
@@ -319,6 +325,11 @@ class TestDaycareFlow(unittest.TestCase):
         res = self.agencies.save_answer(case_name="上传评估结果", param=param)
         print('请求返回数据：%s' % res.json())
         self.assertEqual(res.json()['detail'], 'success')
+
+    @classmethod
+    def tearDownClass(cls):
+        Logger().info("------------------------ 日照评估 END------------------------")
+        print("------------------------ 日照评估 END------------------------")
 
 
 if __name__ == "__main__":

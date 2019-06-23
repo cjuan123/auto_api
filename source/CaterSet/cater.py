@@ -14,29 +14,28 @@ class GovernCater(object):
     request = Request()
     headers = HEADERS.headers
 
-    def user_list(self):
-        response = self.request.get_request(_url=cater.userlist, _headers=self.headers)
+    def user_list(self, case_name):
+        response = self.request.get_request(case_name=case_name, _url=cater.userlist, _headers=self.headers)
         return response
 
-    def get_user_by_idCard(self, param):
+    def get_user_by_id_card(self, case_name, param):
         """根据身份证号码是否存在"""
-        response = self.request.get_request(_url=cater.getUserByIdCard, _data=param, _headers=self.headers)
+        response = self.request.get_request(case_name=case_name, _url=cater.getUserByIdCard, _data=param, _headers=self.headers)
         return response
 
-    def add_user(self, param):
+    def add_user(self, case_name, param):
         """添加人员申请"""
-        response = self.request.post_request_json(_url=cater.adduser, _json=param, _headers=self.headers)
+        response = self.request.post_request_json(case_name=case_name, _url=cater.adduser, _json=param, _headers=self.headers)
         return response
 
-    def get_apply_id(self, param):
+    def get_apply_id(self, case_name, param):
         """根据身份证获取applyID"""
-        response = self.request.get_request(_url=cater.queryAllApplyUser, _data=param, _headers=self.headers)
+        response = self.request.get_request(case_name=case_name, _url=cater.queryAllApplyUser, _data=param, _headers=self.headers)
         return response
 
-
-    def review_user(self, param):
+    def review_user(self, case_name, param):
         """人员审核checkType  1.审核    2.复审"""
-        response = self.request.post_request_json(_url=cater.reviewUser, _json=param, _headers=self.headers)
+        response = self.request.post_request_json(case_name=case_name, _url=cater.reviewUser, _json=param, _headers=self.headers)
         return response
 
 

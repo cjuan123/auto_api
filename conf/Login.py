@@ -100,6 +100,7 @@ def govern_login(account, password):
 
 
 def agencies_app_login(account, password):
+    """评估app登录"""
     def login(func):
         def inner(*args):
             headers["Cookie"] = None
@@ -109,6 +110,8 @@ def agencies_app_login(account, password):
                 'phone': account,
                 'password': password
             }
+            res = request.post_request_data(case_name="评估app登录", _url=_URL, _data=param, _headers=headers)
+            print(headers)
             res = request.post_request_data(case_name="评估APP登录", _url=_URL, _data=param, _headers=headers)
             print(res.cookies.get_dict()['assess_token'])
             headers["Cookie"] = 'assess_token=' + res.cookies.get_dict()['assess_token']

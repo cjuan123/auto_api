@@ -8,6 +8,7 @@
 """
 import unittest
 from conf import Login
+from tools.logger import Logger
 from conf.IDCard import IDCard
 from source.Agencies.agencies import Agencies
 from source.YangLao.yanglao import YangLao
@@ -19,6 +20,11 @@ class TestPersonFlow(unittest.TestCase):
     yang_lao = YangLao()
     id_card = IDCard().idCard(69, 1)
     recordID = []
+
+    @classmethod
+    def setUpClass(cls):
+        print("------------------------ 人员评估 STA------------------------")
+        Logger().info("------------------------ 人员评估 STA------------------------")
 
     @Login.govern_login("18048054262", "123qwe")
     def test_001(self):
@@ -63,7 +69,7 @@ class TestPersonFlow(unittest.TestCase):
         print("【查询评估申请ID】接口返回数据：%s" % response.json())
         print("评估申请ID：【%s】" % rid)
 
-    @Login.agencies_app_login("18048054260", "123456")
+    @Login.agencies_app_login("18048054260", "123qwe")
     def test_004(self):
         """【评估app】：下载评估申请"""
         self.assertEqual(1, len(self.recordID))
@@ -103,6 +109,11 @@ class TestPersonFlow(unittest.TestCase):
         }
         response = self.agencies.save_answer(case_name="上传评估结果", param=param)
         print("【上传评估结果】接口返回数据：%s" % response.json())
+
+    @classmethod
+    def tearDownClass(cls):
+        Logger().info("------------------------ 人员评估 END------------------------")
+        print("------------------------ 人员评估 END------------------------")
 
 
 if __name__ == "__main__":
