@@ -10,12 +10,18 @@ import unittest
 import random
 from conf import Login
 from tools.logger import Logger
+from tools.read_yaml import ReadYaml
 from source.Agencies.agencies import Agencies
 from source.YangLao.yanglao import YangLao
 from tools.http_request import Request
 
 
 class TestDaycareFlow(unittest.TestCase):
+
+    read_yaml = ReadYaml("default.yaml")
+    govern = read_yaml.get_password("govern")
+    agencies_pwd = read_yaml.get_password("agencies_app")
+
     yang_lao = YangLao()
     request = Request()
     agencies = Agencies()
@@ -29,7 +35,7 @@ class TestDaycareFlow(unittest.TestCase):
         print("------------------------ 日照评估 STA------------------------")
         Logger().info("------------------------ 日照评估 STA------------------------")
 
-    @Login.govern_login("18048054262", "123qwe")
+    @Login.govern_login("18048054262", govern)
     def test_001(self):
         """添加日照中心"""
         print("日照中心名称：" + self.sunlightName)
@@ -81,8 +87,8 @@ class TestDaycareFlow(unittest.TestCase):
         self.record_id.append(res.json()["pageView"]["records"][0]["id"])
         print("日照评估ID：%s " % self.record_id)
 
-    @Login.agencies_app_login("18048054260", "123qwe")
-    def test_006(self):
+    @Login.agencies_app_login("18048054260", agencies_pwd)
+    def test_005(self):
         """app下载评估申请"""
         assert len(self.record_id) != 0
         print(self.record_id[0])
@@ -97,7 +103,7 @@ class TestDaycareFlow(unittest.TestCase):
         print("【app下载评估申请】接口返回数据：%s" % res.json())
         self.assertEqual(res.json()['detail'], 'success')
 
-    def test_007(self):
+    def test_006(self):
         """开始评估"""
         param = {
             'recordId': self.record_id[0],
@@ -112,7 +118,7 @@ class TestDaycareFlow(unittest.TestCase):
         print('请求返回数据：%s' % res.json())
         self.assertEqual(res.json()['detail'], 'success')
 
-    def test_008(self):
+    def test_007(self):
         """计算分数"""
         id = self.record_id[0]
         param = {
@@ -218,7 +224,7 @@ class TestDaycareFlow(unittest.TestCase):
         print('请求返回数据：%s' % res.json())
         self.assertEqual(res.json()['detail'], 'success')
 
-    def test_009(self):
+    def test_008(self):
         """上传评估结果"""
         id = self.record_id[0]
         param = {

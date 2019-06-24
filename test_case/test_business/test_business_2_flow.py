@@ -17,6 +17,7 @@ from source.YangLao.yanglao import YangLao
 
 
 class TestBusiness2(unittest.TestCase):
+
     business = Business()
     yang_lao = YangLao()
     id_card = IDCard.IDCard().idCard(66, 2)

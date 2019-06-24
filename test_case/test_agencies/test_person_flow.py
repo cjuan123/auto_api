@@ -10,11 +10,16 @@ import unittest
 from conf import Login
 from tools.logger import Logger
 from conf.IDCard import IDCard
+from tools.read_yaml import ReadYaml
 from source.Agencies.agencies import Agencies
 from source.YangLao.yanglao import YangLao
 
 
 class TestPersonFlow(unittest.TestCase):
+
+    read_yaml = ReadYaml("default.yaml")
+    govern = read_yaml.get_password("govern")
+    agencies_pwd = read_yaml.get_password("agencies_app")
 
     agencies = Agencies()
     yang_lao = YangLao()
@@ -26,7 +31,7 @@ class TestPersonFlow(unittest.TestCase):
         print("------------------------ 人员评估 STA------------------------")
         Logger().info("------------------------ 人员评估 STA------------------------")
 
-    @Login.govern_login("18048054262", "123qwe")
+    @Login.govern_login("18048054262", govern)
     def test_001(self):
         """【政府端】：查询身份证是否存在评估申请"""
         param = {
@@ -69,7 +74,7 @@ class TestPersonFlow(unittest.TestCase):
         print("【查询评估申请ID】接口返回数据：%s" % response.json())
         print("评估申请ID：【%s】" % rid)
 
-    @Login.agencies_app_login("18048054260", "123qwe")
+    @Login.agencies_app_login("18048054260", agencies_pwd)
     def test_004(self):
         """【评估app】：下载评估申请"""
         self.assertEqual(1, len(self.recordID))

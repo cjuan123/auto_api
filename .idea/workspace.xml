@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d673f47-2707-4936-a534-99ff61dfb355" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/Login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_house/test_house_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_house/test_house_flow.py" afterDir="false" />
+      <change beforePath="F:/auto_ui/.idea/auto_ui.iml" beforeDir="false" afterPath="F:/auto_ui/.idea/auto_ui.iml" afterDir="false" />
+      <change beforePath="F:/auto_ui/.idea/misc.xml" beforeDir="false" afterPath="F:/auto_ui/.idea/misc.xml" afterDir="false" />
+      <change beforePath="F:/auto_ui/.idea/workspace.xml" beforeDir="false" afterPath="F:/auto_ui/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="F:/auto_ui/Demo.py" beforeDir="false" afterPath="F:/auto_ui/Demo.py" afterDir="false" />
+      <change beforePath="F:/auto_ui/common/base_page.py" beforeDir="false" afterPath="F:/auto_ui/common/base_page.py" afterDir="false" />
+      <change beforePath="F:/auto_ui/page_object/govern_house/gover_yang_lao.py" beforeDir="false" afterPath="F:/auto_ui/page_object/gover_yang_lao.py" afterDir="false" />
+      <change beforePath="F:/auto_ui/runner/HTMLTestRunnerNew.py" beforeDir="false" afterPath="F:/auto_ui/runner/HTMLTestRunnerNew.py" afterDir="false" />
+      <change beforePath="F:/auto_ui/test_case/test_govern/test_govern_yang_lao.py" beforeDir="false" afterPath="F:/auto_ui/test_case/test_govern/test_govern_yang_lao.py" afterDir="false" />
+      <change beforePath="F:/auto_ui/tools/file_path.py" beforeDir="false" afterPath="F:/auto_ui/tools/file_path.py" afterDir="false" />
+      <change beforePath="F:/auto_ui/yamls/element/govern_yang_lao_element.yaml" beforeDir="false" afterPath="F:/auto_ui/yamls/element/govern_yang_lao_element.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +81,8 @@
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_1_flow_py.coverage" NAME="Unittests in test_business_1_flow.py Coverage Results" MODIFIED="1560934153578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_ Coverage Results" MODIFIED="1559803311467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_apply_gover_TestTransformGovern_test_006_verify_transform.coverage" NAME="Unittests for test_transform_apply_gover.TestTransformGovern.test_006_verify_transform Coverage Results" MODIFIED="1559725697804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
-    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_person_flow_py.coverage" NAME="Unittests in test_person_flow.py Coverage Results" MODIFIED="1560410158655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_agencies" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_person_flow_TestPersonFlow_test_004.coverage" NAME="Unittests for test_person_flow.TestPersonFlow.test_004 Coverage Results" MODIFIED="1561362907116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_agencies" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_person_flow_py.coverage" NAME="Unittests in test_person_flow.py Coverage Results" MODIFIED="1561362980610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_agencies" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_apply_gover_TestTransformGovern_test_008_get_assessment_list.coverage" NAME="Unittests for test_transform_apply_gover.TestTransformGovern.test_008_get_assessment_list Coverage Results" MODIFIED="1559727607190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_flow_TestTransformFlow_test_012_agency_user_edit_submit.coverage" NAME="Unittests for test_transform_flow.TestTransformFlow.test_012_agency_user_edit_submit Coverage Results" MODIFIED="1559740000618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_assessment_gover_TestAssessmentGovern_test_query_agencies_list.coverage" NAME="Unittests for test_assessment_gover.TestAssessmentGovern.test_query_agencies_list Coverage Results" MODIFIED="1559716996922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
@@ -121,73 +132,51 @@
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_gover_TestTransformGovern_test_002_get_product_list.coverage" NAME="Unittests for test_transform_gover.TestTransformGovern.test_002_get_product_list Coverage Results" MODIFIED="1559630710602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_gover_TestTransformGovern_test_get_product_list.coverage" NAME="Unittests for test_transform_gover.TestTransformGovern.test_get_product_list Coverage Results" MODIFIED="1559630278195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_govern_product_TestGovernProduct_test_1_add_product.coverage" NAME="Unittests for test_govern_product.TestGovernProduct.test_1_add_product Coverage Results" MODIFIED="1560502488439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_house" />
-    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_daycare_flow_py.coverage" NAME="Unittests in test_daycare_flow.py Coverage Results" MODIFIED="1560410252032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_agencies" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_daycare_flow_py.coverage" NAME="Unittests in test_daycare_flow.py Coverage Results" MODIFIED="1561363022134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_agencies" />
     <SUITE FILE_PATH="coverage/auto_api$mysql_helper.coverage" NAME="mysql_helper Coverage Results" MODIFIED="1559014261129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_gover_TestTransformGovern_test_get_product_detail.coverage" NAME="Unittests for test_transform_gover.TestTransformGovern.test_get_product_detail Coverage Results" MODIFIED="1559629321436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_transform_flow_py.coverage" NAME="Unittests in test_transform_flow.py Coverage Results" MODIFIED="1560340112091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_gover_TestTransformGovern_test_add_product.coverage" NAME="Unittests for test_transform_gover.TestTransformGovern.test_add_product Coverage Results" MODIFIED="1559629978232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Login.coverage" NAME="Login Coverage Results" MODIFIED="1559027406341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/conf" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="558410317">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="log" value="1" />
+          <entry key="py" value="13" />
+          <entry key="yaml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Log" value="1" />
+          <entry key="Python" value="13" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="167" />
+          <entry key="yaml" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="167" />
+          <entry key="YAML" value="24" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="163" column="47" selection-start-line="163" selection-start-column="47" selection-end-line="163" selection-end-column="47" />
-              <folding>
-                <element signature="e#150#175#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow_gover_balance.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_government_cater.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-              <folding>
-                <element signature="e#92#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_case/test_house/test_house_flow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14035">
-              <caret line="555" column="55" selection-start-line="555" selection-start-column="55" selection-end-line="555" selection-end-column="55" />
-              <folding>
-                <element signature="e#2720#3306#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="88" />
-              <folding>
-                <element signature="e#144#159#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -212,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/yamls/default.yaml" />
         <option value="$PROJECT_DIR$/logs/demo_log.py" />
         <option value="$PROJECT_DIR$/logs/logg.py" />
         <option value="$PROJECT_DIR$/logs/log.txt" />
@@ -253,16 +241,17 @@
         <option value="$PROJECT_DIR$/source/Agencies/agencies_api.py" />
         <option value="$PROJECT_DIR$/source/Business/business_api.py" />
         <option value="$PROJECT_DIR$/source/YangLao/yanglao_api.py" />
-        <option value="$PROJECT_DIR$/conf/Login.py" />
         <option value="$PROJECT_DIR$/logs/2019_06_23.log" />
-        <option value="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" />
-        <option value="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" />
-        <option value="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" />
-        <option value="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" />
         <option value="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" />
         <option value="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" />
         <option value="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" />
         <option value="$PROJECT_DIR$/test_case/test_house/test_house_flow.py" />
+        <option value="$PROJECT_DIR$/conf/Login.py" />
+        <option value="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" />
+        <option value="$PROJECT_DIR$/yamls/default.yaml" />
+        <option value="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" />
+        <option value="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" />
+        <option value="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" />
       </list>
     </option>
   </component>
@@ -297,6 +286,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,24 +328,6 @@
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="test_case" type="462c0819:PsiDirectoryNode" />
-              <item name="test_business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="test_case" type="462c0819:PsiDirectoryNode" />
-              <item name="test_cater_set" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="test_case" type="462c0819:PsiDirectoryNode" />
-              <item name="test_house" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
               <item name="test_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -372,7 +344,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,7 +377,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.runner_agencies">
+  <component name="RunManager" selected="Python tests.Unittests in test_daycare_flow.py">
     <configuration name="runner_agencies" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="auto_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -419,6 +390,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_case/runner_agencies.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -440,6 +412,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_case/runner_business.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -449,62 +422,65 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in test_business_1_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_person_flow.TestPersonFlow.test_004" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="auto_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_agencies" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py&quot;" />
+      <option name="_new_target" value="&quot;test_person_flow.TestPersonFlow.test_004&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_daycare_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="auto_api" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_agencies" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in test_business_2_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in test_person_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="auto_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_agencies" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in test_business_5_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="auto_api" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests in test_business_1_flow.py" />
-      <item itemvalue="Python tests.Unittests in test_business_2_flow.py" />
-      <item itemvalue="Python tests.Unittests in test_business_5_flow.py" />
       <item itemvalue="Python.runner_business" />
       <item itemvalue="Python.runner_agencies" />
+      <item itemvalue="Python tests.Unittests in test_person_flow.py" />
+      <item itemvalue="Python tests.Unittests for test_person_flow.TestPersonFlow.test_004" />
+      <item itemvalue="Python tests.Unittests in test_daycare_flow.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in test_daycare_flow.py" />
+        <item itemvalue="Python tests.Unittests in test_person_flow.py" />
+        <item itemvalue="Python tests.Unittests for test_person_flow.TestPersonFlow.test_004" />
         <item itemvalue="Python.runner_agencies" />
         <item itemvalue="Python.runner_business" />
-        <item itemvalue="Python tests.Unittests in test_business_5_flow.py" />
-        <item itemvalue="Python tests.Unittests in test_business_1_flow.py" />
-        <item itemvalue="Python tests.Unittests in test_business_2_flow.py" />
       </list>
     </recent_temporary>
   </component>
@@ -522,47 +498,46 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_person_flow_py - 2019.06.23 at 10h 22m 43s.xml">
+    <history-entry file="Unittests_in_test_person_flow_py - 2019.06.24 at 15h 49m 03s.xml">
       <configuration name="Unittests in test_person_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 44m 35s.xml">
-      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_person_flow_py - 2019.06.24 at 15h 49m 25s.xml">
+      <configuration name="Unittests in test_person_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 47m 49s.xml">
-      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_person_flow_TestPersonFlow_test_004 - 2019.06.24 at 15h 50m 15s.xml">
+      <configuration name="Unittests for test_person_flow.TestPersonFlow.test_004" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 48m 27s.xml">
-      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_person_flow_py - 2019.06.24 at 15h 50m 48s.xml">
+      <configuration name="Unittests in test_person_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 49m 15s.xml">
-      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_person_flow_TestPersonFlow_test_004 - 2019.06.24 at 15h 51m 22s.xml">
+      <configuration name="Unittests for test_person_flow.TestPersonFlow.test_004" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 49m 51s.xml">
-      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_person_flow_TestPersonFlow_test_004 - 2019.06.24 at 15h 53m 48s.xml">
+      <configuration name="Unittests for test_person_flow.TestPersonFlow.test_004" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 11h 52m 02s.xml">
-      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_person_flow_TestPersonFlow_test_004 - 2019.06.24 at 15h 54m 12s.xml">
+      <configuration name="Unittests for test_person_flow.TestPersonFlow.test_004" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_2_flow_py - 2019.06.23 at 11h 52m 26s.xml">
-      <configuration name="Unittests in test_business_2_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_person_flow_TestPersonFlow_test_004 - 2019.06.24 at 15h 55m 07s.xml">
+      <configuration name="Unittests for test_person_flow.TestPersonFlow.test_004" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.06.23 at 12h 30m 42s.xml">
-      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_person_flow_py - 2019.06.24 at 15h 56m 27s.xml">
+      <configuration name="Unittests in test_person_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_business_5_flow_py - 2019.06.23 at 12h 31m 26s.xml">
-      <configuration name="Unittests in test_business_5_flow.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_daycare_flow_py - 2019.06.24 at 15h 57m 06s.xml">
+      <configuration name="Unittests in test_daycare_flow.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22192867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22441365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275488" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31586403" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.54880697" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45010847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -616,6 +591,9 @@
       </list>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
@@ -635,13 +613,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_case_ddt/test_house.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/2019_06_14.log" />
     <entry file="file://$PROJECT_DIR$/conf/IDCard.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -665,13 +636,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/2019_06_18.log" />
-    <entry file="file://$PROJECT_DIR$/conf/HEADERS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ddt_tool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -683,13 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yamls/default.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -762,12 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="670">
           <caret line="100" column="19" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
-          <folding>
-            <element signature="e#627#830#0" />
-            <element signature="e#959#1314#0" />
-            <element signature="e#1437#3311#0" />
-            <element signature="e#3454#5963#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,17 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="158" column="56" selection-start-line="158" selection-start-column="56" selection-end-line="158" selection-end-column="56" />
-          <folding>
-            <element signature="e#986#1635#0" />
-            <element signature="e#1656#2194#0" />
-            <element signature="e#2292#2655#0" />
-            <element signature="e#2781#3130#0" />
-            <element signature="e#3187#3582#0" />
-            <element signature="e#3655#4255#0" />
-            <element signature="e#4404#4753#0" />
-            <element signature="e#4840#5252#0" />
-            <element signature="e#4976#5142#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -800,13 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="99" column="71" selection-start-line="99" selection-start-column="71" selection-end-line="99" selection-end-column="71" />
-          <folding>
-            <element signature="e#762#1693#0" />
-            <element signature="e#806#1431#0" />
-            <element signature="e#1751#2253#0" />
-            <element signature="e#2310#3865#0" />
-            <element signature="e#2355#3577#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,16 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="144" column="43" selection-start-line="144" selection-start-column="43" selection-end-line="144" selection-end-column="43" />
-          <folding>
-            <element signature="e#739#1094#0" />
-            <element signature="e#1266#1766#0" />
-            <element signature="e#1964#2469#0" />
-            <element signature="e#2537#3499#0" />
-            <element signature="e#2425#3109#0" />
-            <element signature="e#3425#3923#0" />
-            <element signature="e#4392#4803#0" />
-            <element signature="e#4857#5268#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -838,16 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="143" column="49" selection-start-line="143" selection-start-column="49" selection-end-line="143" selection-end-column="49" />
-          <folding>
-            <element signature="e#825#2006#0" />
-            <element signature="e#865#1738#0" />
-            <element signature="e#2071#2578#0" />
-            <element signature="e#2639#3863#0" />
-            <element signature="e#2681#3594#0" />
-            <element signature="e#3917#4339#0" />
-            <element signature="e#4398#4783#0" />
-            <element signature="e#4843#5158#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,13 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
-          <folding>
-            <element signature="e#790#1517#0" />
-            <element signature="e#1820#2284#0" />
-            <element signature="e#2366#2868#0" />
-            <element signature="e#3176#3544#0" />
-            <element signature="e#3595#4021#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -890,13 +796,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/tools/python364/Lib/unittest/loader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/tools/python364/Lib/unittest/loader.py" />
     <entry file="file://$PROJECT_DIR$/source/Business/business_api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -921,80 +821,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/Login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3078">
-          <caret line="114" column="106" selection-start-line="114" selection-start-column="106" selection-end-line="114" selection-end-column="106" />
-          <folding>
-            <element signature="e#109#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_case/runner_agencies.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding>
-            <element signature="e#133#143#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019_06_23.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1232">
-          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-          <folding>
-            <element signature="e#126#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="328" column="4" selection-start-line="328" selection-start-column="4" selection-end-line="331" selection-end-column="74" />
-          <folding>
-            <element signature="e#126#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_06_23.log" />
     <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/runner_cater.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#84#99#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-          <folding>
-            <element signature="e#148#163#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
-          <folding>
-            <element signature="e#150#165#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,33 +840,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-          <folding>
-            <element signature="e#144#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="163" column="47" selection-start-line="163" selection-start-column="47" selection-end-line="163" selection-end-column="47" />
-          <folding>
-            <element signature="e#150#175#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow_gover_balance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+        <state relative-caret-position="837">
+          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_government_cater.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        <state relative-caret-position="594">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
           <folding>
             <element signature="e#92#137#0" expanded="true" />
           </folding>
@@ -1037,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="88" />
+        <state relative-caret-position="837">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
           <folding>
             <element signature="e#144#159#0" expanded="true" />
           </folding>
@@ -1047,10 +872,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_case/test_house/test_house_flow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14035">
-          <caret line="555" column="55" selection-start-line="555" selection-start-column="55" selection-end-line="555" selection-end-column="55" />
+        <state relative-caret-position="6084">
+          <caret line="558" selection-start-line="558" selection-end-line="558" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/HEADERS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/Login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
           <folding>
-            <element signature="e#2720#3306#0" />
+            <element signature="e#109#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_06_24.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-1487" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4509">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+          <folding>
+            <element signature="e#150#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#150#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yamls/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="57" />
+          <folding>
+            <element signature="e#126#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="21" selection-end-column="45" />
+          <folding>
+            <element signature="e#148#163#0" expanded="true" />
+            <element signature="e#765#1776#0" />
+            <element signature="e#1859#2264#0" />
+            <element signature="e#2298#2610#0" />
+            <element signature="e#2690#3004#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="89" column="57" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
+          <folding>
+            <element signature="e#126#141#0" expanded="true" />
           </folding>
         </state>
       </provider>

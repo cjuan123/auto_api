@@ -104,19 +104,17 @@ def agencies_app_login(account, password):
     def login(func):
         def inner(*args):
             headers["Cookie"] = None
+            headers["useragent"] = "Mozilla/5.0 (Linux; Android 5.1; MI PAD 2 Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 Safari/537.36 #a-qspg-14"
             print("=========================== 【评估APP】登录账号：%s ===========================" % account)
             _URL = agencies + "/api/user/login"
             param = {
                 'phone': account,
                 'password': password
             }
-            res = request.post_request_data(case_name="评估app登录", _url=_URL, _data=param, _headers=headers)
-            print(headers)
+            request.post_request_data(case_name="评估app登录", _url=_URL, _data=param, _headers=headers)
             res = request.post_request_data(case_name="评估APP登录", _url=_URL, _data=param, _headers=headers)
-            print(res.cookies.get_dict()['assess_token'])
             headers["Cookie"] = 'assess_token=' + res.cookies.get_dict()['assess_token']
-            print(res.json()['detail'])
-            print(res.json()['data']['agencyId'])
+            print(res.json())
             func(*args)
         return inner
     return login
