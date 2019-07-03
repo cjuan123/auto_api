@@ -2,15 +2,13 @@
 """
 @version: 1.0
 @author: chenj
-@file: run_govern_house.py
+@file: runner_govern_house.py
 @time: 2019/6/13 14:49
 @desc：运行适老化改造流程脚本，并生成测试报告
 """
-import sys, os
+import sys, os, time, unittest
 sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)).split('auto_api')[0], "auto_api"))
 
-import unittest
-import time
 from tools.file_path import FilePath
 from runner import HTMLTestRunnerNew
 

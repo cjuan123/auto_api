@@ -27,24 +27,39 @@ class ReadYaml:
         return url_data
 
     def house_govern(self, type, api_name):
+        """适老化政府端接口地址"""
         data = self.open_yaml()
         return data["house_govern"][type][api_name]
 
     def house_constructor(self, type, api_name):
+        """适老化施工单位接口地址"""
         data = self.open_yaml()
         return data["house_constructor"][type][api_name]
 
     def business(self, type, api_name):
+        """服务企业端接口地址"""
         data = self.open_yaml()
         return data["business"][type][api_name]
 
     def agencies(self, type, api_name):
+        """评估机构接口地址"""
         data = self.open_yaml()
         return data["agencies"][type][api_name]
 
     def govern_agencies(self, type, api_name):
+        """政府端评估机构接口地址"""
         data = self.open_yaml()
         return data["govern_agencies"][type][api_name]
+
+    def govern_cater(self, api_name):
+        """大配餐政府端接口地址"""
+        data = self.open_yaml()
+        return data["govern_cater"][api_name]
+
+    def cater(self, api_name):
+        """大配餐企业端接口地址"""
+        data = self.open_yaml()
+        return data["cater"][api_name]
 
     def get_header(self):
         data = self.open_yaml()

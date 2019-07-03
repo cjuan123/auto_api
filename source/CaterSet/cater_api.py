@@ -4,7 +4,7 @@
 @file: cater_api.py
 @time: 2019/5/19 11:55
 """
-from conf import DEFAULT
+
 goverment_host = "https://test.chinaylzl.com"
 pc_host = "https://test3.chinaylzl.com"
 

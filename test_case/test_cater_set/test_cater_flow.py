@@ -37,7 +37,7 @@ class TestCaterFlow(unittest.TestCase):
         param = {
             "idcard": self.id_card
         }
-        response = self.g_cater.get_user_by_id_card(param)
+        response = self.g_cater.get_user_by_id_card(case_name="添加人员", param=param)
         print(response.json())
         self.assertEqual("操作成功", response.json()["message"])
         print("人员身份证号：%s" % self.id_card)
@@ -62,7 +62,8 @@ class TestCaterFlow(unittest.TestCase):
             "useYanglao": 1,
             "userGoverBalance": {}
         }
-        response = self.g_cater.add_user(param=param)
+        print(param)
+        response = self.g_cater.add_user(case_name="添加人员", param=param)
         print(response.json())
 
     def test_002(self):
@@ -162,6 +163,7 @@ class TestCaterFlow(unittest.TestCase):
     def tearDownClass(cls):
         Logger().info("------------------------ 大配餐 END ------------------------")
         print("------------------------ 大配餐 END ------------------------")
+
 
 if __name__ == "__main__":
     unittest.main()

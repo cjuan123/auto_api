@@ -6,11 +6,11 @@
 @time: 2019/6/13 20:34
 @desc：运行评估流程脚本，并生成测试报告
 """
+import unittest
+import time
 import sys
 import os
 sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)).split('auto_api')[0], "auto_api"))
-import unittest
-import os, time
 from tools.file_path import FilePath
 from runner import HTMLTestRunnerNew
 

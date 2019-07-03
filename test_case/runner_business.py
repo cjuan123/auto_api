@@ -6,9 +6,9 @@
 @time: 2019/6/13 20:34
 @desc：运行企业订单流程脚本，并生成测试报告
 """
-import sys, os
+import sys, os, unittest, time
 sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)).split('auto_api')[0], "auto_api"))
-import unittest, time
+
 from tools.file_path import FilePath
 from runner import HTMLTestRunnerNew
 

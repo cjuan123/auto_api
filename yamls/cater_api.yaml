@@ -1,0 +1,15 @@
+# 大配餐web、app接口地址
+govern_cater:
+  userlist: /cater-server/user/userList   # 人员列表
+  getUserByIdCard: /cater-server/user/getUserByIdCard   # 添加人员更加身份证查询是否存在
+  adduser: /cater-server/user/addUser   # 添加人员
+  reviewUser: /cater-server/review/reviewUser   # 人员审核：checkType  1.审核    2.复审
+  queryAllApplyUser: /cater-server/review/queryAllApplyUser   # 人员审核：查询人员申请，获取applyID
+
+cater:
+  setRecharge: /recharge/setRecharge  # 人员充值
+  memberList: /member/memberList     # 人员列表 根据身份查询，获取userid
+  addAppointment: /appointment/addAppointment    # 新增预约
+
+  completeEat: /api/completeEat  # 大配餐app 就餐扫码
+

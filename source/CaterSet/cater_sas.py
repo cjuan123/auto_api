@@ -8,12 +8,12 @@
 """
 from source.CaterSet import cater_api as cater
 from tools.http_request import Request
-from conf import DEFAULT
+from conf import HEADERS
 
 
 class CaterSAS:
     request = Request()
-    header = DEFAULT.HEADERS
+    header = HEADERS.headers
 
     def member_list(self, case_name, param):
         """企业端：根据身份证查询"""
