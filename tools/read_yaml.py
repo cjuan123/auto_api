@@ -19,8 +19,8 @@ class ReadYaml:
     def open_yaml(self):
         """打开yaml文件"""
         try:
-            with open(self.path, 'r', encoding='utf-8') as url:
-                url_data = yaml.load(url)
+            with open(self.path, 'r', encoding='utf-8') as u:
+                url_data = yaml.load(u)
             return url_data
         except Exception as e:
             print('yaml读取失败，原因为：%s' % e)

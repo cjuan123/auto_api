@@ -17,23 +17,23 @@ from tools.logger import Logger
 class TestCater(unittest.TestCase):
     g_cater = GovernCater()
     log = Logger()
-    test_data = ReadExcel("case_data.xlsx").row_value()
+    test_data = ReadExcel("case_data.xlsx", "cater").row_value()
 
     @classmethod
     def setUpClass(cls):
         print("------------------------------STA------------------------------")
         cls.log.info("------------------------ 大配餐 STA ------------------------")
 
-
     @ddt.data(*test_data)
     @ddt.unpack
     @Login.govern_login("13999999992", "123qwe")
-    def test_add_user(self, moudle, api_name, case_num, case_detail, param, except_result, result):
+    def test_add_user(self, moudle, api_name, case_no, case_detail, param, except_result, case_desc):
         """大配餐政府端添加人员"""
-        param = json.loads(param)
-        response = self.g_cater.add_user(case_name=case_num, param=param)
-        print(response.json())
-        self.log.info("【%s】 - 【返回结果】" % (case_num, response.json()))
+        if api_name == "add_user":
+            response = self.g_cater.add_user(case_name=case_detail, param=json.loads(param))
+            self.log.info("【%s】 - 返回结果：%s" % (case_detail, response.json()))
+            self.log.info("【%s】 - 用例描述：%s" % (case_detail, case_desc))
+            self.assertEqual(except_result, response.json()["message"])
 
     @classmethod
     def tearDownClass(cls):

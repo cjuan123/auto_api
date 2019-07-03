@@ -12,12 +12,12 @@ from tools.file_path import FilePath
 
 class ReadExcel:
 
-    def __init__(self, excel_path):
+    def __init__(self, excel_path, sheet_name):
         self.root_path = FilePath().excel_path()
         self.path = os.path.join(self.root_path, excel_path)
         # 打开excel文件
         work_book = xlrd.open_workbook(self.path, encoding_override="utf-8")
-        self.data_sheet = work_book.sheet_by_name("Sheet1")
+        self.data_sheet = work_book.sheet_by_name(sheet_name)
 
     def row_num(self):
         """获取行数"""
