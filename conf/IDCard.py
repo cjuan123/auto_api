@@ -64,7 +64,7 @@ class IDCard(object):
 
 
 id = IDCard()
-print(id.idCard(88, 1))
+print(id.idCard(40, 1))
 print(id.idCard(88, 1))
 print(id.idCard(88, 1))
 print(id.idCard(88, 1))

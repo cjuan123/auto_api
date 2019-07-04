@@ -81,6 +81,10 @@ class ReadYaml:
         data = self.open_yaml()
         return data["district"][type]
 
+    def get_msyql(self):
+        data = self.open_yaml()
+        return data["mysql"]
+
     def close_yaml(self):
         """关闭文件"""
         self.fo.close()

@@ -29,6 +29,10 @@ class FilePath:
         root = self.root_path()
         return os.path.join(root, "test_case")
 
+    def case_ddt_path(self):
+        root = self.root_path()
+        return os.path.join(root, "test_case_ddt")
+
     def yaml_path(self):
         root = self.root_path()
         return os.path.join(root, "yamls")

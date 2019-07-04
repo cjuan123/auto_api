@@ -29,10 +29,17 @@ class ReadExcel:
         col_num = self.data_sheet.ncols  # 列数
         return col_num
 
-    def row_value(self):
+    def row_values(self):
         row_values = []
         for num in range(1, self.row_num()):
             row_values.append(self.data_sheet.row_values(num))
+        return row_values
+
+    def row_value(self, api_name):
+        row_values = []
+        for num in range(1, len(self.data_sheet.col_values(1))):
+            if self.data_sheet.row_values(num)[1] == api_name:
+                row_values.append(self.data_sheet.row_values(num))
         return row_values
 
     def col_values(self):
@@ -41,11 +48,19 @@ class ReadExcel:
             col_values.append(self.data_sheet.col_values(num))
         return col_values
 
+    def col_value(self):
+        col_values = []
+        for num in range(1, len(self.data_sheet.col_values(1))):
+            if self.data_sheet.row_values(num)[1] == "get_user_by_id_card":
+                print(self.data_sheet.row_values(num))
+
+
+
+
 
 # excel_dir = "case_data.xlsx"
-# readExcel = ReadExcel(excel_dir)
-# readExcel.row_value()
-# print(readExcel.row_value())
+# readExcel = ReadExcel(excel_dir, "cater")
+# # readExcel.row_value()
+# # print(readExcel.row_value()[0][1])
 #
-# readExcel.col_values()
-# print(readExcel.col_values())
+# readExcel.col_value()

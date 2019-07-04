@@ -12,7 +12,7 @@ from pymysql import *
 
 class MysqlHelper:
     # host, port, user, password, db, charset='utf8'
-    def __init__(self, host, port, user, password, db, charset='utf8'):
+    def __init__(self, host, user, password, db, port=3306, charset='utf8'):
         """连接数据库的基本信息"""
         self.host = host
         self.port = port
@@ -47,8 +47,8 @@ class MysqlHelper:
         result = self.cursor.fetchall()
         return result
 
-
-# my_sql = MysqlHelper(host='', port=3306, user='', password='',db='')
-# sql = "SELECT * FROM `appointment` where user_id = 1357 and enabled = 1;"
-# result = my_sql.findAll(sql)
-# print(my_sql.findAll(sql))
+    def find_one(self, sql, param=()):
+        self.open()
+        self.cursor.execute(sql, param)
+        result = self.cursor.fetchone()
+        return result
