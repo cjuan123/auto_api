@@ -37,6 +37,7 @@ class TestCaterFlow(unittest.TestCase):
         param = {
             "idcard": self.id_card
         }
+        print(param)
         response = self.g_cater.get_user_by_id_card(case_name="添加人员", param=param)
         print(response.json())
         self.assertEqual("操作成功", response.json()["message"])
@@ -63,8 +64,8 @@ class TestCaterFlow(unittest.TestCase):
             "userGoverBalance": {}
         }
         print(param)
-        response = self.g_cater.add_user(case_name="添加人员", param=param)
-        print(response.json())
+        # response = self.g_cater.add_user(case_name="添加人员", param=param)
+        # print(response.json())
 
     def test_002(self):
         """根据身份证获取applyid"""
