@@ -53,7 +53,7 @@ class TestCaterFlow(unittest.TestCase):
             "homeDeliveryDetail": "",
             "idCard": self.id_card,
             "isArea": 1,
-            "mealId": 135,
+            "mealId": "135",
             "name": "api" + datetime.datetime.now().strftime('%m%d%H'),
             "otherCredentials": [],
             "permanentAddress": "测试户籍地址",

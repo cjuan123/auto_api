@@ -32,18 +32,26 @@ class TestCater(unittest.TestCase):
     @ddt.data(*ReadExcel("case_data.xlsx", "cater").row_value("get_user_by_id_card"))
     @ddt.unpack
     @Login.govern_login("13999999992", "123qwe")
-    def test_get_user_by_id_card(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
+    def test_1_get_user_by_id_card(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
         """大配餐政府端添加人员:711557193107046197"""
         param = json.loads(data)
-        self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
-        response = self.g_cater.get_user_by_id_card(case_name=case_name, param=param)
-        self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
-        self.assertEqual(except_result, response.json()["message"])
+        result = self.cater_helper.query_user_by_id_card(param["idcard"])   # 查询数据库
+        if result == None:
+            self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
+            response = self.g_cater.get_user_by_id_card(case_name=case_name, param=param)
+            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            self.assertEqual(except_result, response.json()["message"])
+        else:
+            response = self.g_cater.get_user_by_id_card(case_name=case_name, param=param)
+            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            self.assertEqual(except_result, response.json()["message"])
+            self.cater_helper.del_cater_user_info(result[0])    # 删除数据库记录
+            self.log.info("【身份证：%s】 - 删除成功" % (param["idcard"]))
 
     @ddt.data(*ReadExcel("case_data.xlsx", "cater").row_value("add_user"))
     @ddt.unpack
     @Login.govern_login("13999999992", "123qwe")
-    def _test_add_user(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
+    def test_2_add_user(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
         """大配餐政府端添加人员:711557193107046197"""
         param = json.loads(data)
         self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))

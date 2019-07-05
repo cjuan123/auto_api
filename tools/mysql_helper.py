@@ -34,11 +34,10 @@ class MysqlHelper:
     def cud(self, sql, param=()):
         """增删改"""
         self.open()
-        print(sql)
+        self.con.ping(reconnect=True)
         self.cursor.execute(sql, param)
         self.con.commit()
         print('OK!')
-        self.close()
 
     def find_all(self, sql, param=()):
         """查询数据"""
