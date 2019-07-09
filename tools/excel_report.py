@@ -8,7 +8,6 @@
 """
 import xlsxwriter
 import time, os
-from tools.read_excel import ReadExcel
 from tools.file_path import FilePath
 
 
