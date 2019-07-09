@@ -6,6 +6,7 @@
 @time: 2019/7/3 17:00
 @desc：
 """
+import datetime
 import ddt, json, unittest
 from tools.read_excel import ReadExcel
 from source.CaterSet.cater import GovernCater
@@ -17,18 +18,21 @@ from tools.excel_report import ExcelReport
 
 @ddt.ddt
 class TestCater(unittest.TestCase):
-    g_cater = GovernCater()
-    log = Logger()
-    excel_report = ExcelReport()
-    excel_data = {}
-    excel_data["info"] = []
-    # test_data = ReadExcel("case_data.xlsx", "cater").row_value()
 
     @classmethod
     def setUpClass(cls):
+        cls.cater_helper = CaterHelper()
+        cls.g_cater = GovernCater()
+        cls.log = Logger()
+        cls.excel_report = ExcelReport()
+        cls.excel_data = []
+        cls.start = datetime.datetime.now()
+
+        cls.success_num = []
+        cls.fail_num = []
+
         print("------------------------------STA------------------------------")
         cls.log.info("------------------------ 大配餐 STA ------------------------")
-        cls.cater_helper = CaterHelper()
 
     def setUp(self):
         self.log.info("------------------ 用例 STA ------------------")
@@ -39,48 +43,78 @@ class TestCater(unittest.TestCase):
     def test_1_get_user_by_id_card(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
         """大配餐政府端添加人员:711557193107046197"""
         excel = {}
+        excel["t_moudle"] = moudle
         excel["t_id"] = case_no
         excel["t_name"] = case_name
         excel["t_method"] = "get"
         excel["t_param"] = data
-        excel["t_url"] = "https://test.chinaylzl.com/queryuserbyidcard"
         excel["t_hope"] = except_result
-        excel["t_result"] = case_desc
-
-        param = json.loads(data)
-        result = self.cater_helper.query_user_by_id_card(param["idcard"])   # 查询数据库
-        if result == None:
+        try:
+            param = json.loads(data)
+            result = self.cater_helper.query_user_by_id_card(param["idcard"])   # 查询数据库
+            if result != None:
+                self.cater_helper.del_cater_user_info(result[0])    # 删除数据库记录
+                self.log.info("【身份证：%s】 - 删除成功" % (param["idcard"]))
             self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
             response = self.g_cater.get_user_by_id_card(case_name=case_name, param=param)
             self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            excel["t_actual"] = response.json()["message"]
             self.assertEqual(except_result, response.json()["message"])
-        else:
-            response = self.g_cater.get_user_by_id_card(case_name=case_name, param=param)
-            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
-            self.assertEqual(except_result, response.json()["message"])
-            self.cater_helper.del_cater_user_info(result[0])    # 删除数据库记录
-            self.log.info("【身份证：%s】 - 删除成功" % (param["idcard"]))
-        excel["t_actual"] = response.json()["message"]
-        self.excel_data["info"].append(excel)
-        print(self.excel_data)
+            excel["t_result"] = "通过"
+            self.success_num.append("通过")
+        except Exception as e:
+            print("异常：%s" % e)
+            excel["t_result"] = "失败"
+            self.fail_num.append("失败")
+        finally:
+            self.excel_data.append(excel)
 
     @ddt.data(*ReadExcel("case_data.xlsx", "cater").row_value("add_user"))
     @ddt.unpack
     @Login.govern_login("13999999992", "123qwe")
-    def Ttest_2_add_user(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
+    def test_2_add_user(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
         """大配餐政府端添加人员:711557193107046197"""
-        param = json.loads(data)
-        self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
-        response = self.g_cater.add_user(case_name=case_name, param=param)
-        self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
-        self.assertEqual(except_result, response.json()["message"])
+        excel = {}
+        excel["t_moudle"] = moudle
+        excel["t_id"] = case_no
+        excel["t_name"] = case_name
+        excel["t_method"] = "post"
+        excel["t_param"] = data
+        excel["t_hope"] = except_result
+        try:
+            param = json.loads(data)
+            self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
+            response = self.g_cater.add_user(case_name=case_name, param=param)
+            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            excel["t_actual"] = response.json()["message"]
+            self.assertEqual(except_result, response.json()["message"])
+            excel["t_result"] = "通过"
+            self.success_num.append("通过")
+        except Exception as e:
+            print("异常：%s" % e)
+            excel["t_result"] = "失败"
+            self.fail_num.append("失败")
+        finally:
+            self.excel_data.append(excel)
 
     def tearDown(self):
         self.log.info("------------------ 用例 END ------------------")
 
     @classmethod
     def tearDownClass(cls):
-        print(cls.excel_data)
+        cls.end = datetime.datetime.now()
+        cls.profile_data = {}
+        cls.profile_data["test_name"] = "大配餐"
+        cls.profile_data["test_version"] = "version 2.3"
+        cls.profile_data["test_language"] = "python 3"
+        cls.profile_data["test_net"] = "test"
+        cls.profile_data["test_date"] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        cls.profile_data["test_sum"] = ReadExcel("case_data.xlsx", "cater").row_num() - 1
+        cls.profile_data["test_success"] = len(cls.success_num)
+        cls.profile_data["test_failed"] = len(cls.fail_num)
+        cls.profile_data["test_time"] = "%s s" % (cls.end - cls.start)
+
+        cls.excel_report.test_profile(data=cls.profile_data)
         cls.excel_report.test_info(cls.excel_data)
         cls.excel_report.close()
         cls.log.info("------------------------ 大配餐 END ------------------------")
