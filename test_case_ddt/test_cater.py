@@ -27,10 +27,10 @@ class TestCater(unittest.TestCase):
         cls.excel_report = ExcelReport()
         cls.excel_data = []
         cls.start = datetime.datetime.now()
-        cls.success_num = []
-        cls.fail_num = []
+        cls.success_num = []    # 测试用例成功数
+        cls.fail_num = []       # 测试用例失败数
 
-        cls.user_id = []
+        cls.user_id = []        # 添加人员ID
 
         print("------------------------------STA------------------------------")
         cls.log.info("------------------------ 大配餐 STA ------------------------")
