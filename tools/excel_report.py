@@ -49,6 +49,7 @@ class ExcelReport(object):
         worksheet.set_column("F:F", 20)
         worksheet.set_column("G:G", 20)
         worksheet.set_column("H:H", 20)
+        worksheet.set_column("I:I", 20)
 
     # 设置行高度
     def set_rows_heigh(self, worksheet):
@@ -108,15 +109,16 @@ class ExcelReport(object):
     def test_info(self, data):
         self.set_rows_heigh(self.sheet_info)
         self.set_column_width(self.sheet_info)
-        self.sheet_info.merge_range("A1:H1", "测试详情", self.head_1_format())
+        self.sheet_info.merge_range("A1:I1", "测试详情", self.head_1_format())
         self.sheet_info.write("A2", "模块", self.head_2_format())
         self.sheet_info.write("B2", "用例ID", self.head_2_format())
         self.sheet_info.write("C2", "用例名称", self.head_2_format())
-        self.sheet_info.write("D2", "请求方法", self.head_2_format())
+        self.sheet_info.write("D2", "接口名称", self.head_2_format())
         self.sheet_info.write("E2", "请求参数", self.head_2_format())
         self.sheet_info.write("F2", "预期结果", self.head_2_format())
         self.sheet_info.write("G2", "实际结果", self.head_2_format())
         self.sheet_info.write("H2", "测试结果", self.head_2_format())
+        self.sheet_info.write("I2", "返回数据", self.head_2_format())
         # self.sheet_info.write("H2", "测试结果", self.head_2_format())
 
         temp = 3
@@ -124,14 +126,16 @@ class ExcelReport(object):
             self.sheet_info.write("A" + str(temp), data[num]["t_moudle"], self.data_format())
             self.sheet_info.write("B" + str(temp), data[num]["t_id"], self.data_format())
             self.sheet_info.write("C" + str(temp), data[num]["t_name"], self.data_format())
-            self.sheet_info.write("D" + str(temp), data[num]["t_method"], self.data_format())
+            self.sheet_info.write("D" + str(temp), data[num]["t_api_name"], self.data_format())
             self.sheet_info.write("E" + str(temp), data[num]["t_param"], self.data_format())
             self.sheet_info.write("F" + str(temp), data[num]["t_hope"], self.data_format())
             self.sheet_info.write("G" + str(temp), data[num]["t_actual"], self.data_format())
+            self.sheet_info.write("H" + str(temp), data[num]["t_return_data"], self.data_format())
             if data[num]["t_result"] == "通过":
-                self.sheet_info.write("H" + str(temp), data[num]["t_result"], self.data_format_success())
+                self.sheet_info.write("I" + str(temp), data[num]["t_result"], self.data_format_success())
             else:
-                self.sheet_info.write("H" + str(temp), data[num]["t_result"], self.data_format_fail())
+                self.sheet_info.write("I" + str(temp), data[num]["t_result"], self.data_format_fail())
+
             temp += 1
 
     # 关闭excel文件

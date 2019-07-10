@@ -14,8 +14,8 @@ class GovernCater(object):
     request = Request()
     headers = HEADERS.headers
 
-    def user_list(self, case_name):
-        response = self.request.get_request(case_name=case_name, _url=cater.userlist, _headers=self.headers)
+    def user_list(self, case_name, param):
+        response = self.request.get_request(case_name=case_name, _url=cater.userlist, _data=param, _headers=self.headers)
         return response
 
     def get_user_by_id_card(self, case_name, param):

@@ -59,12 +59,16 @@ class CaterHelper:
             """
             self.db.close()
 
+    def query_user(self, name, value):
+        """人员管理：高级筛选"""
+        address = "900109" + "%"
+        sql = "SELECT * FROM user WHERE {} = '{}' AND residence_address LIKE '{}%'".format(name, value, address)
+        print(sql)
+        result = self.db.find_all(sql)
+        return result
+
 
 # if __name__ == '__main__':
-    # cater = CaterHelper()
-    # result = cater.query_user_by_id_card("711557195407037815")  # 711557195407037815
-    # print(result)
-#     if result == None:
-#         print("无数据")
-#     else:
-#         print(result[0])
+#     cater = CaterHelper()
+#     result = cater.query_user("name", "测试人员")
+#     print(result)
