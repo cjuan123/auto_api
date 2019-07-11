@@ -67,8 +67,14 @@ class CaterHelper:
         result = self.db.find_all(sql)
         return result
 
+    # 随机获取一个user id
+    def query_user_id(self):
+        sql = "SELECT id FROM `user`  ORDER BY id DESC LIMIT 1;"
+        result = self.db.find_one(sql=sql)
+        return result[0]
 
+#
 # if __name__ == '__main__':
 #     cater = CaterHelper()
-#     result = cater.query_user("name", "测试人员")
+#     result = cater.query_user_id()
 #     print(result)

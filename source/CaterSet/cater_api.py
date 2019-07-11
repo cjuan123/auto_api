@@ -14,6 +14,7 @@ getUserByIdCard = goverment_host + "/cater-server/user/getUserByIdCard"     # �
 adduser = goverment_host + "/cater-server/user/addUser"     # 添加人员
 reviewUser = goverment_host + "/cater-server/review/reviewUser"     # 人员审核：checkType  1.审核    2.复审
 queryAllApplyUser = goverment_host + "/cater-server/review/queryAllApplyUser"   # 人员审核：查询人员申请，获取applyID
+userDetail = goverment_host + "/cater-server/user/userDetail"    # 获取人员详情
 
 #   【大配餐企业端api】
 setRecharge = pc_host + "/recharge/setRecharge"   # 人员充值

@@ -30,7 +30,7 @@ class TestCater(unittest.TestCase):
         cls.success_num = []    # 测试用例成功数
         cls.fail_num = []       # 测试用例失败数
 
-        cls.user_id = []        # 添加人员ID
+        cls.apply_id = []        # 人员申请ID
 
         print("------------------------------STA------------------------------")
         cls.log.info("------------------------ 大配餐 STA ------------------------")
@@ -94,11 +94,6 @@ class TestCater(unittest.TestCase):
             self.assertEqual(except_result, response.json()["message"])
             excel["t_result"] = "通过"
             self.success_num.append("通过")
-            if response.json()["message"] == "添加成功":
-                responses = self.g_cater.user_list(case_name=case_name, param=param["idCard"])
-                self.user_id.append(responses.json()["data"]["records"][0]["id"])
-            else:
-                pass
         except Exception as e:
             print("异常：%s" % e)
             excel["t_result"] = "失败"
@@ -134,13 +129,157 @@ class TestCater(unittest.TestCase):
         finally:
             self.excel_data.append(excel)
 
+    @ddt.data(*ReadExcel("case_data.xlsx", "cater").row_value("/user/userDetail"))
+    @ddt.unpack
+    @Login.govern_login("13999999992", "123qwe")
+    def test_04_user_detail(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
+        excel = {}
+        excel["t_moudle"] = moudle
+        excel["t_id"] = case_no
+        excel["t_name"] = case_name
+        excel["t_api_name"] = api_name
+        excel["t_param"] = data
+        excel["t_hope"] = except_result
+        try:
+            user_id = self.cater_helper.query_user_id()
+            param = {
+                "id": user_id
+            }
+            self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
+            response = self.g_cater.user_detail(case_name=case_name, param=param)
+            excel["t_return_data"] = str(response.json())
+            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            excel["t_actual"] = response.json()["message"]
+            self.assertEqual(except_result, response.json()["message"])
+            excel["t_result"] = "通过"
+            self.success_num.append("通过")
+        except Exception as e:
+            print("异常：%s" % e)
+            excel["t_result"] = "失败"
+            self.fail_num.append("失败")
+        finally:
+            self.excel_data.append(excel)
+
+    @ddt.data(*ReadExcel("case_data.xlsx", "cater").row_value("/review/queryAllApplyUser"))
+    @ddt.unpack
+    @Login.govern_login("13999999992", "123qwe")
+    def test_05_get_apply_id(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
+        """根据查询条件，获取人员申请ID"""
+        excel = {}
+        excel["t_moudle"] = moudle
+        excel["t_id"] = case_no
+        excel["t_name"] = case_name
+        excel["t_api_name"] = api_name
+        excel["t_param"] = data
+        excel["t_hope"] = except_result
+        try:
+            data_list = str(data).split(",")
+            param = {
+                "parameter": data_list[0],
+                "status": 1,
+                "type": data_list[1],
+                "pageNow": 1
+            }
+            print(param)
+            self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
+            response = self.g_cater.get_apply_id(case_name=case_name, param=param)
+            print(response.json())
+            print(len(response.json()["data"]["records"]))
+            self.apply_id.append(response.json()["data"]["records"][0]["applyId"])
+            excel["t_return_data"] = str(response.json())
+            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            excel["t_actual"] = response.json()["message"]
+            self.assertEqual(except_result, response.json()["message"])
+            excel["t_result"] = "通过"
+            self.success_num.append("通过")
+        except Exception as e:
+            print("异常：%s" % e)
+            excel["t_result"] = "失败"
+            self.fail_num.append("失败")
+        finally:
+            self.excel_data.append(excel)
+
+    @ddt.data(*ReadExcel("case_data.xlsx", "cater").row_value("/review/reviewUser_1"))
+    @ddt.unpack
+    @Login.govern_login("13999999992", "123qwe")
+    def test_06_review_user(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
+        """人员审核"""
+        excel = {}
+        excel["t_moudle"] = moudle
+        excel["t_id"] = case_no
+        excel["t_name"] = case_name
+        excel["t_api_name"] = api_name
+        excel["t_param"] = data
+        excel["t_hope"] = except_result
+        try:
+            data_list = str(data).split(",")
+            param = {
+                "passed": data_list[0],
+                "advice": data_list[1],
+                "checkType": data_list[2],
+                "applyId": self.apply_id[int(data_list[3])]
+            }
+            print(param)
+            self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
+            response = self.g_cater.review_user(case_name=case_name, param=param)
+            print(response.json())
+            excel["t_return_data"] = str(response.json())
+            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            excel["t_actual"] = response.json()["message"]
+            self.assertEqual(except_result, response.json()["message"])
+            excel["t_result"] = "通过"
+            self.success_num.append("通过")
+        except Exception as e:
+            print("异常：%s" % e)
+            excel["t_result"] = "失败"
+            self.fail_num.append("失败")
+        finally:
+            self.excel_data.append(excel)
+
+    @ddt.data(*ReadExcel("case_data.xlsx", "cater").row_value("/review/reviewUser_2"))
+    @ddt.unpack
+    @Login.govern_login("13999999992", "123qwe")
+    def test_07_review_user(self, moudle, api_name, case_no, case_name, data, except_result, case_desc):
+        """人员复审"""
+        excel = {}
+        excel["t_moudle"] = moudle
+        excel["t_id"] = case_no
+        excel["t_name"] = case_name
+        excel["t_api_name"] = api_name
+        excel["t_param"] = data
+        excel["t_hope"] = except_result
+        try:
+            data_list = str(data).split(",")
+            param = {
+                "passed": data_list[0],
+                "advice": data_list[1],
+                "checkType": data_list[2],
+                "applyId": self.apply_id[int(data_list[3])]
+            }
+            print(param)
+            self.log.info("【%s】 - 用例描述：%s" % (case_name, case_desc))
+            response = self.g_cater.review_user(case_name=case_name, param=param)
+            print(response.json())
+            excel["t_return_data"] = str(response.json())
+            self.log.info("【%s】 - 返回结果：%s" % (case_name, response.json()))
+            excel["t_actual"] = response.json()["message"]
+            self.assertEqual(except_result, response.json()["message"])
+            excel["t_result"] = "通过"
+            self.success_num.append("通过")
+        except Exception as e:
+            print("异常：%s" % e)
+            excel["t_result"] = "失败"
+            self.fail_num.append("失败")
+        finally:
+            self.excel_data.append(excel)
+
     def tearDown(self):
         self.log.info("------------------ 用例 END ------------------")
 
     @classmethod
     def tearDownClass(cls):
         cls.end = datetime.datetime.now()
-        print(cls.user_id)
+        print(cls.apply_id)
         cls.profile_data = {}
         cls.profile_data["test_name"] = "大配餐"
         cls.profile_data["test_version"] = "version 2.3"

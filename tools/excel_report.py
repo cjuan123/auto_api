@@ -45,10 +45,10 @@ class ExcelReport(object):
         worksheet.set_column("B:B", 20)
         worksheet.set_column("C:C", 20)
         worksheet.set_column("D:D", 20)
-        worksheet.set_column("E:E", 20)
+        worksheet.set_column("E:E", 40)
         worksheet.set_column("F:F", 20)
         worksheet.set_column("G:G", 20)
-        worksheet.set_column("H:H", 20)
+        worksheet.set_column("H:H", 40)
         worksheet.set_column("I:I", 20)
 
     # 设置行高度
