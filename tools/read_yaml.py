@@ -85,6 +85,11 @@ class ReadYaml:
         data = self.open_yaml()
         return data["mysql"]
 
+    def get_business_account(self, type):
+        """企业服务订单账号"""
+        data = self.open_yaml()
+        return data["business_account"][type]
+
     def close_yaml(self):
         """关闭文件"""
         self.fo.close()
