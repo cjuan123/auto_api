@@ -67,6 +67,8 @@ class TestCater(unittest.TestCase):
             self.success_num.append("通过")
         except Exception as e:
             print("异常：%s" % e)
+            excel["t_return_data"] = "返回错误数据，请检查接口！！"
+            excel["t_actual"] = "错误"
             excel["t_result"] = "失败"
             self.fail_num.append("失败")
         finally:
@@ -96,6 +98,8 @@ class TestCater(unittest.TestCase):
             self.success_num.append("通过")
         except Exception as e:
             print("异常：%s" % e)
+            excel["t_return_data"] = "返回错误数据，请检查接口！！"
+            excel["t_actual"] = "错误"
             excel["t_result"] = "失败"
             self.fail_num.append("失败")
         finally:
@@ -124,6 +128,8 @@ class TestCater(unittest.TestCase):
             self.success_num.append("通过")
         except Exception as e:
             print("异常：%s" % e)
+            excel["t_return_data"] = "返回错误数据，请检查接口！！"
+            excel["t_actual"] = "错误"
             excel["t_result"] = "失败"
             self.fail_num.append("失败")
         finally:
@@ -155,6 +161,8 @@ class TestCater(unittest.TestCase):
             self.success_num.append("通过")
         except Exception as e:
             print("异常：%s" % e)
+            excel["t_return_data"] = "返回错误数据，请检查接口！！"
+            excel["t_actual"] = "错误"
             excel["t_result"] = "失败"
             self.fail_num.append("失败")
         finally:
@@ -194,6 +202,8 @@ class TestCater(unittest.TestCase):
             self.success_num.append("通过")
         except Exception as e:
             print("异常：%s" % e)
+            excel["t_return_data"] = "返回错误数据，请检查接口！！"
+            excel["t_actual"] = "错误"
             excel["t_result"] = "失败"
             self.fail_num.append("失败")
         finally:
@@ -231,6 +241,8 @@ class TestCater(unittest.TestCase):
             self.success_num.append("通过")
         except Exception as e:
             print("异常：%s" % e)
+            excel["t_return_data"] = "返回错误数据，请检查接口！！"
+            excel["t_actual"] = "错误"
             excel["t_result"] = "失败"
             self.fail_num.append("失败")
         finally:
@@ -268,6 +280,8 @@ class TestCater(unittest.TestCase):
             self.success_num.append("通过")
         except Exception as e:
             print("异常：%s" % e)
+            excel["t_return_data"] = "返回错误数据，请检查接口！！"
+            excel["t_actual"] = "错误"
             excel["t_result"] = "失败"
             self.fail_num.append("失败")
         finally:
