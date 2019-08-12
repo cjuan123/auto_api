@@ -23,15 +23,14 @@ class TestBusiness2(unittest.TestCase):
     uid = []
     order_id = []
     read_yaml = ReadYaml("default.yaml")
-    pwd = read_yaml.get_password("govern")
+    pass_word = read_yaml.get_password("govern")
 
     @classmethod
     def setUpClass(cls):
         Logger().info("------------------------ 护理-机构养老补贴 STA ------------------------")
         print("------------------------ 护理-机构养老补贴 STA ------------------------")
 
-
-    @Login.govern_login("13551042646", pwd)
+    @Login.govern_login(read_yaml.get_business_account("shequ"), pass_word)
     def test_001(self):
         """添加人员-级别为：护理-机构养老补贴"""
         print("添加人员身份证号：%s" % self.id_card)
@@ -42,7 +41,7 @@ class TestBusiness2(unittest.TestCase):
             "maritalstatus": 0,
             "level": 6,
             "contact1": "15212365478",
-            "residenceaddress": "5101090201",
+            "residenceaddress": "9001090201",
             "address": "测试详细地址",
             "emergencycontact1name": "测试",
             "emergencycontact1address": "测试地址",
@@ -55,6 +54,7 @@ class TestBusiness2(unittest.TestCase):
         res = self.yang_lao.add_survey_user(case_name="护理-机构养老补贴", param=param)
         print("【添加人员-级别为：居家养老服务补贴】：%s" % res.json())
 
+    @Login.govern_login(read_yaml.get_business_account("jiedao"), pass_word)
     def test_002(self):
         """政府端：根据身份证号查询UID"""
         param = {
@@ -68,22 +68,19 @@ class TestBusiness2(unittest.TestCase):
         print("【根据身份证获取uid】 ：%s" % res.json())
         self.assertEqual("", res.json()["detail"])
 
-    @Login.govern_login("18048054262", pwd)
     def test_003(self):
         """积分充值"""
-
-        print(self.uid[0])
         param = {
-            "uid": str(self.uid[0]),
+            "uid": self.uid[0],
             "balance": 100,
             "remark": 0,
             "source": "api"
         }
-        res = self.yang_lao.single_recharge(case_name="积分充值", param=param)
-        # print("【积分充值】：%s" % res.json())
-        # assert "充值成功" == res.json()["detail"]
+        res = self.yang_lao.single_recharge(case_name="添加居家养老服务补贴", param=param)
+        print("【积分充值】：%s" % res.json())
+        self.assertEqual("充值成功", res.json()["detail"])
 
-    @Login.business_login("849001", pwd)
+    @Login.business_login(read_yaml.get_business_account("admin"), pass_word)
     def test_004(self):
         """服务订单生成--查询信息"""
         param = {
@@ -91,24 +88,26 @@ class TestBusiness2(unittest.TestCase):
             "groupId": 2,
             "idcard": self.id_card
         }
-        res = self.business.query_pai_user_info(case_name="查询信息", param=param)
+        res = self.business.query_pai_user_info(case_name="服务订单生成--查询信息", param=param)
         print("【普通人员：服务订单生成】：%s" % res.json())
+        self.assertEqual("查询成功", res.json()["detail"])
 
     def test_005(self):
         """创建服务订单"""
-        endDate = str(datetime.datetime.now().strftime('%Y-%m-%d')) + " 23:59:59"
+        end_date = str(datetime.datetime.now().strftime('%Y-%m-%d')) + " 23:59:59"
         param = {
             "classification": 1,
             "groupId": 2,
             "idcard": self.id_card,
             "uid": self.uid[0],
             "mark": "api",
-            "itemsId": "310",
+            "itemsId": "8763",
             "number": 1,
-            "endDate": str(endDate)
+            "endDate": end_date
         }
         res = self.business.create_orders(case_name="创建服务订单", param=param)
         print("【创建服务订单】: %s" % res.json())
+        self.assertEqual("", res.json()["detail"])
 
     def test_006(self):
         """获取订单ID"""
@@ -123,20 +122,21 @@ class TestBusiness2(unittest.TestCase):
     def test_007(self):
         """订单派工"""
         param = {
-            "buid": "1182",
+            "buid": "3998",
             "orderId": self.order_id[0]
         }
         res = self.business.save_service_record(case_name="订单派工", param=param)
         print("【订单派工】: %s" % res.json())
+        self.assertEqual("派工成功", res.json()["detail"])
 
-    @Login.business_app_login("626753", pwd)
+    @Login.business_app_login(read_yaml.get_business_account("employee"), pass_word)
     def test_008(self):
         """派工助手--开始服务"""
         param = {
             'orderId': self.order_id[0],
             'startPosition': '104.081859,30.546299'
         }
-        res = self.business.start_service(case_name="开始服务", param=param)
+        res = self.business.start_service(case_name="派工助手--开始服务", param=param)
         print("【派工助手--开始服务】: %s" % res.json())
 
     def test_009(self):
@@ -147,7 +147,7 @@ class TestBusiness2(unittest.TestCase):
             'orderId': self.order_id[0],
             'images': 'https://file.chinaylzl.com/test/serviceImages/2018/11/15/4a6f2a0ffff54ca88aed5132f482a4aa.jpg,'
         }
-        res = self.business.complete_service(case_name="完成服务", param=param)
+        res = self.business.complete_service(case_name="派工助手--完成服务", param=param)
         print("【派工助手--完成服务】: %s" % res.json())
 
     def test_010(self):
@@ -156,14 +156,13 @@ class TestBusiness2(unittest.TestCase):
             'orderId': self.order_id[0],
             'degree': '100'
         }
-        res = self.business.update_service_degree(case_name="评价订单", param=param)
+        res = self.business.update_service_degree(case_name="派工助手--评价订单", param=param)
         print("【派工助手--评价订单】: %s" % res.json())
 
     @classmethod
     def tearDownClass(cls):
         Logger().info("------------------------ 护理-机构养老补贴 END------------------------")
         print("------------------------ 护理-机构养老补贴 END------------------------")
-
 
 
 if __name__ == "__main__":

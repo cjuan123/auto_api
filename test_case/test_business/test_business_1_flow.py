@@ -19,7 +19,7 @@ from source.Business.business import Business
 class TestBusiness1(unittest.TestCase):
 
     read_yaml = ReadYaml("default.yaml")
-    govern = read_yaml.get_password("govern")
+    pass_word = read_yaml.get_password("govern")
 
     yang_lao = YangLao()
     business = Business()
@@ -31,7 +31,7 @@ class TestBusiness1(unittest.TestCase):
         Logger().info("------------------------ 普通人员 STA------------------------")
         print("------------------------ 普通人员 STA------------------------")
 
-    @Login.govern_login("13551042646", govern)
+    @Login.govern_login(read_yaml.get_business_account("shequ"), pass_word)
     def test_001(self):
         """添加人员-级别为：普通老人"""
         print(self.id_card)
@@ -42,7 +42,7 @@ class TestBusiness1(unittest.TestCase):
             "maritalstatus": 0,
             "level": 1,
             "contact1": "15212365478",
-            "residenceaddress": "5101090201",
+            "residenceaddress": "9001090201",
             "address": "测试详细地址",
             "emergencycontact1name": "测试",
             "emergencycontact1address": "测试地址",
@@ -55,7 +55,7 @@ class TestBusiness1(unittest.TestCase):
         res = self.yang_lao.add_survey_user(case_name="添加普通老人", param=param)
         print("【添加人员-级别为：普通老人】：%s" % res.json())
 
-    @Login.govern_login("18048054262", govern)
+    @Login.govern_login(read_yaml.get_business_account("jiedao"), pass_word)
     def test_002(self):
         """政府端：根据身份证号查询UID"""
         param = {
@@ -81,7 +81,7 @@ class TestBusiness1(unittest.TestCase):
         print("【积分充值】：%s" % res.json())
         assert "充值成功" == res.json()["detail"]
 
-    @Login.business_login("849001", govern)
+    @Login.business_login(read_yaml.get_business_account("admin"), pass_word)
     def test_004(self):
         """服务订单生成"""
         param = {
@@ -91,7 +91,8 @@ class TestBusiness1(unittest.TestCase):
         }
         res = self.business.query_pai_user_info(case_name="服务订单生成", param=param)
         print("【普通人员：服务订单生成】：%s" % res.json())
-        assert "该用户不属于服务对象" == res.json()["detail"]
+        print(res.json()["detail"])
+        self.assertEqual("该用户不属于服务对象", res.json()["detail"])
 
     @classmethod
     def tearDownClass(cls):
