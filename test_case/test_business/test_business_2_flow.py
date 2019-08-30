@@ -77,6 +77,7 @@ class TestBusiness2(unittest.TestCase):
             "uid": self.uid[0],
             "balance": 100,
             "remark": 0,
+            "balanceType": 19287,
             "source": "api"
         }
         res = self.yang_lao.single_recharge(case_name="添加居家养老服务补贴", param=param)
@@ -106,6 +107,7 @@ class TestBusiness2(unittest.TestCase):
             "mark": "api",
             "itemsId": "8763",
             "number": 1,
+            "balanceTypeId": 19287,
             "endDate": end_date
         }
         res = self.business.create_orders(case_name="创建服务订单", param=param)

@@ -9,17 +9,19 @@
 
 
 
-business = "https://test1.chinaylzl.com"
+from tools.read_yaml import ReadYaml
+read_yaml = ReadYaml("default.yaml")
+business_host = read_yaml.get_host("business")
 
 #   【企业端】
-addOrUpdateBranch = business + "/business/addOrUpdateBranch"       # 添加|更新分支机构
-branchInfo = business + "/managementBusiness/branchInfo"    # 查询分支机构，获取id"
-queryPaiUserInfo = business + "/service/queryPaiUserInfo"   # 服务订单生成
-createOrders = business + "/service/createOrders"   # 创建订单
-queryPaiOrderSend = business + "/paiOrder/queryPaiOrderSend"    # 订单派工页面，获取订单ID
-saveServiceRecord = business + "/serviceRecord/saveServiceRecord"   # 派工
+addOrUpdateBranch = business_host + "/business/addOrUpdateBranch"       # 添加|更新分支机构
+branchInfo = business_host + "/managementBusiness/branchInfo"    # 查询分支机构，获取id"
+queryPaiUserInfo = business_host + "/service/queryPaiUserInfo"   # 服务订单生成
+createOrders = business_host + "/service/createOrders"   # 创建订单
+queryPaiOrderSend = business_host + "/paiOrder/queryPaiOrderSend"    # 订单派工页面，获取订单ID
+saveServiceRecord = business_host + "/serviceRecord/saveServiceRecord"   # 派工
 
 #   【APP】
-startService = business + "/user/api/startService"  # 派工助手APP：开始服务
-completeService = business + "/user/api/completeService"    # 派工助手APP：完成服务
-updateServiceDegree = business + "/user/api/updateServiceDegree"    # 派工助手APP：评价订单
+startService = business_host + "/user/api/startService"  # 派工助手APP：开始服务
+completeService = business_host + "/user/api/completeService"    # 派工助手APP：完成服务
+updateServiceDegree = business_host + "/user/api/updateServiceDegree"    # 派工助手APP：评价订单

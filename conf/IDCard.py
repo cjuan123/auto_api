@@ -62,10 +62,3 @@ class IDCard(object):
         idCard = str(num) + str(self.vilable(num))
         return idCard
 
-
-# id = IDCard()
-# print(id.idCard(40, 1))
-# print(id.idCard(88, 1))
-# print(id.idCard(88, 1))
-# print(id.idCard(88, 1))
-# print(id.idCard(88, 1))

@@ -17,7 +17,6 @@ from source.Business.business import Business
 
 
 class TestBusiness1(unittest.TestCase):
-
     read_yaml = ReadYaml("default.yaml")
     pass_word = read_yaml.get_password("govern")
 
@@ -28,6 +27,7 @@ class TestBusiness1(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        cls.log = Logger()
         Logger().info("------------------------ 普通人员 STA------------------------")
         print("------------------------ 普通人员 STA------------------------")
 
@@ -53,6 +53,7 @@ class TestBusiness1(unittest.TestCase):
             'headImage': 'http://file.chinaylzl.com/test/userHead/2018/11/16/38acfc8085c249628beffed54bccb2c7.png'
         }
         res = self.yang_lao.add_survey_user(case_name="添加普通老人", param=param)
+        self.log.info("返回结果：%s" % res.json())
         print("【添加人员-级别为：普通老人】：%s" % res.json())
 
     @Login.govern_login(read_yaml.get_business_account("jiedao"), pass_word)
@@ -66,6 +67,7 @@ class TestBusiness1(unittest.TestCase):
         res = self.yang_lao.list_users_new(case_name="根据身份证号查询UID", param=param)
         u_id = res.json()["pageView"]["records"][0]["id"]
         self.uid.append(u_id)
+        self.log.info("返回结果：%s" % res.json())
         print("【根据身份证获取uid】 ：%s" % res.json())
         self.assertEqual("", res.json()["detail"])
 
@@ -75,11 +77,13 @@ class TestBusiness1(unittest.TestCase):
             "uid": self.uid[0],
             "balance": 100,
             "remark": 0,
+            "balanceType": 19287,
             "source": "api"
         }
         res = self.yang_lao.single_recharge(case_name="积分充值", param=param)
         print("【积分充值】：%s" % res.json())
-        assert "充值成功" == res.json()["detail"]
+        self.log.info("返回结果：%s" % res.json())
+        self.assertEqual("充值成功", res.json()["detail"])
 
     @Login.business_login(read_yaml.get_business_account("admin"), pass_word)
     def test_004(self):
@@ -92,6 +96,7 @@ class TestBusiness1(unittest.TestCase):
         res = self.business.query_pai_user_info(case_name="服务订单生成", param=param)
         print("【普通人员：服务订单生成】：%s" % res.json())
         print(res.json()["detail"])
+        self.log.info("返回结果：%s" % res.json())
         self.assertEqual("该用户不属于服务对象", res.json()["detail"])
 
     @classmethod

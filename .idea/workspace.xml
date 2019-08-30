@@ -4,11 +4,12 @@
     <list default="true" id="3d673f47-2707-4936-a534-99ff61dfb355" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/IDCard.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/IDCard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_helper/cater_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_helper/cater_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case_ddt/test_cater.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case_ddt/test_cater.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/case_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/case_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/mysql_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/mysql_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Business/business_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/Business/business_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/YangLao/yanglao_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/YangLao/yanglao_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" afterDir="false" />
       <change beforePath="F:/auto_ui/.idea/auto_ui.iml" beforeDir="false" afterPath="F:/auto_ui/.idea/auto_ui.iml" afterDir="false" />
       <change beforePath="F:/auto_ui/.idea/misc.xml" beforeDir="false" afterPath="F:/auto_ui/.idea/misc.xml" afterDir="false" />
       <change beforePath="F:/auto_ui/.idea/workspace.xml" beforeDir="false" afterPath="F:/auto_ui/.idea/workspace.xml" afterDir="false" />
@@ -34,7 +35,7 @@
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_get_transform_scheme_detail.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_get_transform_scheme_detail Coverage Results" MODIFIED="1560147997062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$construction.coverage" NAME="construction Coverage Results" MODIFIED="1560344016626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_my_task_list.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_my_task_list Coverage Results" MODIFIED="1560223203380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
-    <SUITE FILE_PATH="coverage/auto_api$cater_helper.coverage" NAME="cater_helper Coverage Results" MODIFIED="1562309356366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_helper" />
+    <SUITE FILE_PATH="coverage/auto_api$cater_helper.coverage" NAME="cater_helper Coverage Results" MODIFIED="1562816071868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_helper" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_04_govern_check_transform_scheme.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_04_govern_check_transform_scheme Coverage Results" MODIFIED="1560237506545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_cater_flow_py.coverage" NAME="Unittests in test_cater_flow.py Coverage Results" MODIFIED="1560430848650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_cater_set" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_house_flow_py.coverage" NAME="Unittests in test_house_flow.py Coverage Results" MODIFIED="1560507051023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_house" />
@@ -59,11 +60,14 @@
     <SUITE FILE_PATH="coverage/auto_api$runner_business.coverage" NAME="runner_business Coverage Results" MODIFIED="1560936249038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/auto_api$runner_cater_all.coverage" NAME="runner_cater_all Coverage Results" MODIFIED="1562313741944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_cater_flow_TestCaterFlow_test_001.coverage" NAME="Unittests for test_cater_flow.TestCaterFlow.test_001 Coverage Results" MODIFIED="1562308926964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_cater_set" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_tester_py.coverage" NAME="Unittests in test_tester.py Coverage Results" MODIFIED="1562829800180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_cater_TestCater_test_demo.coverage" NAME="Unittests for test_cater.TestCater.test_demo Coverage Results" MODIFIED="1562729837852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
     <SUITE FILE_PATH="coverage/auto_api$logg.coverage" NAME="logg Coverage Results" MODIFIED="1560422606936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logs" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_govern_product_py.coverage" NAME="Unittests in test_govern_product.py Coverage Results" MODIFIED="1560502822646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_house" />
     <SUITE FILE_PATH="coverage/auto_api$ddt_tool.coverage" NAME="ddt_tool Coverage Results" MODIFIED="1560501510542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
-    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_5_flow_py.coverage" NAME="Unittests in test_business_5_flow.py Coverage Results" MODIFIED="1560935793787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_cater_TestCater_test_get_user_by_id_card.coverage" NAME="Unittests for test_cater.TestCater.test_get_user_by_id_card Coverage Results" MODIFIED="1562293632085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_5_flow_py.coverage" NAME="Unittests in test_business_5_flow.py Coverage Results" MODIFIED="1566440788184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_cater_TestCater_test_user_list.coverage" NAME="Unittests for test_cater.TestCater.test_user_list Coverage Results" MODIFIED="1562729759136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_business_gover_TestConstructionBusinessGovern_test_add_construction_business.coverage" NAME="Unittests for test_construction_business_gover.TestConstructionBusinessGovern.test_add_construction_business Coverage Results" MODIFIED="1559633681799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_business_6_flow_TestBusiness2_test_008.coverage" NAME="Unittests for test_business_6_flow.TestBusiness2.test_008 Coverage Results" MODIFIED="1560935937097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_business_gover_TestConstructionBusinessGovern_test_006_stop_or_start_constructor.coverage" NAME="Unittests for test_construction_business_gover.TestConstructionBusinessGovern.test_006_stop_or_start_constructor Coverage Results" MODIFIED="1559704015383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
@@ -75,11 +79,12 @@
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_govern_apply_TestGovernApply_test_002_add_apply.coverage" NAME="Unittests for test_govern_apply.TestGovernApply.test_002_add_apply Coverage Results" MODIFIED="1560514935842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_house" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_business_2_flow_TestBusiness2_test_005.coverage" NAME="Unittests for test_business_2_flow.TestBusiness2.test_005 Coverage Results" MODIFIED="1559187754785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_apply_gover_TestTransformGovern_test_003_get_transform_apply_list.coverage" NAME="Unittests for test_transform_apply_gover.TestTransformGovern.test_003_get_transform_apply_list Coverage Results" MODIFIED="1559719812801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
+    <SUITE FILE_PATH="coverage/auto_api$excel_report.coverage" NAME="excel_report Coverage Results" MODIFIED="1562657439723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_business_6_flow_TestBusiness2_test_003.coverage" NAME="Unittests for test_business_6_flow.TestBusiness2.test_003 Coverage Results" MODIFIED="1559198381645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_apply_gover_TestTransformGovern_test_001_get_user_by_id_card.coverage" NAME="Unittests for test_transform_apply_gover.TestTransformGovern.test_001_get_user_by_id_card Coverage Results" MODIFIED="1559722917324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$govern_house.coverage" NAME="govern_house Coverage Results" MODIFIED="1560344898657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
-    <SUITE FILE_PATH="coverage/auto_api$IDCard.coverage" NAME="IDCard Coverage Results" MODIFIED="1562307544209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/conf" />
-    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_1_flow_py.coverage" NAME="Unittests in test_business_1_flow.py Coverage Results" MODIFIED="1560934153578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
+    <SUITE FILE_PATH="coverage/auto_api$IDCard.coverage" NAME="IDCard Coverage Results" MODIFIED="1565267829480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/conf" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_1_flow_py.coverage" NAME="Unittests in test_business_1_flow.py Coverage Results" MODIFIED="1566440283136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_ Coverage Results" MODIFIED="1559803311467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_apply_gover_TestTransformGovern_test_006_verify_transform.coverage" NAME="Unittests for test_transform_apply_gover.TestTransformGovern.test_006_verify_transform Coverage Results" MODIFIED="1559725697804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_person_flow_TestPersonFlow_test_004.coverage" NAME="Unittests for test_person_flow.TestPersonFlow.test_004 Coverage Results" MODIFIED="1561362907116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_agencies" />
@@ -90,17 +95,19 @@
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_suitable_aging_app_TestSuitableAgingApp_test_download_subject.coverage" NAME="Unittests for test_suitable_aging_app.TestSuitableAgingApp.test_download_subject Coverage Results" MODIFIED="1560160711660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_construction_business_gover_py.coverage" NAME="Unittests in test_construction_business_gover.py Coverage Results" MODIFIED="1560393191541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_cater_flow_gover_balance_py.coverage" NAME="Unittests in test_cater_flow_gover_balance.py Coverage Results" MODIFIED="1559182528026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_cater_set" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_cater_TestCater_test_03_user_list.coverage" NAME="Unittests for test_cater.TestCater.test_03_user_list Coverage Results" MODIFIED="1562741686673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_govern_apply_py.coverage" NAME="Unittests in test_govern_apply.py Coverage Results" MODIFIED="1560394292569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_house" />
     <SUITE FILE_PATH="coverage/auto_api$runner_agencies.coverage" NAME="runner_agencies Coverage Results" MODIFIED="1561364083051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_business_gover_TestConstructionBusinessGovern_test_004_get_business_detail.coverage" NAME="Unittests for test_construction_business_gover.TestConstructionBusinessGovern.test_004_get_business_detail Coverage Results" MODIFIED="1559642908953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_03_govern_get_project_inspection_list.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_03_govern_get_project_inspection_list Coverage Results" MODIFIED="1560235777798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_06_settlement.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_06_settlement Coverage Results" MODIFIED="1560240253326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_get_task.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_get_task Coverage Results" MODIFIED="1560148193780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
-    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_2_flow_py.coverage" NAME="Unittests in test_business_2_flow.py Coverage Results" MODIFIED="1560935538276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_2_flow_py.coverage" NAME="Unittests in test_business_2_flow.py Coverage Results" MODIFIED="1566440727858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_cater_TestCater_test_05_get_apply_id.coverage" NAME="Unittests for test_cater.TestCater.test_05_get_apply_id Coverage Results" MODIFIED="1562827253601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_apply_gover_TestTransformGovern.coverage" NAME="Unittests for test_transform_apply_gover.TestTransformGovern Coverage Results" MODIFIED="1559719012618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_business_1_flow_TestBusiness1_test_004.coverage" NAME="Unittests for test_business_1_flow.TestBusiness1.test_004 Coverage Results" MODIFIED="1560934095412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_gover_TestTransformGovern_test_get_unit_data.coverage" NAME="Unittests for test_transform_gover.TestTransformGovern.test_get_unit_data Coverage Results" MODIFIED="1559620434610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
-    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_cater_py.coverage" NAME="Unittests in test_cater.py Coverage Results" MODIFIED="1562309923213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_cater_py.coverage" NAME="Unittests in test_cater.py Coverage Results" MODIFIED="1562831797091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_apply_gover_TestTransformGovern_test_001_add_apply.coverage" NAME="Unittests for test_transform_apply_gover.TestTransformGovern.test_001_add_apply Coverage Results" MODIFIED="1559717110094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_suitable_aging_app_TestSuitableAgingApp_test_001_get_tasks.coverage" NAME="Unittests for test_suitable_aging_app.TestSuitableAgingApp.test_001_get_tasks Coverage Results" MODIFIED="1560153206576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_construction_app_TestConstructionApp_test_commit_scheme.coverage" NAME="Unittests for test_construction_app.TestConstructionApp.test_commit_scheme Coverage Results" MODIFIED="1560224405875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform/test_transform_gover" />
@@ -130,8 +137,9 @@
     <SUITE FILE_PATH="coverage/auto_api$demo.coverage" NAME="demo Coverage Results" MODIFIED="1560500897017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_house_py.coverage" NAME="Unittests in test_house.py Coverage Results" MODIFIED="1560507358441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case_ddt" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_house_flow_TestHouseFlow_test_001_add_assess_agency.coverage" NAME="Unittests for test_house_flow.TestHouseFlow.test_001_add_assess_agency Coverage Results" MODIFIED="1560427704913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_house" />
-    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_6_flow_py.coverage" NAME="Unittests in test_business_6_flow.py Coverage Results" MODIFIED="1560935942840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_business_6_flow_py.coverage" NAME="Unittests in test_business_6_flow.py Coverage Results" MODIFIED="1566440845393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_gover_TestTransformGovern_test_002_get_product_list.coverage" NAME="Unittests for test_transform_gover.TestTransformGovern.test_002_get_product_list Coverage Results" MODIFIED="1559630710602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
+    <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_business_2_flow_TestBusiness2_test_001.coverage" NAME="Unittests for test_business_2_flow.TestBusiness2.test_001 Coverage Results" MODIFIED="1565579215406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_business" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_transform_gover_TestTransformGovern_test_get_product_list.coverage" NAME="Unittests for test_transform_gover.TestTransformGovern.test_get_product_list Coverage Results" MODIFIED="1559630278195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_transform" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_for_test_govern_product_TestGovernProduct_test_1_add_product.coverage" NAME="Unittests for test_govern_product.TestGovernProduct.test_1_add_product Coverage Results" MODIFIED="1560502488439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_house" />
     <SUITE FILE_PATH="coverage/auto_api$Unittests_in_test_daycare_flow_py.coverage" NAME="Unittests in test_daycare_flow.py Coverage Results" MODIFIED="1561363783166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_agencies" />
@@ -145,43 +153,59 @@
     <session id="558410317">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.closed" value="28" />
+          <entry key="project.open.time.0" value="5" />
+          <entry key="project.open.time.1" value="4" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.23" value="3" />
           <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.25" value="3" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="log" value="10" />
-          <entry key="py" value="56" />
-          <entry key="yaml" value="5" />
+          <entry key="html" value="1" />
+          <entry key="log" value="21" />
+          <entry key="py" value="132" />
+          <entry key="yaml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Log" value="10" />
-          <entry key="Python" value="56" />
-          <entry key="YAML" value="5" />
+          <entry key="HTML" value="1" />
+          <entry key="Log" value="21" />
+          <entry key="Python" value="132" />
+          <entry key="YAML" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
-          <entry key="log" value="12" />
-          <entry key="py" value="1893" />
-          <entry key="yaml" value="138" />
+          <entry key="log" value="25" />
+          <entry key="py" value="5385" />
+          <entry key="yaml" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Log" value="12" />
+          <entry key="Log" value="25" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="1891" />
+          <entry key="Python" value="5383" />
           <entry key="SQL" value="2" />
-          <entry key="YAML" value="138" />
+          <entry key="YAML" value="229" />
         </counts>
       </usages-collector>
     </session>
@@ -189,47 +213,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runner/HTMLTestRunnerNew.py">
+        <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11097" />
+            <state relative-caret-position="-1258">
+              <caret line="109" column="35" lean-forward="true" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="35" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_case_ddt/test_cater.py">
+        <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="50" column="74" lean-forward="true" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="74" />
-              <folding>
-                <element signature="e#111#137#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="212">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/2019_07_05.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="621">
-              <caret line="23" column="96" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="96" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case_ddt/runner_cater_all.py">
+        <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db_helper/cater_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+            <state relative-caret-position="669">
+              <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -259,17 +264,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ddt_tool.py" />
-        <option value="$PROJECT_DIR$/test_case/test_product.py" />
-        <option value="$PROJECT_DIR$/tools/ddt_tool.py" />
-        <option value="$PROJECT_DIR$/conf/HEADERS.py" />
         <option value="$PROJECT_DIR$/logs/2019_06_14.log" />
         <option value="$PROJECT_DIR$/test_case_ddt/test_house.py" />
         <option value="$PROJECT_DIR$/test_case/run_govern_house.py" />
         <option value="$PROJECT_DIR$/demo.py" />
         <option value="$PROJECT_DIR$/source/Agencies/agencies.py" />
-        <option value="$PROJECT_DIR$/tools/http_request.py" />
-        <option value="$PROJECT_DIR$/source/CaterSet/cater.py" />
         <option value="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow_gover_balance.py" />
         <option value="$PROJECT_DIR$/test_case/test_cater_set/test_government_cater.py" />
         <option value="$PROJECT_DIR$/source/construction.py" />
@@ -284,32 +283,38 @@
         <option value="$PROJECT_DIR$/source/YangLao/yanglao.py" />
         <option value="$PROJECT_DIR$/source/Business/business.py" />
         <option value="$PROJECT_DIR$/source/Agencies/agencies_api.py" />
-        <option value="$PROJECT_DIR$/source/Business/business_api.py" />
-        <option value="$PROJECT_DIR$/source/YangLao/yanglao_api.py" />
         <option value="$PROJECT_DIR$/logs/2019_06_23.log" />
-        <option value="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" />
-        <option value="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" />
         <option value="$PROJECT_DIR$/test_case/test_house/test_house_flow.py" />
         <option value="$PROJECT_DIR$/conf/Login.py" />
-        <option value="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" />
-        <option value="$PROJECT_DIR$/yamls/default.yaml" />
-        <option value="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" />
         <option value="$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py" />
         <option value="$PROJECT_DIR$/test_case/test_agencies/test_daycare_flow.py" />
         <option value="$PROJECT_DIR$/test_case/runner_agencies.py" />
         <option value="$PROJECT_DIR$/test_case/runner_govern_house.py" />
         <option value="$PROJECT_DIR$/test_case/runner_business.py" />
-        <option value="$PROJECT_DIR$/source/CaterSet/cater_api.py" />
         <option value="$PROJECT_DIR$/yamls/cater_api.yaml" />
-        <option value="$PROJECT_DIR$/tools/read_yaml.py" />
         <option value="$PROJECT_DIR$/source/CaterSet/cater_sas.py" />
         <option value="$PROJECT_DIR$/logs/2019_07_03.log" />
         <option value="$PROJECT_DIR$/logs/2019_07_05.log" />
         <option value="$PROJECT_DIR$/tools/mysql_helper.py" />
-        <option value="$PROJECT_DIR$/conf/IDCard.py" />
         <option value="$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py" />
+        <option value="$PROJECT_DIR$/logs/2019_07_11.log" />
         <option value="$PROJECT_DIR$/db_helper/cater_helper.py" />
+        <option value="$PROJECT_DIR$/source/CaterSet/cater_api.py" />
+        <option value="$PROJECT_DIR$/tools/http_request.py" />
+        <option value="$PROJECT_DIR$/source/CaterSet/cater.py" />
+        <option value="$PROJECT_DIR$/tools/excel_report.py" />
+        <option value="$PROJECT_DIR$/test_case_ddt/test_tester.py" />
         <option value="$PROJECT_DIR$/test_case_ddt/test_cater.py" />
+        <option value="$PROJECT_DIR$/conf/IDCard.py" />
+        <option value="$PROJECT_DIR$/tools/read_yaml.py" />
+        <option value="$PROJECT_DIR$/yamls/default.yaml" />
+        <option value="$PROJECT_DIR$/source/YangLao/yanglao_api.py" />
+        <option value="$PROJECT_DIR$/source/Business/business_api.py" />
+        <option value="$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py" />
+        <option value="$PROJECT_DIR$/logs/2019_08_22.log" />
+        <option value="$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py" />
+        <option value="$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py" />
+        <option value="$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py" />
       </list>
     </option>
   </component>
@@ -319,11 +324,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="y" value="169" />
-    <option name="width" value="892" />
-    <option name="height" value="740" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="743" />
+    <option name="y" value="363" />
+    <option name="width" value="1080" />
+    <option name="height" value="628" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -360,43 +365,18 @@
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="db_helper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="runner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
               <item name="test_case" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auto_api" type="462c0819:PsiDirectoryNode" />
               <item name="test_case" type="462c0819:PsiDirectoryNode" />
-              <item name="test_cater_set" type="462c0819:PsiDirectoryNode" />
+              <item name="test_business" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="auto_api" type="462c0819:PsiDirectoryNode" />
               <item name="test_case_ddt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auto_api" type="462c0819:PsiDirectoryNode" />
-              <item name="test_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="auto_api" type="b2602c69:ProjectViewProjectNode" />
@@ -423,9 +403,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\auto_api\test_case_ddt" />
       <recent name="F:\auto_api\test_case" />
       <recent name="F:\auto_api" />
-      <recent name="F:\auto_api\test_case_ddt" />
       <recent name="F:\auto_api\test_data" />
       <recent name="F:\auto_api\test_case\test_transform" />
     </key>
@@ -446,117 +426,96 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.runner_cater_all">
-    <configuration name="IDCard" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_api" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/conf" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conf/IDCard.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="cater_helper" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_api" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db_helper" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_helper/cater_helper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="runner_cater_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_api" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case_ddt" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_case_ddt/runner_cater_all.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_cater_flow.TestCaterFlow.test_001" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in test_business_6_flow.py">
+    <configuration name="Unittests for test_business_2_flow.TestBusiness2.test_001" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="auto_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_cater_set" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cater_flow.TestCaterFlow.test_001&quot;" />
+      <option name="_new_target" value="&quot;test_business_2_flow.TestBusiness2.test_001&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in test_cater.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in test_business_1_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="auto_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case_ddt" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case_ddt/test_cater.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_business_2_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="auto_api" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_business_5_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="auto_api" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_business_6_flow.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="auto_api" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case/test_business" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.IDCard" />
-      <item itemvalue="Python tests.Unittests for test_cater_flow.TestCaterFlow.test_001" />
-      <item itemvalue="Python tests.Unittests in test_cater.py" />
-      <item itemvalue="Python.cater_helper" />
-      <item itemvalue="Python.runner_cater_all" />
+      <item itemvalue="Python tests.Unittests in test_business_1_flow.py" />
+      <item itemvalue="Python tests.Unittests in test_business_2_flow.py" />
+      <item itemvalue="Python tests.Unittests for test_business_2_flow.TestBusiness2.test_001" />
+      <item itemvalue="Python tests.Unittests in test_business_6_flow.py" />
+      <item itemvalue="Python tests.Unittests in test_business_5_flow.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.runner_cater_all" />
-        <item itemvalue="Python tests.Unittests in test_cater.py" />
-        <item itemvalue="Python.cater_helper" />
-        <item itemvalue="Python tests.Unittests for test_cater_flow.TestCaterFlow.test_001" />
-        <item itemvalue="Python.IDCard" />
+        <item itemvalue="Python tests.Unittests in test_business_6_flow.py" />
+        <item itemvalue="Python tests.Unittests in test_business_5_flow.py" />
+        <item itemvalue="Python tests.Unittests in test_business_2_flow.py" />
+        <item itemvalue="Python tests.Unittests in test_business_1_flow.py" />
+        <item itemvalue="Python tests.Unittests for test_business_2_flow.TestBusiness2.test_001" />
       </list>
     </recent_temporary>
   </component>
@@ -574,46 +533,47 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_cater_flow_TestCaterFlow_test_001 - 2019.07.05 at 14h 33m 34s.xml">
-      <configuration name="Unittests for test_cater_flow.TestCaterFlow.test_001" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.08.13 at 16h 12m 28s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_cater_flow_TestCaterFlow_test_001 - 2019.07.05 at 14h 36m 21s.xml">
-      <configuration name="Unittests for test_cater_flow.TestCaterFlow.test_001" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.08.13 at 16h 16m 15s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_cater_flow_TestCaterFlow_test_001 - 2019.07.05 at 14h 36m 37s.xml">
-      <configuration name="Unittests for test_cater_flow.TestCaterFlow.test_001" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.08.22 at 10h 03m 05s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_cater_flow_TestCaterFlow_test_001 - 2019.07.05 at 14h 37m 15s.xml">
-      <configuration name="Unittests for test_cater_flow.TestCaterFlow.test_001" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.08.22 at 10h 14m 10s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_cater_flow_TestCaterFlow_test_001 - 2019.07.05 at 14h 42m 09s.xml">
-      <configuration name="Unittests for test_cater_flow.TestCaterFlow.test_001" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.08.22 at 10h 16m 24s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_cater_py - 2019.07.05 at 14h 48m 19s.xml">
-      <configuration name="Unittests in test_cater.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_1_flow_py - 2019.08.22 at 10h 18m 10s.xml">
+      <configuration name="Unittests in test_business_1_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_cater_py - 2019.07.05 at 14h 51m 35s.xml">
-      <configuration name="Unittests in test_cater.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_2_flow_py - 2019.08.22 at 10h 22m 39s.xml">
+      <configuration name="Unittests in test_business_2_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_cater_py - 2019.07.05 at 14h 55m 11s.xml">
-      <configuration name="Unittests in test_cater.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_2_flow_py - 2019.08.22 at 10h 25m 38s.xml">
+      <configuration name="Unittests in test_business_2_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_cater_py - 2019.07.05 at 14h 57m 33s.xml">
-      <configuration name="Unittests in test_cater.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_5_flow_py - 2019.08.22 at 10h 26m 37s.xml">
+      <configuration name="Unittests in test_business_5_flow.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_cater_py - 2019.07.05 at 14h 59m 03s.xml">
-      <configuration name="Unittests in test_cater.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_business_6_flow_py - 2019.08.22 at 10h 27m 36s.xml">
+      <configuration name="Unittests in test_business_6_flow.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16044776" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21801706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275488" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.61713666" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4175705" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45010847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -621,7 +581,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.328125" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3298611" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32843137" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3275488" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -666,114 +626,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/govern_house.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="212" column="8" lean-forward="true" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_house/test_govern_apply.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="144" column="43" selection-start-line="144" selection-start-column="43" selection-end-line="144" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_house/test_govern_construction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="143" column="49" selection-start-line="143" selection-start-column="49" selection-end-line="143" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_house/test_govern_product.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/DEFAULT.py" />
-    <entry file="file://$PROJECT_DIR$/source/Business/business.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Agencies/agencies_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/tools/python364/Lib/unittest/loader.py" />
-    <entry file="file://$PROJECT_DIR$/source/Business/business_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/YangLao/yanglao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="26" column="88" lean-forward="true" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/YangLao/yanglao_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019_06_23.log" />
-    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/runner_cater.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow_gover_balance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_government_cater.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_house/test_house_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6084">
-          <caret line="558" selection-start-line="558" selection-end-line="558" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/HEADERS.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -782,24 +634,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/2019_06_24.log" />
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_case/test_agencies/test_person_flow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="21" column="45" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="21" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -824,16 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/http_request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/file_path.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_case/runner_agencies.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
@@ -842,27 +670,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_case_ddt/test_house.py" />
-    <entry file="file://$PROJECT_DIR$/yamls/default.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/CaterSet/cater_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/read_yaml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yamls/cater_api.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -870,20 +677,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yamls/agencies_api.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="69" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/CaterSet/cater_sas.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="e#117#163#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,13 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/CaterSet/cater.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -912,16 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="614">
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/Login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="e#109#133#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,37 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/IDCard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="65" selection-start-line="65" selection-start-column="2" selection-end-line="70" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="16" />
-          <folding>
-            <element signature="e#150#175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_helper/cater_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019_07_05.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="621">
-          <caret line="23" column="96" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_case_ddt/runner_cater_all.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
@@ -985,17 +734,215 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/runner/HTMLTestRunnerNew.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test_reports_cater_2019_07_05.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/file_path.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_07_10.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-98433">
+          <caret line="15" column="97" selection-start-line="15" selection-start-column="97" selection-end-line="15" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/http_request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11097" />
+        <state relative-caret-position="326">
+          <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-110481944/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="3601" column="8" selection-start-line="3601" selection-start-column="8" selection-end-line="3601" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/CaterSet/cater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="43" column="86" selection-start-line="43" selection-start-column="86" selection-end-line="43" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/CaterSet/cater_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_07_11.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-57266">
+          <caret line="28" column="80" lean-forward="true" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/excel_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="60" column="26" lean-forward="true" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case_ddt/test_tester.py" />
+    <entry file="file://$PROJECT_DIR$/db_helper/cater_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yamls/agencies_api.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yamls/buinsess_api.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/IDCard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_08_13.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/Login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Business/business.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="84" lean-forward="true" selection-start-line="29" selection-start-column="84" selection-end-line="29" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/YangLao/yanglao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="26" column="87" lean-forward="true" selection-start-line="26" selection-start-column="87" selection-end-line="26" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/YangLao/yanglao_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Business/business_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/read_yaml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+          <folding>
+            <marker date="1565578630668" expanded="true" signature="2262:2369" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yamls/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_07_05.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="690">
+          <caret line="23" column="96" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2009">
+          <caret line="88" column="60" lean-forward="true" selection-start-line="82" selection-start-column="8" selection-end-line="88" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_government_cater.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/runner_cater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_cater_set/test_cater_flow_gover_balance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_case_ddt/test_cater.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="50" column="74" lean-forward="true" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="74" />
+        <state relative-caret-position="-695">
+          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="26" />
           <folding>
-            <element signature="e#111#137#0" expanded="true" />
+            <element signature="e#111#126#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_1_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="79" column="33" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="33" />
+          <folding>
+            <element signature="e#148#163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019_08_22.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_6_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_2_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret line="109" column="35" lean-forward="true" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case/test_business/test_business_5_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>
